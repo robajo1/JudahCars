@@ -1,7 +1,10 @@
 # **Judah Cars**  
-*Your car Fucking Platform*
+*Your Fucking car dealership Platform*
 
-![Spotfire Screenshot](Frame.png)
+![Spotfire Screenshot](Frame1.png)
+![Spotfire Screenshot](Frame2.png)
+![Spotfire Screenshot](Frame3.png)
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
