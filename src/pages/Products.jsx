@@ -2,7 +2,7 @@ import Header from "../components/Header"
 function Products() {
     return(
         <>
-            <p>Products</p>
+            <img src="/ProductCar.png" alt="" className="h-screen w-screen " />
         </>
     )
 }
