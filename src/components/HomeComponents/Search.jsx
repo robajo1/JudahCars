@@ -6,7 +6,7 @@ const Search = () => {
   return (
     <div className="max-w-4xl mx-auto p-5 text-center font-sans absolute top-[15vh] left-[34vw] w-auto ">
       
-      <p className='text-white font-sans  text-xs my-2'>Find Cars for sake ~ sale your car ~ swap your car</p>
+      <p className=' text-white font-sans  text-xs my-2'>Find Cars for sake ~ sale your car ~ swap your car</p>
       <h1 className="text-4xl font-bold text-white mb-6">Find Your Perfect Car</h1>
       
       <div className="flex justify-center mb-10">

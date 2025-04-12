@@ -1,8 +1,11 @@
-import Header from "../components/Header"
+import ProductsSearch from "../components/ProductsComponents/ProductsSearch";
+import ProductsBody from "../components/ProductsComponents/ProductsBody";
 function Products() {
     return(
         <>
-            <img src="/ProductCar.png" alt="" className="h-screen w-screen " />
+            <img src="/ProductCar.png" alt="" className="h-[80vh]   w-screen " />
+            <ProductsSearch />
+            <ProductsBody />
         </>
     )
 }
