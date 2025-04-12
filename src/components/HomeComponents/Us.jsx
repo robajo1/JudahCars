@@ -18,8 +18,6 @@ function Us(params) {
                         <BrandCard />
                     </>
                 )}
-
-                
             </div>
         </div>
     )
