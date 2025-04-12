@@ -6,6 +6,7 @@ function Footer() {
         <p>
           <a href="/privacy-policy" className="text-gray-400 hover:text-white">
             Privacy Policy
+            Robel looks like saka
           </a>
         </p>
       </div>
