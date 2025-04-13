@@ -5,6 +5,7 @@ import Header from "./components/Header"
 import { BrowserRouter,Routes,Route } from "react-router-dom"
 import NoPage from "./pages/NoPage"
 import Footer from "./components/Footer"
+import DetailsBody from "./components/DetailComponents/DetailsBody"
 function App() {
 
   return (
@@ -15,6 +16,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="products" element={<Products />} />
             <Route path="aboutus" element={<AboutUs />} />
+            <Route path="detail" element={<DetailsBody />} />
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>
