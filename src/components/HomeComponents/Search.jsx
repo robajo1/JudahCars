@@ -1,10 +1,14 @@
 
-
+import { useNavigate } from 'react-router-dom';
 import React from 'react';
 
 const Search = () => {
+  const navigate = useNavigate();
+  const handleCategoryClick = (category) => {
+    navigate(`/products#${category}`);
+  };
   return (
-    <div className="max-w-4xl mx-auto p-5 text-center font-sans absolute top-[15vh] left-[34vw] w-auto ">
+    <div className="max-w-4xl mx-auto p-5 text-center font-sans absolute top-[15vh] left-[30vw] w-auto ">
       
       <p className=' text-white font-sans  text-xs my-2'>Find Cars for sake ~ sale your car ~ swap your car</p>
       <h1 className="text-4xl font-bold text-white mb-6">Find Your Perfect Car</h1>
@@ -34,15 +38,17 @@ const Search = () => {
       
         <p className="font-semibold text-white text-xs m-10">Or Browse Featured Model</p>
       <div className="flex justify-center gap-8">
-        <div className="px-6 py-3 bg-gray-700 rounded-lg text-gray-100 font-medium hover:scale-105 transition duration-300 ease-in-out cursor-pointer ">
-          Hatchback
-        </div>
-        <div className="px-6 py-3 bg-gray-700 rounded-lg text-gray-100 font-medium hover:scale-105 transition duration-300 ease-in-out cursor-pointer ">
-          Coupe
-        </div>
-        <div className="px-6 py-3 bg-gray-700 rounded-lg text-gray-100 font-medium hover:scale-105 transition duration-300 ease-in-out cursor-pointer ">
-          Hybrid
-        </div>
+      <div className="flex justify-center gap-8">
+          {['Suv', 'Sedan', 'Hatchback', 'Coupe', 'Hybrid'].map((cat) => (
+            <div
+              key={cat}
+              onClick={() => handleCategoryClick(cat.toLowerCase())}
+              className="px-6 py-3 bg-gray-700 rounded-lg text-gray-100 font-medium hover:scale-105 transition duration-300 ease-in-out cursor-pointer"
+            >
+              {cat}
+            </div>
+          ))}
+       </div>
       </div>
     </div>
   );
