@@ -8,10 +8,10 @@ import "swiper/css/pagination";
 
 const carImages = [
   "https://randomuser.me/api/portraits/men/32.jpg",
-  "https://randomuser.me/api/portraits/men/32.jpg",
-  "https://randomuser.me/api/portraits/men/32.jpg",
-  "https://randomuser.me/api/portraits/men/32.jpg",
-  "https://randomuser.me/api/portraits/men/32.jpg",
+  "https://randomuser.me/api/portraits/men/33.jpg",
+  "https://randomuser.me/api/portraits/men/34.jpg",
+  "https://randomuser.me/api/portraits/men/35.jpg",
+  "https://randomuser.me/api/portraits/men/36.jpg",
 ];
 
 const brands = [

@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 function ProductsBody() {
+  const navigate = useNavigate();
+  const navigateToDetail = () =>{
+    navigate("/detail")
+  }
+
   const [inventory, setInventory] = useState(null);
 
   useEffect(() => {
@@ -40,7 +46,7 @@ function ProductsBody() {
                       />
                       <h4>Model: {car.model}</h4>
                       <p>Price: {car.price}$</p>
-                      <button className="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
+                      <button className="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onClick={navigateToDetail}>
                         View Details
                       </button>
                     </div>
