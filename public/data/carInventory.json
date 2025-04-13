@@ -1,0 +1,1415 @@
+{
+  "platform_name": "AutoHive",
+  "categories": {
+    "SUV": {
+      "Audi": [
+        {
+          "id": 1,
+          "model": "A4",
+          "year": 2019,
+          "price": 53020,
+          "mileage": 17439,
+          "fuel_type": "Hybrid",
+          "transmission": "CVT",
+          "location": "Cleveland, OH",
+          "images": [
+            "https://example.com/audi-a4.jpg"
+          ],
+          "seller": {
+            "name": "Laura Woods",
+            "contact": "audi@dealer.com",
+            "phone": "+1-555-1126"
+          }
+        },
+        {
+          "id": 2,
+          "model": "A4",
+          "year": 2022,
+          "price": 43162,
+          "mileage": 14503,
+          "fuel_type": "Hybrid",
+          "transmission": "Automatic",
+          "location": "Atlanta, GA",
+          "images": [
+            "https://example.com/audi-a4.jpg"
+          ],
+          "seller": {
+            "name": "Olivia King",
+            "contact": "audi@dealer.com",
+            "phone": "+1-555-8928"
+          }
+        },
+        {
+          "id": 3,
+          "model": "Q5",
+          "year": 2021,
+          "price": 24304,
+          "mileage": 9629,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Portland, OR",
+          "images": [
+            "https://example.com/audi-q5.jpg"
+          ],
+          "seller": {
+            "name": "Evan Dean",
+            "contact": "audi@dealer.com",
+            "phone": "+1-555-3071"
+          }
+        }
+      ],
+      "BMW": [
+        {
+          "id": 4,
+          "model": "330e",
+          "year": 2023,
+          "price": 47543,
+          "mileage": 26658,
+          "fuel_type": "Hybrid",
+          "transmission": "Automatic",
+          "location": "Miami, FL",
+          "images": [
+            "https://example.com/bmw-330e.jpg"
+          ],
+          "seller": {
+            "name": "Kate Moon",
+            "contact": "bmw@dealer.com",
+            "phone": "+1-555-8110"
+          }
+        },
+        {
+          "id": 5,
+          "model": "330e",
+          "year": 2023,
+          "price": 33501,
+          "mileage": 16750,
+          "fuel_type": "Diesel",
+          "transmission": "CVT",
+          "location": "San Francisco, CA",
+          "images": [
+            "https://example.com/bmw-330e.jpg"
+          ],
+          "seller": {
+            "name": "Jake Lee",
+            "contact": "bmw@dealer.com",
+            "phone": "+1-555-8024"
+          }
+        },
+        {
+          "id": 6,
+          "model": "4 Series Coupe",
+          "year": 2021,
+          "price": 59554,
+          "mileage": 14599,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Cleveland, OH",
+          "images": [
+            "https://example.com/bmw-4-series-coupe.jpg"
+          ],
+          "seller": {
+            "name": "Tracy Brooks",
+            "contact": "bmw@dealer.com",
+            "phone": "+1-555-8708"
+          }
+        }
+      ],
+      "Toyota": [
+        {
+          "id": 7,
+          "model": "Prius",
+          "year": 2023,
+          "price": 26597,
+          "mileage": 35912,
+          "fuel_type": "Diesel",
+          "transmission": "Automatic",
+          "location": "Phoenix, AZ",
+          "images": [
+            "https://example.com/toyota-prius.jpg"
+          ],
+          "seller": {
+            "name": "Tracy Cole",
+            "contact": "toyota@dealer.com",
+            "phone": "+1-555-6951"
+          }
+        },
+        {
+          "id": 8,
+          "model": "Prius",
+          "year": 2022,
+          "price": 59298,
+          "mileage": 35926,
+          "fuel_type": "Hybrid",
+          "transmission": "Automatic",
+          "location": "Orlando, FL",
+          "images": [
+            "https://example.com/toyota-prius.jpg"
+          ],
+          "seller": {
+            "name": "Jake Riley",
+            "contact": "toyota@dealer.com",
+            "phone": "+1-555-5658"
+          }
+        },
+        {
+          "id": 9,
+          "model": "Camry",
+          "year": 2023,
+          "price": 16150,
+          "mileage": 21654,
+          "fuel_type": "Diesel",
+          "transmission": "Manual",
+          "location": "Cleveland, OH",
+          "images": [
+            "https://example.com/toyota-camry.jpg"
+          ],
+          "seller": {
+            "name": "Amy Lee",
+            "contact": "toyota@dealer.com",
+            "phone": "+1-555-2133"
+          }
+        }
+      ],
+      "Volkswagen": [
+        {
+          "id": 10,
+          "model": "Tiguan",
+          "year": 2023,
+          "price": 46021,
+          "mileage": 44977,
+          "fuel_type": "Gasoline",
+          "transmission": "CVT",
+          "location": "Boston, MA",
+          "images": [
+            "https://example.com/volkswagen-tiguan.jpg"
+          ],
+          "seller": {
+            "name": "Henry Miles",
+            "contact": "volkswagen@dealer.com",
+            "phone": "+1-555-9030"
+          }
+        },
+        {
+          "id": 11,
+          "model": "Golf",
+          "year": 2022,
+          "price": 32289,
+          "mileage": 37673,
+          "fuel_type": "Gasoline",
+          "transmission": "Manual",
+          "location": "Portland, OR",
+          "images": [
+            "https://example.com/volkswagen-golf.jpg"
+          ],
+          "seller": {
+            "name": "Olivia Moon",
+            "contact": "volkswagen@dealer.com",
+            "phone": "+1-555-1656"
+          }
+        },
+        {
+          "id": 12,
+          "model": "Scirocco",
+          "year": 2020,
+          "price": 48442,
+          "mileage": 39977,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Newark, NJ",
+          "images": [
+            "https://example.com/volkswagen-scirocco.jpg"
+          ],
+          "seller": {
+            "name": "Sean King",
+            "contact": "volkswagen@dealer.com",
+            "phone": "+1-555-6613"
+          }
+        }
+      ],
+      "Mitsubishi": [
+        {
+          "id": 13,
+          "model": "Eclipse",
+          "year": 2019,
+          "price": 20762,
+          "mileage": 33242,
+          "fuel_type": "Hybrid",
+          "transmission": "CVT",
+          "location": "Phoenix, AZ",
+          "images": [
+            "https://example.com/mitsubishi-eclipse.jpg"
+          ],
+          "seller": {
+            "name": "Isabel Hall",
+            "contact": "mitsubishi@dealer.com",
+            "phone": "+1-555-3259"
+          }
+        },
+        {
+          "id": 14,
+          "model": "Outlander",
+          "year": 2020,
+          "price": 54740,
+          "mileage": 20830,
+          "fuel_type": "Diesel",
+          "transmission": "CVT",
+          "location": "Austin, TX",
+          "images": [
+            "https://example.com/mitsubishi-outlander.jpg"
+          ],
+          "seller": {
+            "name": "Henry Hale",
+            "contact": "mitsubishi@dealer.com",
+            "phone": "+1-555-1143"
+          }
+        },
+        {
+          "id": 15,
+          "model": "Outlander PHEV",
+          "year": 2022,
+          "price": 40895,
+          "mileage": 20663,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "San Jose, CA",
+          "images": [
+            "https://example.com/mitsubishi-outlander-phev.jpg"
+          ],
+          "seller": {
+            "name": "Leo Grant",
+            "contact": "mitsubishi@dealer.com",
+            "phone": "+1-555-1873"
+          }
+        }
+      ]
+    },
+    "Sedan": {
+      "Audi": [
+        {
+          "id": 16,
+          "model": "Q5 Hybrid",
+          "year": 2022,
+          "price": 36928,
+          "mileage": 18101,
+          "fuel_type": "Hybrid",
+          "transmission": "Manual",
+          "location": "Portland, OR",
+          "images": [
+            "https://example.com/audi-q5-hybrid.jpg"
+          ],
+          "seller": {
+            "name": "Evan King",
+            "contact": "audi@dealer.com",
+            "phone": "+1-555-7992"
+          }
+        },
+        {
+          "id": 17,
+          "model": "Q5 Hybrid",
+          "year": 2023,
+          "price": 53341,
+          "mileage": 6426,
+          "fuel_type": "Hybrid",
+          "transmission": "CVT",
+          "location": "San Francisco, CA",
+          "images": [
+            "https://example.com/audi-q5-hybrid.jpg"
+          ],
+          "seller": {
+            "name": "Leo Brown",
+            "contact": "audi@dealer.com",
+            "phone": "+1-555-6882"
+          }
+        },
+        {
+          "id": 18,
+          "model": "A4",
+          "year": 2022,
+          "price": 33808,
+          "mileage": 18021,
+          "fuel_type": "Diesel",
+          "transmission": "CVT",
+          "location": "Columbus, OH",
+          "images": [
+            "https://example.com/audi-a4.jpg"
+          ],
+          "seller": {
+            "name": "Kate Adams",
+            "contact": "audi@dealer.com",
+            "phone": "+1-555-4191"
+          }
+        }
+      ],
+      "BMW": [
+        {
+          "id": 19,
+          "model": "330e",
+          "year": 2021,
+          "price": 24630,
+          "mileage": 44942,
+          "fuel_type": "Hybrid",
+          "transmission": "Manual",
+          "location": "Cleveland, OH",
+          "images": [
+            "https://example.com/bmw-330e.jpg"
+          ],
+          "seller": {
+            "name": "Sean Lee",
+            "contact": "bmw@dealer.com",
+            "phone": "+1-555-3998"
+          }
+        },
+        {
+          "id": 20,
+          "model": "330e",
+          "year": 2019,
+          "price": 25259,
+          "mileage": 8279,
+          "fuel_type": "Hybrid",
+          "transmission": "Automatic",
+          "location": "San Francisco, CA",
+          "images": [
+            "https://example.com/bmw-330e.jpg"
+          ],
+          "seller": {
+            "name": "Daniel Ray",
+            "contact": "bmw@dealer.com",
+            "phone": "+1-555-3606"
+          }
+        },
+        {
+          "id": 21,
+          "model": "4 Series Coupe",
+          "year": 2021,
+          "price": 38693,
+          "mileage": 17041,
+          "fuel_type": "Diesel",
+          "transmission": "Automatic",
+          "location": "Miami, FL",
+          "images": [
+            "https://example.com/bmw-4-series-coupe.jpg"
+          ],
+          "seller": {
+            "name": "Chris Moon",
+            "contact": "bmw@dealer.com",
+            "phone": "+1-555-1563"
+          }
+        }
+      ],
+      "Toyota": [
+        {
+          "id": 22,
+          "model": "Prius",
+          "year": 2023,
+          "price": 21247,
+          "mileage": 10709,
+          "fuel_type": "Diesel",
+          "transmission": "Automatic",
+          "location": "Boise, ID",
+          "images": [
+            "https://example.com/toyota-prius.jpg"
+          ],
+          "seller": {
+            "name": "Henry Riley",
+            "contact": "toyota@dealer.com",
+            "phone": "+1-555-7163"
+          }
+        },
+        {
+          "id": 23,
+          "model": "Camry",
+          "year": 2023,
+          "price": 49531,
+          "mileage": 36716,
+          "fuel_type": "Gasoline",
+          "transmission": "Manual",
+          "location": "San Diego, CA",
+          "images": [
+            "https://example.com/toyota-camry.jpg"
+          ],
+          "seller": {
+            "name": "Nora Adams",
+            "contact": "toyota@dealer.com",
+            "phone": "+1-555-1897"
+          }
+        },
+        {
+          "id": 24,
+          "model": "RAV4",
+          "year": 2021,
+          "price": 47867,
+          "mileage": 20122,
+          "fuel_type": "Hybrid",
+          "transmission": "Automatic",
+          "location": "Portland, OR",
+          "images": [
+            "https://example.com/toyota-rav4.jpg"
+          ],
+          "seller": {
+            "name": "Nora Adams",
+            "contact": "toyota@dealer.com",
+            "phone": "+1-555-2215"
+          }
+        }
+      ],
+      "Volkswagen": [
+        {
+          "id": 25,
+          "model": "Golf",
+          "year": 2021,
+          "price": 40871,
+          "mileage": 29702,
+          "fuel_type": "Gasoline",
+          "transmission": "CVT",
+          "location": "Salt Lake City, UT",
+          "images": [
+            "https://example.com/volkswagen-golf.jpg"
+          ],
+          "seller": {
+            "name": "Evan Smith",
+            "contact": "volkswagen@dealer.com",
+            "phone": "+1-555-9552"
+          }
+        },
+        {
+          "id": 26,
+          "model": "Passat",
+          "year": 2021,
+          "price": 33688,
+          "mileage": 41260,
+          "fuel_type": "Gasoline",
+          "transmission": "CVT",
+          "location": "Phoenix, AZ",
+          "images": [
+            "https://example.com/volkswagen-passat.jpg"
+          ],
+          "seller": {
+            "name": "Leo Ray",
+            "contact": "volkswagen@dealer.com",
+            "phone": "+1-555-5565"
+          }
+        },
+        {
+          "id": 27,
+          "model": "Tiguan",
+          "year": 2023,
+          "price": 22042,
+          "mileage": 22556,
+          "fuel_type": "Gasoline",
+          "transmission": "CVT",
+          "location": "Newark, NJ",
+          "images": [
+            "https://example.com/volkswagen-tiguan.jpg"
+          ],
+          "seller": {
+            "name": "Jake Miller",
+            "contact": "volkswagen@dealer.com",
+            "phone": "+1-555-1441"
+          }
+        }
+      ],
+      "Mitsubishi": [
+        {
+          "id": 28,
+          "model": "Outlander PHEV",
+          "year": 2023,
+          "price": 59343,
+          "mileage": 33068,
+          "fuel_type": "Diesel",
+          "transmission": "Manual",
+          "location": "Austin, TX",
+          "images": [
+            "https://example.com/mitsubishi-outlander-phev.jpg"
+          ],
+          "seller": {
+            "name": "Emily King",
+            "contact": "mitsubishi@dealer.com",
+            "phone": "+1-555-5421"
+          }
+        },
+        {
+          "id": 29,
+          "model": "Mirage",
+          "year": 2020,
+          "price": 21959,
+          "mileage": 32501,
+          "fuel_type": "Hybrid",
+          "transmission": "CVT",
+          "location": "Boston, MA",
+          "images": [
+            "https://example.com/mitsubishi-mirage.jpg"
+          ],
+          "seller": {
+            "name": "Sean Riley",
+            "contact": "mitsubishi@dealer.com",
+            "phone": "+1-555-9868"
+          }
+        },
+        {
+          "id": 30,
+          "model": "Eclipse",
+          "year": 2023,
+          "price": 27298,
+          "mileage": 37467,
+          "fuel_type": "Diesel",
+          "transmission": "Manual",
+          "location": "San Francisco, CA",
+          "images": [
+            "https://example.com/mitsubishi-eclipse.jpg"
+          ],
+          "seller": {
+            "name": "Chris Miller",
+            "contact": "mitsubishi@dealer.com",
+            "phone": "+1-555-9709"
+          }
+        }
+      ]
+    },
+    "Hatchback": {
+      "Audi": [
+        {
+          "id": 31,
+          "model": "A5 Coupe",
+          "year": 2023,
+          "price": 49248,
+          "mileage": 20172,
+          "fuel_type": "Gasoline",
+          "transmission": "CVT",
+          "location": "Charlotte, NC",
+          "images": [
+            "https://example.com/audi-a5-coupe.jpg"
+          ],
+          "seller": {
+            "name": "Nora Hall",
+            "contact": "audi@dealer.com",
+            "phone": "+1-555-9844"
+          }
+        },
+        {
+          "id": 32,
+          "model": "A3 Sportback",
+          "year": 2019,
+          "price": 24854,
+          "mileage": 33742,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Austin, TX",
+          "images": [
+            "https://example.com/audi-a3-sportback.jpg"
+          ],
+          "seller": {
+            "name": "Judy Cole",
+            "contact": "audi@dealer.com",
+            "phone": "+1-555-7362"
+          }
+        },
+        {
+          "id": 33,
+          "model": "A4",
+          "year": 2023,
+          "price": 32292,
+          "mileage": 36400,
+          "fuel_type": "Gasoline",
+          "transmission": "CVT",
+          "location": "Boise, ID",
+          "images": [
+            "https://example.com/audi-a4.jpg"
+          ],
+          "seller": {
+            "name": "Evan Dean",
+            "contact": "audi@dealer.com",
+            "phone": "+1-555-7099"
+          }
+        }
+      ],
+      "BMW": [
+        {
+          "id": 34,
+          "model": "X5",
+          "year": 2023,
+          "price": 48759,
+          "mileage": 25801,
+          "fuel_type": "Hybrid",
+          "transmission": "Manual",
+          "location": "Miami, FL",
+          "images": [
+            "https://example.com/bmw-x5.jpg"
+          ],
+          "seller": {
+            "name": "Leo Moon",
+            "contact": "bmw@dealer.com",
+            "phone": "+1-555-2523"
+          }
+        },
+        {
+          "id": 35,
+          "model": "X5",
+          "year": 2023,
+          "price": 42843,
+          "mileage": 29695,
+          "fuel_type": "Diesel",
+          "transmission": "Manual",
+          "location": "Miami, FL",
+          "images": [
+            "https://example.com/bmw-x5.jpg"
+          ],
+          "seller": {
+            "name": "Judy Brown",
+            "contact": "bmw@dealer.com",
+            "phone": "+1-555-6313"
+          }
+        },
+        {
+          "id": 36,
+          "model": "4 Series Coupe",
+          "year": 2021,
+          "price": 57848,
+          "mileage": 11534,
+          "fuel_type": "Hybrid",
+          "transmission": "CVT",
+          "location": "Miami, FL",
+          "images": [
+            "https://example.com/bmw-4-series-coupe.jpg"
+          ],
+          "seller": {
+            "name": "Emily Grant",
+            "contact": "bmw@dealer.com",
+            "phone": "+1-555-8600"
+          }
+        }
+      ],
+      "Toyota": [
+        {
+          "id": 37,
+          "model": "Prius",
+          "year": 2019,
+          "price": 32795,
+          "mileage": 28004,
+          "fuel_type": "Hybrid",
+          "transmission": "Manual",
+          "location": "Boise, ID",
+          "images": [
+            "https://example.com/toyota-prius.jpg"
+          ],
+          "seller": {
+            "name": "Lara Smith",
+            "contact": "toyota@dealer.com",
+            "phone": "+1-555-2881"
+          }
+        },
+        {
+          "id": 38,
+          "model": "Prius",
+          "year": 2023,
+          "price": 48029,
+          "mileage": 40234,
+          "fuel_type": "Diesel",
+          "transmission": "Automatic",
+          "location": "Denver, CO",
+          "images": [
+            "https://example.com/toyota-prius.jpg"
+          ],
+          "seller": {
+            "name": "Emily Ray",
+            "contact": "toyota@dealer.com",
+            "phone": "+1-555-7863"
+          }
+        },
+        {
+          "id": 39,
+          "model": "Prius",
+          "year": 2019,
+          "price": 36766,
+          "mileage": 33581,
+          "fuel_type": "Hybrid",
+          "transmission": "CVT",
+          "location": "Los Angeles, CA",
+          "images": [
+            "https://example.com/toyota-prius.jpg"
+          ],
+          "seller": {
+            "name": "Chris Brown",
+            "contact": "toyota@dealer.com",
+            "phone": "+1-555-5306"
+          }
+        }
+      ],
+      "Volkswagen": [
+        {
+          "id": 40,
+          "model": "Scirocco",
+          "year": 2020,
+          "price": 23886,
+          "mileage": 21745,
+          "fuel_type": "Hybrid",
+          "transmission": "Automatic",
+          "location": "Columbus, OH",
+          "images": [
+            "https://example.com/volkswagen-scirocco.jpg"
+          ],
+          "seller": {
+            "name": "Oscar Ross",
+            "contact": "volkswagen@dealer.com",
+            "phone": "+1-555-4329"
+          }
+        },
+        {
+          "id": 41,
+          "model": "Scirocco",
+          "year": 2023,
+          "price": 57310,
+          "mileage": 17658,
+          "fuel_type": "Diesel",
+          "transmission": "Manual",
+          "location": "Tampa, FL",
+          "images": [
+            "https://example.com/volkswagen-scirocco.jpg"
+          ],
+          "seller": {
+            "name": "Samantha Hale",
+            "contact": "volkswagen@dealer.com",
+            "phone": "+1-555-2365"
+          }
+        },
+        {
+          "id": 42,
+          "model": "Scirocco",
+          "year": 2022,
+          "price": 33914,
+          "mileage": 44710,
+          "fuel_type": "Hybrid",
+          "transmission": "Automatic",
+          "location": "Los Angeles, CA",
+          "images": [
+            "https://example.com/volkswagen-scirocco.jpg"
+          ],
+          "seller": {
+            "name": "Emily Moon",
+            "contact": "volkswagen@dealer.com",
+            "phone": "+1-555-9337"
+          }
+        }
+      ],
+      "Mitsubishi": [
+        {
+          "id": 43,
+          "model": "Outlander",
+          "year": 2020,
+          "price": 31426,
+          "mileage": 35227,
+          "fuel_type": "Hybrid",
+          "transmission": "CVT",
+          "location": "San Francisco, CA",
+          "images": [
+            "https://example.com/mitsubishi-outlander.jpg"
+          ],
+          "seller": {
+            "name": "Evan Rogers",
+            "contact": "mitsubishi@dealer.com",
+            "phone": "+1-555-7220"
+          }
+        },
+        {
+          "id": 44,
+          "model": "Eclipse",
+          "year": 2022,
+          "price": 57407,
+          "mileage": 8664,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Boston, MA",
+          "images": [
+            "https://example.com/mitsubishi-eclipse.jpg"
+          ],
+          "seller": {
+            "name": "Kate Ross",
+            "contact": "mitsubishi@dealer.com",
+            "phone": "+1-555-4633"
+          }
+        },
+        {
+          "id": 45,
+          "model": "Outlander PHEV",
+          "year": 2020,
+          "price": 48721,
+          "mileage": 11951,
+          "fuel_type": "Diesel",
+          "transmission": "Automatic",
+          "location": "Miami, FL",
+          "images": [
+            "https://example.com/mitsubishi-outlander-phev.jpg"
+          ],
+          "seller": {
+            "name": "Alex Adams",
+            "contact": "mitsubishi@dealer.com",
+            "phone": "+1-555-4696"
+          }
+        }
+      ]
+    },
+    "Coupe": {
+      "Audi": [
+        {
+          "id": 46,
+          "model": "A5 Coupe",
+          "year": 2019,
+          "price": 56505,
+          "mileage": 30952,
+          "fuel_type": "Hybrid",
+          "transmission": "Manual",
+          "location": "Austin, TX",
+          "images": [
+            "https://example.com/audi-a5-coupe.jpg"
+          ],
+          "seller": {
+            "name": "Tracy Chen",
+            "contact": "audi@dealer.com",
+            "phone": "+1-555-6481"
+          }
+        },
+        {
+          "id": 47,
+          "model": "A3 Sportback",
+          "year": 2021,
+          "price": 35103,
+          "mileage": 35012,
+          "fuel_type": "Hybrid",
+          "transmission": "Automatic",
+          "location": "Phoenix, AZ",
+          "images": [
+            "https://example.com/audi-a3-sportback.jpg"
+          ],
+          "seller": {
+            "name": "Isabel Ray",
+            "contact": "audi@dealer.com",
+            "phone": "+1-555-9396"
+          }
+        },
+        {
+          "id": 48,
+          "model": "A3 Sportback",
+          "year": 2019,
+          "price": 19606,
+          "mileage": 33726,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Boise, ID",
+          "images": [
+            "https://example.com/audi-a3-sportback.jpg"
+          ],
+          "seller": {
+            "name": "Judy Grey",
+            "contact": "audi@dealer.com",
+            "phone": "+1-555-9400"
+          }
+        }
+      ],
+      "BMW": [
+        {
+          "id": 49,
+          "model": "4 Series Coupe",
+          "year": 2021,
+          "price": 50357,
+          "mileage": 26395,
+          "fuel_type": "Diesel",
+          "transmission": "Automatic",
+          "location": "San Diego, CA",
+          "images": [
+            "https://example.com/bmw-4-series-coupe.jpg"
+          ],
+          "seller": {
+            "name": "Laura Tan",
+            "contact": "bmw@dealer.com",
+            "phone": "+1-555-3253"
+          }
+        },
+        {
+          "id": 50,
+          "model": "X5",
+          "year": 2021,
+          "price": 55928,
+          "mileage": 38841,
+          "fuel_type": "Gasoline",
+          "transmission": "CVT",
+          "location": "Charlotte, NC",
+          "images": [
+            "https://example.com/bmw-x5.jpg"
+          ],
+          "seller": {
+            "name": "Daniel Chen",
+            "contact": "bmw@dealer.com",
+            "phone": "+1-555-4028"
+          }
+        },
+        {
+          "id": 51,
+          "model": "X5",
+          "year": 2019,
+          "price": 54680,
+          "mileage": 25226,
+          "fuel_type": "Hybrid",
+          "transmission": "Automatic",
+          "location": "Seattle, WA",
+          "images": [
+            "https://example.com/bmw-x5.jpg"
+          ],
+          "seller": {
+            "name": "Lara Grey",
+            "contact": "bmw@dealer.com",
+            "phone": "+1-555-7543"
+          }
+        }
+      ],
+      "Toyota": [
+        {
+          "id": 52,
+          "model": "RAV4",
+          "year": 2022,
+          "price": 37357,
+          "mileage": 8833,
+          "fuel_type": "Gasoline",
+          "transmission": "Manual",
+          "location": "Kansas City, MO",
+          "images": [
+            "https://example.com/toyota-rav4.jpg"
+          ],
+          "seller": {
+            "name": "Zach Miller",
+            "contact": "toyota@dealer.com",
+            "phone": "+1-555-8269"
+          }
+        },
+        {
+          "id": 53,
+          "model": "Prius",
+          "year": 2021,
+          "price": 52421,
+          "mileage": 41882,
+          "fuel_type": "Gasoline",
+          "transmission": "CVT",
+          "location": "Chicago, IL",
+          "images": [
+            "https://example.com/toyota-prius.jpg"
+          ],
+          "seller": {
+            "name": "Leo Lee",
+            "contact": "toyota@dealer.com",
+            "phone": "+1-555-2791"
+          }
+        },
+        {
+          "id": 54,
+          "model": "Camry",
+          "year": 2021,
+          "price": 16871,
+          "mileage": 29002,
+          "fuel_type": "Diesel",
+          "transmission": "CVT",
+          "location": "Salt Lake City, UT",
+          "images": [
+            "https://example.com/toyota-camry.jpg"
+          ],
+          "seller": {
+            "name": "Chris Rogers",
+            "contact": "toyota@dealer.com",
+            "phone": "+1-555-5995"
+          }
+        }
+      ],
+      "Volkswagen": [
+        {
+          "id": 55,
+          "model": "Passat",
+          "year": 2019,
+          "price": 41814,
+          "mileage": 29791,
+          "fuel_type": "Gasoline",
+          "transmission": "Manual",
+          "location": "Charlotte, NC",
+          "images": [
+            "https://example.com/volkswagen-passat.jpg"
+          ],
+          "seller": {
+            "name": "Kate Moon",
+            "contact": "volkswagen@dealer.com",
+            "phone": "+1-555-3391"
+          }
+        },
+        {
+          "id": 56,
+          "model": "Tiguan",
+          "year": 2020,
+          "price": 19070,
+          "mileage": 39340,
+          "fuel_type": "Diesel",
+          "transmission": "CVT",
+          "location": "Portland, OR",
+          "images": [
+            "https://example.com/volkswagen-tiguan.jpg"
+          ],
+          "seller": {
+            "name": "Sean Grant",
+            "contact": "volkswagen@dealer.com",
+            "phone": "+1-555-8160"
+          }
+        },
+        {
+          "id": 57,
+          "model": "Tiguan",
+          "year": 2021,
+          "price": 58612,
+          "mileage": 12031,
+          "fuel_type": "Hybrid",
+          "transmission": "CVT",
+          "location": "Cleveland, OH",
+          "images": [
+            "https://example.com/volkswagen-tiguan.jpg"
+          ],
+          "seller": {
+            "name": "Chris Lee",
+            "contact": "volkswagen@dealer.com",
+            "phone": "+1-555-3053"
+          }
+        }
+      ],
+      "Mitsubishi": [
+        {
+          "id": 58,
+          "model": "Outlander PHEV",
+          "year": 2022,
+          "price": 54613,
+          "mileage": 38064,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Seattle, WA",
+          "images": [
+            "https://example.com/mitsubishi-outlander-phev.jpg"
+          ],
+          "seller": {
+            "name": "Tracy Brown",
+            "contact": "mitsubishi@dealer.com",
+            "phone": "+1-555-7856"
+          }
+        },
+        {
+          "id": 59,
+          "model": "Outlander PHEV",
+          "year": 2019,
+          "price": 40090,
+          "mileage": 7703,
+          "fuel_type": "Diesel",
+          "transmission": "CVT",
+          "location": "Kansas City, MO",
+          "images": [
+            "https://example.com/mitsubishi-outlander-phev.jpg"
+          ],
+          "seller": {
+            "name": "Lara Brown",
+            "contact": "mitsubishi@dealer.com",
+            "phone": "+1-555-4644"
+          }
+        },
+        {
+          "id": 60,
+          "model": "Eclipse",
+          "year": 2023,
+          "price": 47630,
+          "mileage": 42872,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Atlanta, GA",
+          "images": [
+            "https://example.com/mitsubishi-eclipse.jpg"
+          ],
+          "seller": {
+            "name": "Jake Rogers",
+            "contact": "mitsubishi@dealer.com",
+            "phone": "+1-555-5604"
+          }
+        }
+      ]
+    },
+    "Hybrid": {
+      "Audi": [
+        {
+          "id": 61,
+          "model": "A5 Coupe",
+          "year": 2020,
+          "price": 46787,
+          "mileage": 26605,
+          "fuel_type": "Diesel",
+          "transmission": "Automatic",
+          "location": "Portland, OR",
+          "images": [
+            "https://example.com/audi-a5-coupe.jpg"
+          ],
+          "seller": {
+            "name": "Jake Miles",
+            "contact": "audi@dealer.com",
+            "phone": "+1-555-6729"
+          }
+        },
+        {
+          "id": 62,
+          "model": "Q5 Hybrid",
+          "year": 2023,
+          "price": 22387,
+          "mileage": 25066,
+          "fuel_type": "Diesel",
+          "transmission": "Automatic",
+          "location": "Charlotte, NC",
+          "images": [
+            "https://example.com/audi-q5-hybrid.jpg"
+          ],
+          "seller": {
+            "name": "Chris Miles",
+            "contact": "audi@dealer.com",
+            "phone": "+1-555-3461"
+          }
+        },
+        {
+          "id": 63,
+          "model": "Q5",
+          "year": 2021,
+          "price": 21264,
+          "mileage": 44407,
+          "fuel_type": "Hybrid",
+          "transmission": "Manual",
+          "location": "Orlando, FL",
+          "images": [
+            "https://example.com/audi-q5.jpg"
+          ],
+          "seller": {
+            "name": "Alex Smith",
+            "contact": "audi@dealer.com",
+            "phone": "+1-555-1669"
+          }
+        }
+      ],
+      "BMW": [
+        {
+          "id": 64,
+          "model": "4 Series Coupe",
+          "year": 2022,
+          "price": 51427,
+          "mileage": 43535,
+          "fuel_type": "Hybrid",
+          "transmission": "Manual",
+          "location": "Miami, FL",
+          "images": [
+            "https://example.com/bmw-4-series-coupe.jpg"
+          ],
+          "seller": {
+            "name": "Nora Woods",
+            "contact": "bmw@dealer.com",
+            "phone": "+1-555-7113"
+          }
+        },
+        {
+          "id": 65,
+          "model": "4 Series Coupe",
+          "year": 2023,
+          "price": 49893,
+          "mileage": 21200,
+          "fuel_type": "Gasoline",
+          "transmission": "Manual",
+          "location": "San Jose, CA",
+          "images": [
+            "https://example.com/bmw-4-series-coupe.jpg"
+          ],
+          "seller": {
+            "name": "Judy Perry",
+            "contact": "bmw@dealer.com",
+            "phone": "+1-555-1530"
+          }
+        },
+        {
+          "id": 66,
+          "model": "1 Series",
+          "year": 2019,
+          "price": 32234,
+          "mileage": 44128,
+          "fuel_type": "Hybrid",
+          "transmission": "CVT",
+          "location": "Boise, ID",
+          "images": [
+            "https://example.com/bmw-1-series.jpg"
+          ],
+          "seller": {
+            "name": "Alex Dean",
+            "contact": "bmw@dealer.com",
+            "phone": "+1-555-7143"
+          }
+        }
+      ],
+      "Toyota": [
+        {
+          "id": 67,
+          "model": "Yaris",
+          "year": 2019,
+          "price": 18588,
+          "mileage": 31139,
+          "fuel_type": "Gasoline",
+          "transmission": "CVT",
+          "location": "Cleveland, OH",
+          "images": [
+            "https://example.com/toyota-yaris.jpg"
+          ],
+          "seller": {
+            "name": "Alex Hall",
+            "contact": "toyota@dealer.com",
+            "phone": "+1-555-9209"
+          }
+        },
+        {
+          "id": 68,
+          "model": "Yaris",
+          "year": 2022,
+          "price": 38104,
+          "mileage": 26380,
+          "fuel_type": "Hybrid",
+          "transmission": "CVT",
+          "location": "Cleveland, OH",
+          "images": [
+            "https://example.com/toyota-yaris.jpg"
+          ],
+          "seller": {
+            "name": "Sean Brown",
+            "contact": "toyota@dealer.com",
+            "phone": "+1-555-1611"
+          }
+        },
+        {
+          "id": 69,
+          "model": "RAV4",
+          "year": 2021,
+          "price": 46066,
+          "mileage": 43320,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Phoenix, AZ",
+          "images": [
+            "https://example.com/toyota-rav4.jpg"
+          ],
+          "seller": {
+            "name": "Megan Lee",
+            "contact": "toyota@dealer.com",
+            "phone": "+1-555-6793"
+          }
+        }
+      ],
+      "Volkswagen": [
+        {
+          "id": 70,
+          "model": "Passat",
+          "year": 2023,
+          "price": 21549,
+          "mileage": 23482,
+          "fuel_type": "Diesel",
+          "transmission": "CVT",
+          "location": "Phoenix, AZ",
+          "images": [
+            "https://example.com/volkswagen-passat.jpg"
+          ],
+          "seller": {
+            "name": "Oscar Rogers",
+            "contact": "volkswagen@dealer.com",
+            "phone": "+1-555-9708"
+          }
+        },
+        {
+          "id": 71,
+          "model": "Scirocco",
+          "year": 2022,
+          "price": 17330,
+          "mileage": 16964,
+          "fuel_type": "Hybrid",
+          "transmission": "CVT",
+          "location": "Dallas, TX",
+          "images": [
+            "https://example.com/volkswagen-scirocco.jpg"
+          ],
+          "seller": {
+            "name": "Lara Grey",
+            "contact": "volkswagen@dealer.com",
+            "phone": "+1-555-8641"
+          }
+        },
+        {
+          "id": 72,
+          "model": "Golf",
+          "year": 2022,
+          "price": 45102,
+          "mileage": 8381,
+          "fuel_type": "Diesel",
+          "transmission": "Automatic",
+          "location": "Dallas, TX",
+          "images": [
+            "https://example.com/volkswagen-golf.jpg"
+          ],
+          "seller": {
+            "name": "Brian Brooks",
+            "contact": "volkswagen@dealer.com",
+            "phone": "+1-555-6226"
+          }
+        }
+      ],
+      "Mitsubishi": [
+        {
+          "id": 73,
+          "model": "Lancer",
+          "year": 2019,
+          "price": 49509,
+          "mileage": 29518,
+          "fuel_type": "Diesel",
+          "transmission": "CVT",
+          "location": "Newark, NJ",
+          "images": [
+            "https://example.com/mitsubishi-lancer.jpg"
+          ],
+          "seller": {
+            "name": "Jake Blake",
+            "contact": "mitsubishi@dealer.com",
+            "phone": "+1-555-4264"
+          }
+        },
+        {
+          "id": 74,
+          "model": "Eclipse",
+          "year": 2020,
+          "price": 34564,
+          "mileage": 26835,
+          "fuel_type": "Diesel",
+          "transmission": "Manual",
+          "location": "Miami, FL",
+          "images": [
+            "https://example.com/mitsubishi-eclipse.jpg"
+          ],
+          "seller": {
+            "name": "Wade Dean",
+            "contact": "mitsubishi@dealer.com",
+            "phone": "+1-555-3592"
+          }
+        },
+        {
+          "id": 75,
+          "model": "Mirage",
+          "year": 2020,
+          "price": 50012,
+          "mileage": 25645,
+          "fuel_type": "Diesel",
+          "transmission": "Manual",
+          "location": "Salt Lake City, UT",
+          "images": [
+            "https://example.com/mitsubishi-mirage.jpg"
+          ],
+          "seller": {
+            "name": "Nora Tan",
+            "contact": "mitsubishi@dealer.com",
+            "phone": "+1-555-4705"
+          }
+        }
+      ]
+    }
+  }
+}
