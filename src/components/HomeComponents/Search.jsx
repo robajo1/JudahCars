@@ -5,8 +5,9 @@ import React from 'react';
 const Search = () => {
   const navigate = useNavigate();
   const handleCategoryClick = (category) => {
-    navigate(`/products#${category}`);
+    navigate(`/products?type=${category.toLowerCase()}`);
   };
+
   return (
     <div className="max-w-4xl mx-auto p-5 text-center font-sans absolute top-[15vh] left-[30vw] w-auto ">
       
@@ -42,7 +43,7 @@ const Search = () => {
           {['Suv', 'Sedan', 'Hatchback', 'Coupe', 'Hybrid'].map((cat) => (
             <div
               key={cat}
-              onClick={() => handleCategoryClick(cat.toLowerCase())}
+              onClick={() => handleCategoryClick(cat)}
               className="px-6 py-3 bg-gray-700 rounded-lg text-gray-100 font-medium hover:scale-105 transition duration-300 ease-in-out cursor-pointer"
             >
               {cat}
