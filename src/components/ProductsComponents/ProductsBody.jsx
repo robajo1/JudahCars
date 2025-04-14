@@ -1,4 +1,4 @@
-import React, { useRef,useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 function ProductsBody() {
@@ -7,9 +7,11 @@ function ProductsBody() {
   const location = useLocation();
   const [inventory, setInventory] = useState(null);
 
-
   const searchParams = new URLSearchParams(location.search);
-  const typeFilter = searchParams.get('type'); 
+  const typeFilter = searchParams.get('type');
+  const fuelFilter = searchParams.get('fuel');
+  const transmissionFilter = searchParams.get('transmission');
+  const priceRange = searchParams.get('price'); 
 
   useEffect(() => {
     fetch("/data/carInventory.json")
@@ -17,27 +19,49 @@ function ProductsBody() {
       .then((data) => setInventory(data))
       .catch((err) => console.error("Error loading car inventory:", err));
   }, []);
-  if(typeFilter !== null){
-    useEffect(() => {
-      if (inventory && headingRef.current) {
-        headingRef.current.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, [inventory]);
-  }
+
+  useEffect(() => {
+    if (inventory && headingRef.current) {
+      headingRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [inventory]);
 
   const navigateToDetail = (car) => {
-    navigate("/detail",{state: { car } });
+    navigate("/detail", { state: { car } });
   };
 
   if (!inventory) return <p>Loading...</p>;
 
 
-  const filteredInventory = typeFilter
-    ? inventory.filter(car => car.type.toLowerCase() === typeFilter.toLowerCase())
-    : inventory;
+  let filteredInventory = [...inventory];
+
+  if (typeFilter) {
+    filteredInventory = filteredInventory.filter(
+      (car) => car.type.toLowerCase() === typeFilter.toLowerCase()
+    );
+  }
+
+  if (fuelFilter) {
+    filteredInventory = filteredInventory.filter(
+      (car) => car.fuel_type.toLowerCase() === fuelFilter.toLowerCase()
+    );
+  }
+
+  if (transmissionFilter) {
+    filteredInventory = filteredInventory.filter(
+      (car) => car.transmission.toLowerCase() === transmissionFilter.toLowerCase()
+    );
+  }
+
+  if (priceRange) {
+    const [min, max] = priceRange.split('-').map(Number);
+    filteredInventory = filteredInventory.filter(
+      (car) => car.price >= min && car.price <= max
+    );
+  }
 
   if (filteredInventory.length === 0) {
-    return <p>No vehicles found for the selected type.</p>;
+    return <p className="text-center text-gray-500 mt-10">No vehicles found matching the filters.</p>;
   }
 
   return (
@@ -63,7 +87,7 @@ function ProductsBody() {
             <p className="text-blue-600 font-bold mb-2">${car.price.toLocaleString()}</p>
             <button
               className="mt-auto bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
-              onClick={()=> navigateToDetail(car)}
+              onClick={() => navigateToDetail(car)}
             >
               View Details
             </button>
@@ -73,4 +97,5 @@ function ProductsBody() {
     </div>
   );
 }
+
 export default ProductsBody;
