@@ -17,6 +17,8 @@ function DetailsBody() {
    
   const navigate=useNavigate();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [addToCartStatus, setAddToCartStatus] = useState("Add to Cart");
+  const [isAddingToCart, setIsAddingToCart] = useState(false);
   const [inventory, setInventory] = useState([]);
 
   useEffect(() => {
@@ -44,6 +46,7 @@ function DetailsBody() {
       location: carLocation,
     images,
     seller,
+    id, // Assuming each car object has a unique 'id'
   } = car;
   //filters similar cars by type randomly 
   const typeFilter=type;
@@ -68,10 +71,37 @@ const similarCars = shuffledSimilarCars.slice(0, 5); // take first 5
     );
   };
 
-  const navigateToDetail = (car) => {
-    console.log(car);
-    navigate("/detail", { state: { car } });
+  const handleAddToCart = () => {
+    setIsAddingToCart(true);
+    setAddToCartStatus("Adding...");
+    const existingCartItems = localStorage.getItem("cartItems");
+    let cartItems = existingCartItems ? JSON.parse(existingCartItems) : [];
+
+    const itemToAdd = {
+      id: id,
+      make: make,
+      model: model,
+      price: price,
+      image: images[0], // Add the first image to the cart item
+    };
+
+    cartItems = [...cartItems, itemToAdd];
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    setAddToCartStatus("Added to Cart");
+
+    setTimeout(() => {
+      setIsAddingToCart(false);
+      setAddToCartStatus("Add to Cart");
+    }, 2000);
   };
+
+  const getAddToCartButtonStyle = () => {
+    if (addToCartStatus === "Added to Cart") {
+      return "added";
+    }
+    return "";
+  };
+
   return (
     <div className="details-page">
       <div className="details-container">
@@ -118,12 +148,8 @@ const similarCars = shuffledSimilarCars.slice(0, 5); // take first 5
 
               <div className="specs-badges">
                 <span className="badge fuel-badge">🚗 {fuel_type}</span>
-                <span className="badge transmission-badge">
-                  ⚙️ {transmission}
-                </span>
-                <span className="badge drivetrain-badge">
-                  🧭 All-Wheel Drive
-                </span>
+                <span className="badge transmission-badge">⚙️ {transmission}</span>
+                <span className="badge drivetrain-badge">🧭 All-Wheel Drive</span> {/* Assuming this is always the case or from data */}
               </div>
 
               <p className="car-price">${price}</p>
@@ -134,7 +160,13 @@ const similarCars = shuffledSimilarCars.slice(0, 5); // take first 5
                 </p>
               </div>
 
-              <button className="add-to-cart-button">Added to Cart</button>
+              <button
+                className={`add-to-cart-button ${getAddToCartButtonStyle()}`}
+                onClick={handleAddToCart}
+                disabled={isAddingToCart || addToCartStatus === "Added to Cart"}
+              >
+                {addToCartStatus}
+              </button>
             </aside>
           </div>
         </div>
