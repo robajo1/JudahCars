@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { FaPhoneAlt, FaEnvelope, FaArrowRight } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
-import "./detailsbody.css";
+import "./detailsbody.css"; // Make sure this CSS file exists and has styles
 
 function DetailsBody() {
   const location = useLocation();
   const car = location.state?.car;
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [addToCartStatus, setAddToCartStatus] = useState("Add to Cart");
+  const [isAddingToCart, setIsAddingToCart] = useState(false);
 
   if (!car) {
     return <p className="no-data">No car data available.</p>;
@@ -24,6 +26,7 @@ function DetailsBody() {
     location: carLocation,
     images,
     seller,
+    id, // Assuming each car object has a unique 'id'
   } = car;
 
   const nextImage = () => {
@@ -36,6 +39,37 @@ function DetailsBody() {
     setCurrentImageIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
+  };
+
+  const handleAddToCart = () => {
+    setIsAddingToCart(true);
+    setAddToCartStatus("Adding...");
+    const existingCartItems = localStorage.getItem("cartItems");
+    let cartItems = existingCartItems ? JSON.parse(existingCartItems) : [];
+
+    const itemToAdd = {
+      id: id,
+      make: make,
+      model: model,
+      price: price,
+      image: images[0], // Add the first image to the cart item
+    };
+
+    cartItems = [...cartItems, itemToAdd];
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    setAddToCartStatus("Added to Cart");
+
+    setTimeout(() => {
+      setIsAddingToCart(false);
+      setAddToCartStatus("Add to Cart");
+    }, 2000);
+  };
+
+  const getAddToCartButtonStyle = () => {
+    if (addToCartStatus === "Added to Cart") {
+      return "added";
+    }
+    return "";
   };
 
   return (
@@ -85,7 +119,7 @@ function DetailsBody() {
               <div className="specs-badges">
                 <span className="badge fuel-badge">🚗 {fuel_type}</span>
                 <span className="badge transmission-badge">⚙️ {transmission}</span>
-                <span className="badge drivetrain-badge">🧭 All-Wheel Drive</span>
+                <span className="badge drivetrain-badge">🧭 All-Wheel Drive</span> {/* Assuming this is always the case or from data */}
               </div>
 
               <p className="car-price">${price}</p>
@@ -96,7 +130,13 @@ function DetailsBody() {
                 </p>
               </div>
 
-              <button className="add-to-cart-button">Added to Cart</button>
+              <button
+                className={`add-to-cart-button ${getAddToCartButtonStyle()}`}
+                onClick={handleAddToCart}
+                disabled={isAddingToCart || addToCartStatus === "Added to Cart"}
+              >
+                {addToCartStatus}
+              </button>
             </aside>
           </div>
         </div>

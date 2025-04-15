@@ -1,5 +1,26 @@
 /* detailsbody.css */
 
+.add-to-cart-button {
+  /* Existing styles */
+  background-color: #5cb85c; /* Default green */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+  background-color: #4cae4c;
+}
+
+.add-to-cart-button.added {
+  background-color: #ffa500; /* Light orange */
+  cursor: not-allowed;
+}
+
 /* Base styles and overall layout */
 .details-page {
     font-family: sans-serif;
@@ -183,16 +204,12 @@
     width: 100%;
     transition: background-color 0.3s ease;
   }
-  
-  .add-to-cart-button:hover {
-    background-color: #276f49;
-  }
-  
+
   .seller-contact-section {
     border-radius: 8px;
     margin-bottom: 20px;
     display: flex;
-    flex-direction: column; /* Changed back to column */
+    flex-direction: column; 
     gap: 15px;
   }
   
