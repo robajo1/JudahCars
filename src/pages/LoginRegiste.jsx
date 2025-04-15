@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function LoginRegister() {
   const [isRegistering, setIsRegistering] = useState(false);
-  const [formData, setFormData] = useState({
+  var [formData, setFormData] = useState({
     fullName: "",
     email: "",
     password: "",
@@ -47,21 +47,24 @@ function LoginRegister() {
         alert("Seller login is not implemented yet.");
       }
       else{
-        try{
+        try {
           const response = await fetch("data/buyer.json");
           const data = await response.json();
-          const userExists = data.some((user) =>
-            user.email === formData.email &&
-            user.password === formData.password
+        
+          const matchedUser = data.find(
+            (user) =>
+              user.email === formData.email &&
+              user.password === formData.password
           );
-          if(!userExists) {
+        
+          if (!matchedUser) {
             alert("Invalid email or password");
-          }
-          else{
+          } else {
+            formData = { ...matchedUser };
             localStorage.setItem("user", JSON.stringify(formData));
             alert("Login successful");
+            window.location.href = "/";
           }
-
         }catch(e){
           console.error("Error logging in:", e);
           alert("Login failed. Please try again.");

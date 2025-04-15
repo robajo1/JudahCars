@@ -28,7 +28,12 @@ const VehicleCard = ({ image, title, price, year, mileage ,car,navigate}) => (
   </div>
 );
 export default function Body() {
-const [cars, setCars] = useState([]);
+  
+  const user = localStorage.getItem("user");
+  useEffect(() => {},[user])
+  
+
+  const [cars, setCars] = useState([]);
 
 useEffect(() => {
   fetch("/data/carInventory.json")
@@ -37,14 +42,8 @@ useEffect(() => {
     .catch((err) => console.error("Error loading car data:", err));
 }, []);
 const navigate = useNavigate();
-// useEffect(() => {
-  //   const user = localStorage.getItem("user");
-  //   if (user) {
-  //     console.log("User is logged in:", JSON.parse(user).isSeller);
-  //   } else {
-  //     console.log("No user is logged in.");
-  //   }
-  // }, []);
+
+
   
   
   
@@ -105,31 +104,32 @@ const navigate = useNavigate();
       <img src="/images/AD.png" alt="" className="AD"/>
     </div>
       
+      {JSON.parse(user) ? <></> :    
       <div className="ass">
-      <div className="one">
-        <div className="one-text">
-          <h2>Are you looking for a car ?</h2>
-          <p>We are committed to providing our customers with
-          exceptional service.</p>
-          <button onClick={()=>{navigate("/login")}}>Get Started -</button>
+        <div className="one">
+          <div className="one-text">
+            <h2>Are you looking for a car ?</h2>
+            <p>We are committed to providing our customers with
+            exceptional service.</p>
+            <button onClick={()=>{navigate("/login")}}>Get Started -</button>
+          </div>
+          <div className="one-icon">
+            <img src="/images/car-icon.png" alt="" />
+          </div>
         </div>
-        <div className="one-icon">
-          <img src="/images/car-icon.png" alt="" />
-        </div>
-      </div>
 
-      <div className="two">
-        <div className="one-text">
-          <h2>Do You Wnt to Sell a Car ?</h2>
-          <p>We are committed to providing our customers with
-          exceptional service.</p>
-          <button onClick={()=>{navigate("/login")}}>Start Selling -</button>
+        <div className="two">
+          <div className="one-text">
+            <h2>Do You Wnt to Sell a Car ?</h2>
+            <p>We are committed to providing our customers with
+            exceptional service.</p>
+            <button onClick={()=>{navigate("/login")}}>Start Selling -</button>
+          </div>
+          <div className="one-icon">
+            <img src="/images/two-icon.png" alt="" />
+          </div>
         </div>
-        <div className="one-icon">
-          <img src="/images/two-icon.png" alt="" />
-        </div>
-      </div>
-      </div>
+      </div>}
 
 
     </>

@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './search.css';
 import { useNavigate } from 'react-router-dom';
 
 const Search = ({ showFull = true }) => {
+  const user = localStorage.getItem("user");
+  useEffect(() => {},[user])
+
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -27,7 +30,7 @@ const Search = ({ showFull = true }) => {
       {showFull && (
         <>
           <p className="search-tagline">Find cars for sale ~ sale your car ~ swap your car</p>
-          <h1 className="search-title">Find Your Perfect Car</h1>
+          <h1 className="search-title">{user ? `Welcome ${JSON.parse(user).fullName} ` : "Find Your Perfect Car" }</h1>
         </>
       )}
 

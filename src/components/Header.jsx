@@ -1,7 +1,10 @@
 import { Outlet, Link } from "react-router-dom";
 import "./header.css"; 
+import { useEffect } from "react";
 
 function Header() {
+    const user = localStorage.getItem("user");
+    useEffect(() => {},[user])
     return(
         <>   
         <nav className="header-nav">
@@ -19,8 +22,9 @@ function Header() {
                         <li>
                             <Link to="/aboutus">About Us</Link>
                         </li>
-                        <li>
-                            <Link to="/"><button className="cart">Cart</button></Link>
+                        <li>{
+                            JSON.parse(user) ? <Link to="/"><button className="cart">Cart</button></Link> : <Link to="/login" ><button className="cart">Login</button></Link>}
+                            
                         </li>
                     </div>
                 </ul>
