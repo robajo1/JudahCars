@@ -1,0 +1,33 @@
+.header-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0); 
+    padding: 1rem;
+    color: white;
+    z-index: 10;
+  }
+  
+  .header-nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;   
+    padding: 0;       
+    margin: 0;
+  }
+  
+  .nav-links-container {
+    display: flex;
+    gap: 1rem; 
+    
+  }
+
+  .cart {
+    background-color: white;
+    color: black;
+    height: 33px;
+    width: 77px;
+    border-radius: 20px;
+  }

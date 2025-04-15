@@ -23,7 +23,7 @@ function LoginRegister() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Basic validation
@@ -41,10 +41,39 @@ function LoginRegister() {
         alert("Passwords do not match");
         return;
       }
+    }else{
+      if(formData.isSeller){
+        // Check if the user is a seller and handle accordingly
+        alert("Seller login is not implemented yet.");
+      }
+      else{
+        try{
+          const response = await fetch("data/buyer.json");
+          const data = await response.json();
+          const userExists = data.some((user) =>
+            user.email === formData.email &&
+            user.password === formData.password
+          );
+          if(!userExists) {
+            alert("Invalid email or password");
+          }
+          else{
+            localStorage.setItem("user", JSON.stringify(formData));
+            alert("Login successful");
+          }
+
+        }catch(e){
+          console.error("Error logging in:", e);
+          alert("Login failed. Please try again.");
+        }
+     
+      }
+      
+
     }
 
-    alert(`${isRegistering ? "Registered" : "Logged in"} as ${formData.isSeller ? "Seller" : "User"} successfully!`);
-    console.log("Form Data:", formData);
+    // alert(`${isRegistering ? "Registered" : "Logged in"} as ${formData.isSeller ? "Seller" : "User"} successfully!`);
+    // console.log("Form Data:", formData);
   };
 
   return (

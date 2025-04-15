@@ -1,57 +1,71 @@
-
+import React, { useState } from 'react';
+import './search.css';
 import { useNavigate } from 'react-router-dom';
-import React from 'react';
 
-const Search = () => {
+const Search = ({ showFull = true }) => {
   const navigate = useNavigate();
-  
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearchClick = () => {
+    if (searchQuery.trim()) {
+      navigate(`/products?query=${searchQuery}`);
+    } else {
+      navigate('/products');
+    }
+  };
+
   const handleCategoryClick = (category) => {
     navigate(`/products?type=${category.toLowerCase()}`);
   };
 
+  const handleInputChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
   return (
-    <div className="max-w-4xl mx-auto p-5 text-center font-sans absolute top-[15vh] left-[30vw] w-auto ">
-      
-      <p className=' text-white font-sans  text-xs my-2'>Find Cars for sake ~ sale your car ~ swap your car</p>
-      <h1 className="text-4xl font-bold text-white mb-6">Find Your Perfect Car</h1>
-      
-      <div className="flex justify-center mb-10">
-        <div className="relative flex items-center max-w-2xl w-full">
-          <svg
-            className="absolute right-5 h-5 w-5 text-white"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 16 16"
-            fill="currentColor"
-          >
-            <path
-              fillRule="evenodd"
-              d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-              clipRule="evenodd"
-            />
-          </svg>
-          <input
-            type="text"
-            placeholder="Mitsubishi Airtrek EV GMC 2023"
-            className="text-white w-full py-4 pl-12 pr-36 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          />
-          
-        </div>
+    <div className={`search-container ${!showFull ? 'search-input-only-container' : ''}`}>
+      {showFull && (
+        <>
+          <p className="search-tagline">Find cars for sale ~ sale your car ~ swap your car</p>
+          <h1 className="search-title">Find Your Perfect Car</h1>
+        </>
+      )}
+
+      <div className={`search-input-group ${!showFull ? 'search-input-group-only' : ''}`}>
+        <input
+          type="text"
+          className={`search-input ${!showFull ? 'search-input-only-field' : ''}`}
+          placeholder="Mitsubishi Airtruk EV GMC 2023"
+          value={searchQuery}
+          onChange={handleInputChange}
+        />
+        <button className={`search-button ${!showFull ? 'search-button-only' : ''}`} onClick={handleSearchClick}>
+          Search Cars
+        </button>
       </div>
-      
-        <p className="font-semibold text-white text-xs m-10">Or Browse Featured Model</p>
-      <div className="flex justify-center gap-8">
-      <div className="flex justify-center gap-8">
-          {['Suv', 'Sedan', 'Hatchback', 'Coupe', 'Hybrid'].map((cat) => (
-            <div
-              key={cat}
-              onClick={() => handleCategoryClick(cat)}
-              className="px-6 py-3 bg-gray-700 rounded-lg text-gray-100 font-medium hover:scale-105 transition duration-300 ease-in-out cursor-pointer"
-            >
-              {cat}
-            </div>
-          ))}
-       </div>
-      </div>
+
+      {showFull && (
+        <>
+          <p className="search-featured-text">Or Browse Featured Model</p>
+          <div className="search-tags">
+            {['Suv', 'Sedan', 'Hatchback', 'Coupe', 'Hybrid'].map((cat, index) => (
+              <div
+                key={index}
+                className="tag"
+                onClick={() => handleCategoryClick(cat)}
+                style={{ cursor: 'pointer' }}
+              >
+                {cat === 'Suv' && '🚙 '}
+                {cat === 'Sedan' && '🚗 '}
+                {cat === 'Hatchback' && '🚘 '}
+                {cat === 'Coupe' && '🏎️ '}
+                {cat === 'Hybrid' && '⚡ '}
+                <span>{cat}</span>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 };
