@@ -70,7 +70,10 @@ const similarCars = shuffledSimilarCars.slice(0, 5); // take first 5
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
   };
-
+  const navigateToDetail = (car) => {
+    console.log(car);
+    navigate("/detail", { state: { car } });
+  };
   const handleAddToCart = () => {
     setIsAddingToCart(true);
     setAddToCartStatus("Adding...");

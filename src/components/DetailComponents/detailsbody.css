@@ -94,13 +94,13 @@
   }
   
   .image-dots {
-    position: absolute;
     bottom: 10px;
     left: 0;
     width: 100%;
     display: flex;
     justify-content: center;
     gap: 8px;
+    padding-top: 10px;
   }
   
   .dot {
