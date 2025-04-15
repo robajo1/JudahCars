@@ -1,92 +1,1636 @@
-[
-  {
-    "type": "sedan",
-    "make": "Toyota",
-    "model": "Camry",
-    "year": 2021,
-    "price": 23850,
-    "mileage": 15400,
-    "fuel_type": "Gasoline",
-    "transmission": "Automatic",
-    "description": "The 2021 Toyota Camry combines comfort, fuel efficiency, and reliability. With a spacious interior, advanced safety features, and a smooth ride, it’s an excellent daily driver.",
-    "location": "Austin, TX",
-    "images": ["/images/1.png", "/images/2.png , /images/3.png"],
-    "seller": {
-      "name": "Maya Lee",
-      "contact": "toyota@austinautos.com",
-      "phone": "+1-555-1234"
-    }
-  },
-  {
-    "type": "SUV",
-    "make": "BMW",
-    "model": "X5",
-    "year": 2022,
-    "price": 58900,
-    "mileage": 9800,
-    "fuel_type": "Gasoline",
-    "transmission": "Automatic",
-    "description": "Luxury meets performance in the 2022 BMW X5. With premium features, advanced tech, and all-wheel drive, it's built for adventure.",
-    "location": "Denver, CO",
-    "images": ["/images/2.png", "/images/3.png , /images/4.png"],
-    "seller": {
-      "name": "Jackson Ford",
-      "contact": "bmw@milehighauto.com",
-      "phone": "+1-555-8234"
-    }
-  },
-  {
-    "type": "hatchback",
-    "make": "Volkswagen",
-    "model": "Golf",
-    "year": 2019,
-    "price": 17900,
-    "mileage": 32000,
-    "fuel_type": "Diesel",
-    "transmission": "Manual",
-    "description": "The 2019 Volkswagen Golf offers great handling, practicality, and a premium feel in a compact hatchback package.",
-    "location": "Portland, OR",
-    "images": ["/images/3.png", "/images/4.png , /images/5.png"],
-    "seller": {
-      "name": "Liam Patel",
-      "contact": "vw@pacificrides.com",
-      "phone": "+1-555-7712"
-    }
-  },
-  {
-    "type": "coupe",
-    "make": "Ford",
-    "model": "Mustang",
-    "year": 2020,
-    "price": 33200,
-    "mileage": 21000,
-    "fuel_type": "Gasoline",
-    "transmission": "Manual",
-    "description": "The 2020 Ford Mustang Coupe brings iconic muscle car performance with a modern touch, blending style and raw power.",
-    "location": "Charlotte, NC",
-    "images": ["/images/4.png", "/images/5.png , /images/6.png"],
-    "seller": {
-      "name": "Carla Morgan",
-      "contact": "mustang@forddealer.com",
-      "phone": "+1-555-4488"
-    }
-  },
-  {
-    "type": "hybrid",
-    "make": "Honda",
-    "model": "Insight",
-    "year": 2021,
-    "price": 25600,
-    "mileage": 13000,
-    "fuel_type": "Hybrid",
-    "transmission": "Automatic",
-    "description": "Efficient and refined, the 2021 Honda Insight hybrid offers a quiet ride, great mileage, and a sleek sedan design.",
-    "location": "Seattle, WA",
-    "images": ["/images/5.png", "/images/6.png , /images/7.png"],
-    "seller": {
-      "name": "Derek Lin",
-      "contact": "insight@hondacenter.com",
-      "phone": "+1-555-3344"
+{
+  "categories": {
+    "Sedan": {
+      "Toyota": [
+        {
+          "id": 1,
+          "model": "Camry",
+          "year": 2020,
+          "price": 24500,
+          "mileage": 35000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Austin, TX",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2020-toyta-camry-mmp-1-1566921359.jpg?crop=0.878xw:0.737xh;0.0554xw,0.263xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2020-toyota-camry-mmp-2-1566921081.jpg?crop=1xw:0.84346875xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2020-toyota-camry-mmp-3-1566921132.jpg?crop=1xw:0.3751875xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "John Doe",
+            "contact": "sales@toyotadealer.com",
+            "phone": "+1-555-1001"
+          }
+        },
+        {
+          "id": 2,
+          "model": "Corolla",
+          "year": 2021,
+          "price": 19800,
+          "mileage": 28000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Miami, FL",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2021-toyota-corolla-se-apex-mmp-1-1601668779.jpg?crop=0.861xw:0.724xh;0.0641xw,0.194xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-toyota-corolla-se-apex-418-1601389656.jpg?crop=1xw:0.8433127671978236xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-toyota-corolla-se-apex-451-1601389669.jpg?crop=1xw:0.8433812511706312xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Jane Smith",
+            "contact": "jsmith@toyotafl.com",
+            "phone": "+1-555-1002"
+          }
+        },
+        {
+          "id": 51,
+          "model": "Avalon",
+          "year": 2019,
+          "price": 29500,
+          "mileage": 48000,
+          "fuel_type": "Hybrid",
+          "transmission": "Automatic",
+          "location": "Atlanta, GA",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2019-toyota-avalon-hybrid-99leadgallery-1530545662.jpg?crop=1.00xw:0.924xh;0,0.0759xh&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Georgia Peach Toyota",
+            "contact": "info@gptoyota.com",
+            "phone": "+1-555-1008"
+          }
+        }
+      ],
+      "BMW": [
+        {
+          "id": 5,
+          "model": "3 Series",
+          "year": 2020,
+          "price": 38000,
+          "mileage": 31000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Los Angeles, CA",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2020-bmw-m340i-v-2020-genesis-g70-3p3t-1016-hdr-1571838328.jpg?crop=0.827xw:0.761xh;0,0.239xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2020-bmw-m340i-v-2020-genesis-g70-3p3t-989-hdr-1571838326.jpg?crop=1xw:0.9203658183921342xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2020-bmw-m340i-v-2020-genesis-g70-3p3t-107-1571838324.jpg?crop=1xw:0.9204692440356425xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Peter Chen",
+            "contact": "pchen@bimmerla.com",
+            "phone": "+1-555-3001"
+          }
+        },
+        {
+          "id": 6,
+          "model": "5 Series",
+          "year": 2021,
+          "price": 48500,
+          "mileage": 22000,
+          "fuel_type": "Hybrid",
+          "transmission": "Automatic",
+          "location": "New York, NY",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2021-bmw-530e-481-edit-1611852114.jpg?crop=0.654xw:0.549xh;0.343xw,0.444xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-bmw-530e-396-1611852097.jpg?crop=1xw:0.843291831510356xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-bmw-530e-421-1611852102.jpg?crop=1xw:0.843323702159909xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Luxury Motors",
+            "contact": "info@luxurymotorsny.com",
+            "phone": "+1-555-3002"
+          }
+        },
+        {
+          "id": 52,
+          "model": "7 Series",
+          "year": 2018,
+          "price": 52000,
+          "mileage": 55000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Chicago, IL",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2017-bmw-7-series-01-placement-1525961624.jpg?crop=0.739xw:0.686xh;0.183xw,0.113xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2017-bmw-7-series-140-1525982962.jpg?crop=1xw:0.9204545454545454xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2017-bmw-7-series-117-1525982952.jpg?crop=1xw:0.9204545454545454xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Windy City BMW",
+            "contact": "sales@wcbmw.com",
+            "phone": "+1-555-3006"
+          }
+        }
+      ],
+      "Audi": [
+        {
+          "id": 7,
+          "model": "A4",
+          "year": 2019,
+          "price": 33020,
+          "mileage": 47439,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Cleveland, OH",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2019-audi-a4-107-1530210093.jpg?crop=0.891xw:0.814xh;0,0.186xh&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Laura Woods",
+            "contact": "audi@dealer.com",
+            "phone": "+1-555-1126"
+          }
+        },
+        {
+          "id": 8,
+          "model": "A6",
+          "year": 2022,
+          "price": 55000,
+          "mileage": 18000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Chicago, IL",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2019-audi-a6-3-0t-99leadgallery-1545842828.jpg?crop=0.981xw:0.901xh;0.0112xw,0.0314xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2019-audi-a6-3-0t-104-1547049584.jpg?crop=1xw:0.9203478260869565xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2019-audi-a6-3-0t-118-1547049594.jpg?crop=1xw:0.9205016902274125xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Audi Downtown",
+            "contact": "sales@audichicago.com",
+            "phone": "+1-555-1127"
+          }
+        },
+        {
+          "id": 53,
+          "model": "A3",
+          "year": 2020,
+          "price": 29500,
+          "mileage": 39000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Boston, MA",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2020-audi-a3-mmp-1-1570819350.jpg?crop=1.00xw:0.798xh;0,0.202xh&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Boston Audi Group",
+            "contact": "info@bostonaudi.com",
+            "phone": "+1-555-1130"
+          }
+        }
+      ],
+      "Mercedes-Benz": [
+        {
+          "id": 9,
+          "model": "C-Class",
+          "year": 2020,
+          "price": 41000,
+          "mileage": 39000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "San Francisco, CA",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2020-mercedes-benz-c-class-mmp-1-1572373169.jpg?crop=0.782xw:0.777xh;0,0.223xh&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Golden Gate Benz",
+            "contact": "inquire@ggbenz.com",
+            "phone": "+1-555-4001"
+          }
+        },
+        {
+          "id": 10,
+          "model": "E-Class",
+          "year": 2021,
+          "price": 58000,
+          "mileage": 25000,
+          "fuel_type": "Hybrid",
+          "transmission": "Automatic",
+          "location": "Boston, MA",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2021-genesis-g80-3p5t-prestige-v-2021-mercedes-benz-e450-sedan-1466-1621886878.jpg?crop=0.609xw:0.515xh;0.225xw,0.429xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-genesis-g80-3p5t-prestige-v-2021-mercedes-benz-e450-sedan-1511-edit-1621886882.jpg?crop=1xw:0.8433791674514974xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-genesis-g80-3p5t-prestige-v-2021-mercedes-benz-e450-sedan-1398-1621886877.jpg?crop=1xw:0.8433759262777883xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Prestige Cars Boston",
+            "contact": "sales@prestigeboston.com",
+            "phone": "+1-555-4002"
+          }
+        },
+        {
+          "id": 54,
+          "model": "S-Class",
+          "year": 2019,
+          "price": 68000,
+          "mileage": 42000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Miami, FL",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2018-mercedes-benz-s-class-mmp-1545171931.jpg?crop=0.941xw:0.859xh;0,0.141xh&resize=1200:*"
+          ],
+          "seller": {
+            "name": "MBZ of Miami",
+            "contact": "sales@mbzmiami.com",
+            "phone": "+1-555-4003"
+          }
+        }
+      ],
+      "Hyundai": [
+        {
+          "id": 11,
+          "model": "Sonata",
+          "year": 2021,
+          "price": 23500,
+          "mileage": 32000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Dallas, TX",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2021-hyundai-sonata-n-line-108-1606156377.jpg?crop=1.00xw:0.847xh;0,0.108xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-hyundai-sonata-n-line-105-1606156380.jpg?crop=1xw:0.843328125xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-hyundai-sonata-n-line-127-1606156390.jpg?crop=1xw:0.843328335832084xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Dallas Hyundai",
+            "contact": "sales@dallashyundai.com",
+            "phone": "+1-555-5001"
+          }
+        },
+        {
+          "id": 12,
+          "model": "Elantra",
+          "year": 2022,
+          "price": 20500,
+          "mileage": 21000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Phoenix, AZ",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2022-hyundai-elantra-mmp-1-1634851642.jpg?crop=0.869xw:0.733xh;0.0753xw,0.147xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2022-hyundai-elantra-mmp-2-1634851741.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2022-hyundai-elantra-mmp-12022-hyundai-elantra-mmp-3-1634851803.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Arizona Auto",
+            "contact": "info@azauto.com",
+            "phone": "+1-555-5002"
+          }
+        },
+        {
+          "id": 55,
+          "model": "Ioniq Hybrid",
+          "year": 2020,
+          "price": 22000,
+          "mileage": 36000,
+          "fuel_type": "Hybrid",
+          "transmission": "Automatic",
+          "location": "Seattle, WA",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2022-hyundai-ioniq-plug-in-mmp-1-1634324700.jpg?crop=0.864xw:0.785xh;0.0625xw,0.0674xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2022-hyundai-ioniq-plug-in-mmp-3-1634324974.jpg?crop=1xw:0.7500741106719367xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2022-hyundai-ioniq-plug-in-mmp-2-1634325300.jpg?crop=1xw:0.8433257918552036xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Eco Motors Seattle",
+            "contact": "ioniq@ecomotors.com",
+            "phone": "+1-555-5003"
+          }
+        }
+      ],
+      "Kia": [
+        {
+          "id": 13,
+          "model": "K5",
+          "year": 2022,
+          "price": 24000,
+          "mileage": 19000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Atlanta, GA",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2022-kia-k5-mmp-1-1624460092.jpg?crop=0.710xw:0.599xh;0.143xw,0.240xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2022-kia-k5-mmp-2-1624460186.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2022-kia-k5-mmp-3-jpg-1624460253.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Georgia Kia",
+            "contact": "sales@georgiakia.com",
+            "phone": "+1-555-6001"
+          }
+        },
+        {
+          "id": 14,
+          "model": "Stinger",
+          "year": 2020,
+          "price": 35000,
+          "mileage": 45000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Orlando, FL",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2020-kia-stinger-gts-107-1555528650.jpg?crop=0.891xw:0.816xh;0.0945xw,0.184xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2020-kia-stinger-gts-108-1555528636.jpg?crop=1xw:0.9204545454545454xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2020-kia-stinger-gts-105-1555528653.jpg?crop=1xw:0.9203701155751238xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Sunshine Motors",
+            "contact": "stingers@sunshinemotors.net",
+            "phone": "+1-555-6002"
+          }
+        },
+        {
+          "id": 56,
+          "model": "Forte",
+          "year": 2021,
+          "price": 18500,
+          "mileage": 31000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Raleigh, NC",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2021-kia-forte-mmp-1-1603206396.jpg?crop=0.913xw:0.772xh;0.0673xw,0.228xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-kia-forte-mmp-2-1603207292.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-kia-forte-mmp-3-1603207696.jpg?crop=1xw:0.7721368335146899xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Capital City Kia",
+            "contact": "forte@cckia.com",
+            "phone": "+1-555-6005"
+          }
+        }
+      ],
+      "Nissan": [
+        {
+          "id": 15,
+          "model": "Altima",
+          "year": 2021,
+          "price": 22500,
+          "mileage": 36000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Houston, TX",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2021-nissan-altima-mmp-1-1603227990.jpg?crop=0.845xw:0.714xh;0.0849xw,0.212xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-nissan-altima-mmp-3-1603228192.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-altima-12-source-1602598718.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Houston Nissan",
+            "contact": "info@houstonnissan.com",
+            "phone": "+1-555-7001"
+          }
+        },
+        {
+          "id": 16,
+          "model": "Maxima",
+          "year": 2019,
+          "price": 28000,
+          "mileage": 51000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Philadelphia, PA",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2019-nissan-maxima-platinum-174-1548780176.jpg?crop=0.625xw:0.573xh;0.364xw,0.427xh&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Philly Auto Sales",
+            "contact": "sales@phillyauto.com",
+            "phone": "+1-555-7002"
+          }
+        },
+        {
+          "id": 57,
+          "model": "Sentra",
+          "year": 2022,
+          "price": 20000,
+          "mileage": 25000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "San Antonio, TX",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2020-nissan-sentra-120-1574102513.jpg?crop=0.824xw:0.792xh;0.176xw,0.162xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2020-nissan-sentra-134-1574102519.jpg?crop=1xw:0.8446549874865927xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2020-nissan-sentra-124-1574102515.jpg?crop=1xw:0.8434487682970367xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Alamo Nissan",
+            "contact": "sentra@alamonissan.com",
+            "phone": "+1-555-7003"
+          }
+        }
+      ],
+      "Volkswagen": [
+        {
+          "id": 17,
+          "model": "Passat",
+          "year": 2018,
+          "price": 18500,
+          "mileage": 62000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Charlotte, NC",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/images/media/672264/2018-volkswagen-passat-in-depth-model-review-car-and-driver-photo-701537-s-original.jpg?crop=0.763xw:0.704xh;0.144xw,0.168xh&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Carolina VW",
+            "contact": "inquire@carolinavw.com",
+            "phone": "+1-555-8001"
+          }
+        },
+        {
+          "id": 18,
+          "model": "Jetta",
+          "year": 2020,
+          "price": 19900,
+          "mileage": 33000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Portland, OR",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2020-volkswagen-jetta-mmp-1-1570049916.jpg?crop=1.00xw:0.846xh;0,0.154xh&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Portland Volks",
+            "contact": "pdxvw@dealer.net",
+            "phone": "+1-555-8002"
+          }
+        },
+        {
+          "id": 58,
+          "model": "Arteon",
+          "year": 2019,
+          "price": 32000,
+          "mileage": 41000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Denver, CO",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2019-volkswagen-arteon-se-4motion-102-1560203646.jpg?crop=0.891xw:0.819xh;0.0449xw,0.181xh&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Mile High VW",
+            "contact": "arteon@mhvw.com",
+            "phone": "+1-555-8004"
+          }
+        }
+      ]
+    },
+    "SUV": {
+      "Toyota": [
+        {
+          "id": 19,
+          "model": "RAV4",
+          "year": 2021,
+          "price": 29000,
+          "mileage": 26000,
+          "fuel_type": "Hybrid",
+          "transmission": "Automatic",
+          "location": "Dallas, TX",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2021-toyota-rav4-trd-off-road-101-1626364941.jpg?crop=0.813xw:0.688xh;0.127xw,0.228xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-toyota-rav4-trd-off-road-118-1626364951.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-toyota-rav4-trd-off-road-133-1626364959.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Texas Auto Group",
+            "contact": "sales@texasauto.com",
+            "phone": "+1-555-1003"
+          }
+        },
+        {
+          "id": 20,
+          "model": "Highlander",
+          "year": 2020,
+          "price": 36500,
+          "mileage": 41000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Chicago, IL",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2020-toyota-highlander-platinum-157-1576621500.jpg?crop=0.800xw:0.734xh;0.106xw,0.266xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2020-toyota-highlander-platinum-128-1576621487.jpg?crop=1xw:0.9205176456071076xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2020-toyota-highlander-platinum-165-1576621504.jpg?crop=1xw:0.9203937990021382xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Windy City Motors",
+            "contact": "info@windycitytoyota.com",
+            "phone": "+1-555-1004"
+          }
+        },
+        {
+          "id": 59,
+          "model": "4Runner",
+          "year": 2018,
+          "price": 38000,
+          "mileage": 65000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Denver, CO",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/images/media/672264/2018-toyota-4runner-in-depth-model-review-car-and-driver-photo-690348-s-original.jpg?crop=0.726xw:0.670xh;0.220xw,0.160xh&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Rocky Mountain Toyota",
+            "contact": "4runner@rmtoyota.com",
+            "phone": "+1-555-1009"
+          }
+        }
+      ],
+      "Honda": [
+        {
+          "id": 21,
+          "model": "CR-V",
+          "year": 2022,
+          "price": 31000,
+          "mileage": 18000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Phoenix, AZ",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2021-honda-cr-v-hybrid-awd-touring-ltup-mmp-1-1629832353.jpg?crop=0.958xw:0.806xh;0.00962xw,0.0959xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-honda-cr-v-hybrid-awd-touring-ltup-154-1629297043.jpg?crop=1xw:0.8432781040268457xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-honda-cr-v-hybrid-awd-touring-ltup-987-1629297053.jpg?crop=1xw:0.8432651790844666xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Desert Honda",
+            "contact": "sales@deserthonda.com",
+            "phone": "+1-555-2003"
+          }
+        },
+        {
+          "id": 22,
+          "model": "Pilot",
+          "year": 2019,
+          "price": 33500,
+          "mileage": 55000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Atlanta, GA",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2019-honda-pilot-103-1534804398.jpg?crop=1.00xw:0.923xh;0,0.0767xh&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Atlanta Auto Mall",
+            "contact": "pilot@atlantahonda.com",
+            "phone": "+1-555-2004"
+          }
+        },
+        {
+          "id": 60,
+          "model": "HR-V",
+          "year": 2021,
+          "price": 24500,
+          "mileage": 29000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Orlando, FL",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2021-honda-hr-v-mmp-1-1595869461.jpg?crop=0.968xw:0.969xh;0.00160xw,0&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-honda-hr-v-mmp-2-1595869524.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-honda-hr-v-mmp-3-1595869572.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Sunshine Honda",
+            "contact": "hrv@sunshinehonda.net",
+            "phone": "+1-555-2006"
+          }
+        }
+      ],
+      "Ford": [
+        {
+          "id": 23,
+          "model": "Explorer",
+          "year": 2021,
+          "price": 42000,
+          "mileage": 30000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Detroit, MI",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2021-ford-explorer-mmp-1-1595540826.jpg?crop=1.00xw:0.846xh;0,0.120xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-ford-explorer-mmp-2-1595541025.jpg?crop=1xw:0.9949986838641748xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-ford-explorer-mmp-3-1595541087.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Motor City Ford",
+            "contact": "sales@motorcityford.com",
+            "phone": "+1-555-9001"
+          }
+        },
+        {
+          "id": 24,
+          "model": "Escape",
+          "year": 2020,
+          "price": 26000,
+          "mileage": 38000,
+          "fuel_type": "Hybrid",
+          "transmission": "Automatic",
+          "location": "Nashville, TN",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2020-ford-escape-2p0t-titanium-awd-102-1572013378.jpg?crop=0.692xw:0.636xh;0.244xw,0.295xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2020-ford-escape-2p0t-titanium-awd-105-1572013344.jpg?crop=1xw:0.9204038652130823xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2020-ford-escape-2p0t-titanium-awd-125-1572013495.jpg?crop=1xw:0.9203708753749659xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Music City Motors",
+            "contact": "escape@musiccityford.net",
+            "phone": "+1-555-9002"
+          }
+        },
+        {
+          "id": 61,
+          "model": "Bronco Sport",
+          "year": 2022,
+          "price": 34000,
+          "mileage": 15000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Austin, TX",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2021-ford-bronco-sport-1p5l-1332-edit-1617333027.jpg?crop=0.644xw:0.542xh;0.0417xw,0.252xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-ford-bronco-sport-1p5l-1088-1617333019.jpg?crop=1xw:0.8433382137628112xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-ford-bronco-sport-1p5l-667-1617333002.jpg?crop=1xw:0.8432744692842382xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Texas Ford",
+            "contact": "bronco@texasford.com",
+            "phone": "+1-555-9007"
+          }
+        }
+      ],
+      "BMW": [
+        {
+          "id": 25,
+          "model": "X3",
+          "year": 2021,
+          "price": 45000,
+          "mileage": 27000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Miami, FL",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2021-bmw-x3-mmp-1-1603213364.jpg?crop=0.814xw:0.812xh;0.0945xw,0.188xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-bmw-x3-mmp-3-1603213570.png?crop=0.9964946604711828xw:1xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-bmw-x3-mmp-1-1603213364.jpg?crop=0.814xw:0.812xh;0.0945xw,0.188xh&resize=1200:*"
+          ],
+          "seller": {
+            "name": "BMW of Miami",
+            "contact": "sales@bmwmiami.com",
+            "phone": "+1-555-3003"
+          }
+        },
+        {
+          "id": 26,
+          "model": "X5",
+          "year": 2020,
+          "price": 59000,
+          "mileage": 34000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "San Diego, CA",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2020-bmw-x5-mmp-1-1579125510.jpg?crop=0.940xw:0.945xh;0.0603xw,0.0552xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2020-bmw-x5-mmp-2-1571856735.jpg?crop=1xw:1xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2020-bmw-x5-mmp-3-1571856790.png?crop=0.9973445143256464xw:1xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "SoCal BMW",
+            "contact": "inquire@socalbmw.com",
+            "phone": "+1-555-3004"
+          }
+        },
+        {
+          "id": 62,
+          "model": "X1",
+          "year": 2022,
+          "price": 37000,
+          "mileage": 19000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "San Francisco, CA",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2020-bmw-x1-euro-spec-106-1559085961.jpg?crop=0.726xw:0.668xh;0.0721xw,0.209xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2020-bmw-x1-euro-spec-114-1559085966.jpg?crop=1xw:0.920375833760903xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2020-bmw-x1-euro-spec-108-1559085963.jpg?crop=1xw:0.920375833760903xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Bay Area BMW",
+            "contact": "x1sales@baybmw.com",
+            "phone": "+1-555-3007"
+          }
+        }
+      ],
+      "Chevrolet": [
+        {
+          "id": 29,
+          "model": "Equinox",
+          "year": 2021,
+          "price": 27000,
+          "mileage": 31000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Houston, TX",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2021-chevrolet-equinox-mmp-1-1589917518.jpg?crop=0.801xw:0.674xh;0.135xw,0.326xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-chevrolet-equinox-mmp-2-1589917698.jpg?crop=1xw:0.8424862705941089xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-chevrolet-equinox-mmp-3-1589917792.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Space City Chevy",
+            "contact": "sales@spacecitychevy.com",
+            "phone": "+1-555-9101"
+          }
+        },
+        {
+          "id": 30,
+          "model": "Traverse",
+          "year": 2020,
+          "price": 34500,
+          "mileage": 44000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "St. Louis, MO",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2020-chverolet-traverse-mmp-1-1579128594.jpg?crop=0.779xw:0.879xh;0.221xw,0.121xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2020-chevrolet-traverese-mp-2-1571681015.png?crop=0.8857731041005954xw:1xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2020-chevrolet-traverse-mmp-3-1571681068.png?crop=0.8853262079714985xw:1xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Gateway Chevrolet",
+            "contact": "info@gatewaychevy.com",
+            "phone": "+1-555-9102"
+          }
+        },
+        {
+          "id": 63,
+          "model": "Tahoe",
+          "year": 2019,
+          "price": 46000,
+          "mileage": 58000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Dallas, TX",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/wp-content/uploads/2018/03/2018-Chevrolet-Tahoe-RST-Edition-107.jpg?crop=0.974xw:0.898xh;0.00962xw,0.102xh&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Texas Chevy Dealers",
+            "contact": "tahoe@txchevy.com",
+            "phone": "+1-555-9107"
+          }
+        }
+      ],
+      "Kia": [
+        {
+          "id": 31,
+          "model": "Sorento",
+          "year": 2022,
+          "price": 32000,
+          "mileage": 23000,
+          "fuel_type": "Hybrid",
+          "transmission": "Automatic",
+          "location": "Raleigh, NC",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2022-sorento-phev-mmp-1-1629903751.jpg?crop=0.704xw:0.594xh;0.170xw,0.200xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2022-sorento-phev-mmp-2-1629903382.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2022-sorento-phev-mmp-3-1629903580.jpg?crop=1xw:0.8414372040867182xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Carolina Kia",
+            "contact": "sorento@carolinakia.com",
+            "phone": "+1-555-6003"
+          }
+        },
+        {
+          "id": 32,
+          "model": "Telluride",
+          "year": 2023,
+          "price": 46000,
+          "mileage": 11000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Las Vegas, NV",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2023-kia-telluride-x-line-103-1666960055.jpg?crop=0.675xw:0.570xh;0.252xw,0.339xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2023-kia-telluride-x-line-104-1666960056.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2023-kia-telluride-x-line-109-1666960067.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Vegas Auto Nation",
+            "contact": "telluride@vegasauto.com",
+            "phone": "+1-555-6004"
+          }
+        },
+        {
+          "id": 64,
+          "model": "Sportage",
+          "year": 2021,
+          "price": 25000,
+          "mileage": 35000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Philadelphia, PA",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2021-kia-sportage-mmp-1-1601580353.jpg?crop=0.926xw:0.779xh;0.00962xw,0.201xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-kia-sportage-mmp-2-1601580481.jpg?crop=1xw:0.843328335832084xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-kia-sportage-mmp-3-1601581243.jpg?crop=1xw:0.843328335832084xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Philly Kia Center",
+            "contact": "sportage@phillykia.com",
+            "phone": "+1-555-6006"
+          }
+        }
+      ],
+      "Subaru": [
+        {
+          "id": 33,
+          "model": "Outback",
+          "year": 2021,
+          "price": 30500,
+          "mileage": 37000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Denver, CO",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2021-suabru-outback-mmp-1-1598639461.jpg?crop=0.801xw:0.675xh;0.0673xw,0.159xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-subaru-outback-mmp-2-1598639564.jpg?crop=1xw:0.8438481675392671xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-subaru-outback-mmp-3-1598639637.jpg?crop=1xw:0.8035714285714286xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Mountain Subaru",
+            "contact": "sales@mtnsubaru.com",
+            "phone": "+1-555-8101"
+          }
+        },
+        {
+          "id": 34,
+          "model": "Forester",
+          "year": 2020,
+          "price": 28000,
+          "mileage": 42000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Portland, OR",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2020-subaru-forester-mmp-1-1567099000.jpg?crop=0.824xw:0.620xh;0.0244xw,0.224xh&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Rose City Subaru",
+            "contact": "info@rosecitysubaru.net",
+            "phone": "+1-555-8102"
+          }
+        },
+        {
+          "id": 65,
+          "model": "Crosstrek",
+          "year": 2022,
+          "price": 27500,
+          "mileage": 21000,
+          "fuel_type": "Hybrid",
+          "transmission": "Automatic",
+          "location": "Seattle, WA",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2022-subaru-crosstrek-mmp-1-1638577219.jpg?crop=1.00xw:0.846xh;0,0.00721xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-subaru-crosstrek-limited-107-1591636870.jpg?crop=1xw:0.9200743494423792xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-subaru-crosstrek-limited-105-1591636873.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Pacific Subaru",
+            "contact": "crosstrek@pacificsubaru.com",
+            "phone": "+1-555-8103"
+          }
+        }
+      ]
+    },
+    "Truck": {
+      "Ford": [
+        {
+          "id": 35,
+          "model": "F-150",
+          "year": 2020,
+          "price": 39000,
+          "mileage": 58000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Dallas, TX",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2020-ford-f-150-mmp-1-1565730299.jpg?crop=0.827xw:0.699xh;0.114xw,0.152xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2020-ford-f-150-mmp-2-1565730404.jpg?crop=1xw:0.8438149088391415xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2020-ford-f-150-mmp-3-1565730517.jpg?crop=1xw:0.8438149088391415xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Big Tex Trucks",
+            "contact": "f150@bigtex.com",
+            "phone": "+1-555-9003"
+          }
+        },
+        {
+          "id": 36,
+          "model": "Ranger",
+          "year": 2021,
+          "price": 31500,
+          "mileage": 33000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Phoenix, AZ",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2021-ford-ranger-tremor-474-1612842302.jpg?crop=0.657xw:0.554xh;0.231xw,0.348xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-ford-ranger-tremor-151-1612842282.jpg?crop=1xw:0.843310031286664xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-ford-ranger-tremor-655-1612842308.jpg?crop=1xw:0.8433382137628112xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Sun Valley Ford",
+            "contact": "ranger@svford.com",
+            "phone": "+1-555-9004"
+          }
+        },
+        {
+          "id": 66,
+          "model": "F-250 Super Duty",
+          "year": 2019,
+          "price": 48000,
+          "mileage": 72000,
+          "fuel_type": "Diesel",
+          "transmission": "Automatic",
+          "location": "Houston, TX",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/18fordsuperduty-limited-04-hr-1554819780.jpg?crop=1.00xw:0.921xh;0,0.0785xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/18fordsuperduty-limited-07-hr-1554819781.jpg?crop=0.9608465608465608xw:1xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/18fordsuperduty-limited-04-hr-1554819780.jpg?crop=1.00xw:0.921xh;0,0.0785xh&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Texas Truck Source",
+            "contact": "f250@txtrucks.com",
+            "phone": "+1-555-9008"
+          }
+        }
+      ],
+      "Chevrolet": [
+        {
+          "id": 37,
+          "model": "Silverado 1500",
+          "year": 2021,
+          "price": 41000,
+          "mileage": 40000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Nashville, TN",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2021-chevrolet-silverado-mmp-1-1602270920.jpg?crop=1.00xw:0.846xh;0,0.154xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-chevrolet-silverado-mmp-2-1602271284.jpg?crop=1xw:0.843677269200931xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-chevrolet-silverado-mmp-3-1602271379.jpg?crop=1xw:0.8417182662538699xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Country Chevy",
+            "contact": "sales@countrychevy.com",
+            "phone": "+1-555-9103"
+          }
+        },
+        {
+          "id": 38,
+          "model": "Colorado",
+          "year": 2019,
+          "price": 29500,
+          "mileage": 61000,
+          "fuel_type": "Diesel",
+          "transmission": "Automatic",
+          "location": "Denver, CO",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2019-chevrolet-colorado-zr2-bison-102-1536244058.jpg?crop=1.00xw:0.932xh;0,0&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Mile High Trucks",
+            "contact": "colorado@mhtrucks.com",
+            "phone": "+1-555-9104"
+          }
+        },
+        {
+          "id": 67,
+          "model": "Silverado 2500HD",
+          "year": 2020,
+          "price": 52000,
+          "mileage": 55000,
+          "fuel_type": "Diesel",
+          "transmission": "Automatic",
+          "location": "Atlanta, GA",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2020-chevrolet-silverado-hd-103-1561405154.jpg?crop=0.818xw:0.687xh;0.0391xw,0.257xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2020-chevrolet-silverado-hd-102-1561405141.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2020-chevrolet-silverado-hd-114-1561405236.jpg?crop=1xw:0.8789266068326578xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Heavy Duty Chevy ATL",
+            "contact": "hd@chevyatl.com",
+            "phone": "+1-555-9108"
+          }
+        }
+      ],
+      "Toyota": [
+        {
+          "id": 39,
+          "model": "Tacoma",
+          "year": 2022,
+          "price": 37000,
+          "mileage": 24000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "San Diego, CA",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2022-toyota-tacoma-trail-edition-104-1622509060.jpg?crop=0.726xw:0.613xh;0.144xw,0.257xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2022-toyota-tacoma-trd-pro-103-1622509116.jpg?crop=1xw:0.8436984984435085xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2022-toyota-tacoma-trail-edition-104-1622509060.jpg?crop=0.726xw:0.613xh;0.144xw,0.257xh&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Beach Cities Toyota",
+            "contact": "taco@bctoyota.com",
+            "phone": "+1-555-1005"
+          }
+        },
+        {
+          "id": 40,
+          "model": "Tundra",
+          "year": 2020,
+          "price": 43000,
+          "mileage": 52000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Houston, TX",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2020-toyota-tundra-mmp-1-1565713870.jpeg?crop=0.866xw:0.864xh;0.111xw,0.136xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2020-toyota-tundra-mmp-2-1565714016.jpeg?crop=1xw:1xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2020-toyota-tundra-mmp-3-1565714182.jpeg?crop=1xw:1xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Lone Star Toyota",
+            "contact": "sales@lonestartoyota.net",
+            "phone": "+1-555-1006"
+          }
+        },
+        {
+          "id": 68,
+          "model": "Tundra Hybrid",
+          "year": 2023,
+          "price": 58000,
+          "mileage": 12000,
+          "fuel_type": "Hybrid",
+          "transmission": "Automatic",
+          "location": "Austin, TX",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2022-toyota-tundra-platinum-103-1643664435.jpg?crop=0.678xw:0.572xh;0.226xw,0.325xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2023-toyota-tundra-hybrid-platinum-interior-64b03f900aef8.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2022-toyota-tundra-platinum-107-1643664433.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "EcoTrucks Austin",
+            "contact": "tundra@ecotrucks.com",
+            "phone": "+1-555-1010"
+          }
+        }
+      ]
+    },
+    "Hatchback": {
+      "Honda": [
+        {
+          "id": 41,
+          "model": "Civic Hatchback",
+          "year": 2022,
+          "price": 24000,
+          "mileage": 19000,
+          "fuel_type": "Gasoline",
+          "transmission": "Manual",
+          "location": "Portland, OR",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/wp-content/uploads/2017/03/2017-Honda-Civic-Hatchback-Sport-Touring-119.jpg?crop=0.955xw:0.877xh;0,0.123xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/wp-content/uploads/2017/03/2017-Honda-Civic-Hatchback-Sport-Touring-113.jpg?crop=1xw:0.92045xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/wp-content/uploads/2017/03/2017-Honda-Civic-Hatchback-Sport-Touring-130.jpg?crop=1xw:0.92045xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "PDX Honda Sales",
+            "contact": "hatch@pdxhonda.com",
+            "phone": "+1-555-2005"
+          }
+        },
+        {
+          "id": 69,
+          "model": "Fit",
+          "year": 2019,
+          "price": 17000,
+          "mileage": 48000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "San Francisco, CA",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2018-honda-fit-132-1-1557845823.jpg?crop=1.00xw:0.923xh;0,0.0767xh&resize=1200:*"
+          ],
+          "seller": {
+            "name": "City Honda SF",
+            "contact": "fit@cityhondasf.com",
+            "phone": "+1-555-2007"
+          }
+        },
+        {
+          "id": 70,
+          "model": "Civic Type R",
+          "year": 2021,
+          "price": 41000,
+          "mileage": 22000,
+          "fuel_type": "Gasoline",
+          "transmission": "Manual",
+          "location": "Los Angeles, CA",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2021-honda-civic-type-r-mmp-1-1596639951.jpg?crop=0.942xw:0.796xh;0.0272xw,0.192xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2022-vw-golf-r-vs-honda-civic-type-r-le-2694-edit-1637733175.jpg?crop=1xw:0.37518310546875xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2022-vw-golf-r-vs-honda-civic-type-r-le-3105-edit-1637734331.jpg?crop=1xw:0.8433382137628112xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Performance Imports LA",
+            "contact": "typer@performancela.com",
+            "phone": "+1-555-2008"
+          }
+        }
+      ],
+      "Volkswagen": [
+        {
+          "id": 42,
+          "model": "Golf GTI",
+          "year": 2021,
+          "price": 31000,
+          "mileage": 29000,
+          "fuel_type": "Gasoline",
+          "transmission": "Manual",
+          "location": "Boston, MA",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2021-volkswagen-golf-gti-mmp-1-1590522492.jpg?crop=0.837xw:0.712xh;0.163xw,0.149xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-volkswagen-golf-gti-mmp-3-1590522738.jpg?crop=1xw:0.8434864104967198xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/large-9341-2019gtirabbitedition-1607626550.jpg?crop=1xw:0.8432529162248145xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Boston VW Hub",
+            "contact": "gti@bostonvw.com",
+            "phone": "+1-555-8003"
+          }
+        },
+        {
+          "id": 71,
+          "model": "Golf R",
+          "year": 2019,
+          "price": 36000,
+          "mileage": 40000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Chicago, IL",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2018-volkswagen-golf-r-6mt-1545153574.jpg?crop=1.00xw:0.929xh;0,0.0419xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/wp-content/uploads/2018/02/2018-Volkswagen-Golf-R-6MT-108.jpg?fill=16:9&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/wp-content/uploads/2018/02/2018-Volkswagen-Golf-R-6MT-153.jpg?fill=16:9&resize=1200:*"
+          ],
+          "seller": {
+            "name": "VW Performance Chicago",
+            "contact": "golfr@vwperform.com",
+            "phone": "+1-555-8005"
+          }
+        },
+        {
+          "id": 72,
+          "model": "Golf",
+          "year": 2020,
+          "price": 21000,
+          "mileage": 31000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "New York, NY",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2020-volkswagen-golf-mmp-1581097913.jpg?crop=0.922xw:0.776xh;0,0.224xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2020-volkswagen-golf-mmp-3-1581098364.jpg?crop=1xw:0.843644544431946xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2020-volkswagen-golf-mmp-2-1581098314.jpg?crop=1xw:0.8439609902475619xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Manhattan VW",
+            "contact": "golf@manhattanvw.com",
+            "phone": "+1-555-8006"
+          }
+        }
+      ],
+      "Toyota": [
+        {
+          "id": 73,
+          "model": "Prius",
+          "year": 2019,
+          "price": 23000,
+          "mileage": 52000,
+          "fuel_type": "Hybrid",
+          "transmission": "Automatic",
+          "location": "San Francisco, CA",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2019-toyota-prius-limited-1545163015.jpg?crop=0.933xw:0.856xh;0.0449xw,0.144xh&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Bay Area Hybrids",
+            "contact": "prius@bayhybrids.com",
+            "phone": "+1-555-1011"
+          }
+        },
+        {
+          "id": 74,
+          "model": "GR Corolla",
+          "year": 2023,
+          "price": 45000,
+          "mileage": 8000,
+          "fuel_type": "Gasoline",
+          "transmission": "Manual",
+          "location": "Denver, CO",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2023-lightning-lap-toyota-gr-corolla-mu-103-1675451520.jpg?crop=0.595xw:0.505xh;0.236xw,0.329xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2023-toyota-gr-corolla-127-1663097948.jpg?crop=0.808xw:0.682xh;0.178xw,0.151xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2023-toyota-gr-corolla-106-1663097944.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Performance Toyota Denver",
+            "contact": "gr@toyotadenver.com",
+            "phone": "+1-555-1012"
+          }
+        }
+      ]
+    },
+    "Coupe": {
+      "Porsche": [
+        {
+          "id": 44,
+          "model": "718 Cayman",
+          "year": 2024,
+          "price": 99000,
+          "mileage": 25000,
+          "fuel_type": "Gasoline",
+          "transmission": "Manual",
+          "location": "Miami, FL",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/718-style-edition-18-1667334774.jpg?crop=0.704xw:0.594xh;0.192xw,0.125xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/gt-silver-cayman-gts-4-0-081-4e9a3779-6424a8b089b7b.jpg?crop=1xw:0.8430913348946136xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2024-porsche-718-cayman-style-edition-102-1674233993.jpeg?crop=1xw:0.9975369458128078xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Performance Ford",
+            "contact": "caymen@performance.com",
+            "phone": "+1-555-9005"
+          }
+        },
+        {
+          "id": 75,
+          "model": "911",
+          "year": 2017,
+          "price": 90000,
+          "mileage": 38000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Dallas, TX",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/wp-content/uploads/2016/07/2017-Porsche-911-104.jpg?crop=0.612xw:0.564xh;0.324xw,0.436xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/wp-content/uploads/2016/07/2017-Porsche-911-127.jpg?crop=1xw:0.92045xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/wp-content/uploads/2016/07/2017-Porsche-911-150.jpg?crop=1xw:0.92045xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "DFW Cars",
+            "contact": "porsche@dfw.com",
+            "phone": "+1-555-9009"
+          }
+        },
+        {
+          "id": 76,
+          "model": "911 Turbo S",
+          "year": 2024,
+          "price": 200000,
+          "mileage": 12000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Charlotte, NC",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2024-porsche-911-turbo-102-67360755ca94f.jpg?crop=0.804xw:0.680xh;0.0833xw,0.238xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2024-porsche-911-turbo-107-6736074f7b23b.jpg?crop=0.719xw:0.607xh;0.119xw,0.309xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2024-porsche-911-turbo-102-6736091dc6d8d.jpg?crop=1.00xw:0.847xh;0,0.0204xh&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Carolina Performance",
+            "contact": "porsche@carolinaperf.com",
+            "phone": "+1-555-9010"
+          }
+        }
+      ],
+      "Chevrolet": [
+        {
+          "id": 45,
+          "model": "Camaro",
+          "year": 2022,
+          "price": 34000,
+          "mileage": 32000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Charlotte, NC",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2019-chevrolet-camaro-2-0t-1le-6mt-109-1539790971.jpg?crop=0.641xw:0.589xh;0.359xw,0.335xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2019-chevrolet-camaro-2-0t-1le-6mt-111-1539790974.jpg?crop=1xw:0.9203789893617021xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2019-chevrolet-camaro-2-0t-1le-6mt-123-1539790979.jpg?crop=1xw:0.920337528604119xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Queen City Muscle",
+            "contact": "camaro@queencitymuscle.com",
+            "phone": "+1-555-9105"
+          }
+        },
+        {
+          "id": 77,
+          "model": "Corvette ZR1",
+          "year": 2021,
+          "price": 170000,
+          "mileage": 28000,
+          "fuel_type": "Gasoline",
+          "transmission": "Manual",
+          "location": "Nashville, TN",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2025-chevrolet-corvette-zr1-115-66a156005fa2c.jpg?crop=0.696xw:0.585xh;0.167xw,0.309xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2025-chevrolet-corvette-zr1-113-66a15600432b8.jpg?crop=1.00xw:0.847xh;0,0.107xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2025-chevrolet-corvette-zr1-111-66a155fec0681.jpg?crop=1xw:0.9530308734939759xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Music City Performance",
+            "contact": "lt1@mcperformance.com",
+            "phone": "+1-555-9109"
+          }
+        },
+        {
+          "id": 78,
+          "model": "Camaro ZL1",
+          "year": 2019,
+          "price": 58000,
+          "mileage": 25000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Houston, TX",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2018-chevrolet-camaro-zl1-1le-001-1561050025.jpg?crop=1.00xw:0.850xh;0,0.150xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/wp-content/uploads/2017/09/2018-Chevrolet-Camaro-ZL1-1LE-103.jpg?crop=0.903xw:0.833xh;0.0408xw,0.0696xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/wp-content/uploads/2017/05/2017-Chevrolet-Camaro-ZL1-coupe-308.jpg?fill=16:9&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Texas Muscle Connection",
+            "contact": "zl1@txmuscle.com",
+            "phone": "+1-555-9110"
+          }
+        }
+      ],
+      "BMW": [
+        {
+          "id": 46,
+          "model": "4 Series Coupe",
+          "year": 2022,
+          "price": 49000,
+          "mileage": 14000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "New York, NY",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2022-bmw-m440i-xdrive-gran-coupe-108-1623173717.jpg?crop=0.760xw:0.642xh;0.0465xw,0.296xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2022-bmw-m440i-xdrive-gran-coupe-119-1623173723.jpg?crop=1xw:0.8438350468702752xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2022-bmw-m440i-xdrive-gran-coupe-113-1623173720.jpg?crop=1xw:0.8438350468702752xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Manhattan BMW",
+            "contact": "4series@manhattanbmw.com",
+            "phone": "+1-555-3005"
+          }
+        },
+        {
+          "id": 79,
+          "model": "2 Series Coupe",
+          "year": 2020,
+          "price": 35000,
+          "mileage": 33000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Boston, MA",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2020-bmw-228i-xdrive-gran-coupe-433-1585753118.jpg?crop=0.752xw:0.636xh;0.248xw,0.364xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2020-bmw-228i-xdrive-gran-coupe-211-1585753108.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2020-bmw-228i-xdrive-gran-coupe-115-1585753097.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "BMW Boston",
+            "contact": "2series@bmwboston.com",
+            "phone": "+1-555-3008"
+          }
+        },
+        {
+          "id": 80,
+          "model": "8 Series Coupe",
+          "year": 2020,
+          "price": 85000,
+          "mileage": 40000,
+          "fuel_type": "Gasoline",
+          "transmission": "Automatic",
+          "location": "Miami, FL",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2020-bmw-m850i-xdrive-gran-coupe-190-1583241850.jpg?crop=0.751xw:0.633xh;0.0407xw,0.367xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2020-bmw-m850i-xdrive-gran-coupe-118-1583241836.jpg?crop=1xw:1xh;center,top&resize=980:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2020-bmw-m850i-xdrive-gran-coupe-164-1583241845.jpg?crop=1xw:0.8436854783207157xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Prestige BMW Miami",
+            "contact": "8series@prestigebmw.com",
+            "phone": "+1-555-3009"
+          }
+        }
+      ]
+    },
+    "Electric": {
+      "Tesla": [
+        {
+          "id": 47,
+          "model": "Model 3",
+          "year": 2022,
+          "price": 42000,
+          "mileage": 22000,
+          "fuel_type": "Electric",
+          "transmission": "Automatic",
+          "location": "San Francisco, CA",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2022-tesla-model-3-mmp-1-1640025520.jpg?crop=0.755xw:0.637xh;0.106xw,0.159xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/0x0-model3-12-1640025317.jpg?crop=1xw:0.843644544431946xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/0x0-model3-03-1640025425.jpg?crop=1xw:0.8035714285714286xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Bay Area EV",
+            "contact": "sales@bayareaev.com",
+            "phone": "+1-555-9201"
+          }
+        },
+        {
+          "id": 48,
+          "model": "Model Y",
+          "year": 2021,
+          "price": 48000,
+          "mileage": 31000,
+          "fuel_type": "Electric",
+          "transmission": "Automatic",
+          "location": "Austin, TX",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2021-tesla-model-y-mmp-1-1604701558.jpg?crop=0.840xw:0.894xh;0.0737xw,0.0515xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2021-tesla-model-y-mmp-2-1604701038.png?crop=0.8875602059458563xw:1xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2020-tesla-model-y-long-range-212-1592938857.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "ATX Electric Cars",
+            "contact": "info@atxev.com",
+            "phone": "+1-555-9202"
+          }
+        },
+        {
+          "id": 81,
+          "model": "Model S",
+          "year": 2019,
+          "price": 62000,
+          "mileage": 45000,
+          "fuel_type": "Electric",
+          "transmission": "Automatic",
+          "location": "Los Angeles, CA",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2018-tesla-model-s-100d-1545165580.jpg?crop=1.00xw:0.924xh;0,0.0759xh&resize=1200:*"
+          ],
+          "seller": {
+            "name": "LA EV Center",
+            "contact": "models@laevcenter.com",
+            "phone": "+1-555-9203"
+          }
+        }
+      ],
+      "Ford": [
+        {
+          "id": 49,
+          "model": "Mustang Mach-E",
+          "year": 2022,
+          "price": 52000,
+          "mileage": 17000,
+          "fuel_type": "Electric",
+          "transmission": "Automatic",
+          "location": "Los Angeles, CA",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2024-ford-mustang-mach-e-rally-121-66f1845f19ea4.jpg?crop=0.696xw:0.587xh;0.184xw,0.238xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2024-ford-mustang-mach-e-rally-123-66f184611b6b7.jpg?crop=0.595xw:0.503xh;0.124xw,0.268xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2024-ford-mustang-mach-e-rally-137-66f1856c555e6.jpg?crop=1.00xw:0.847xh;0,0.153xh&resize=1200:*"
+          ],
+          "seller": {
+            "name": "LA Electric Ford",
+            "contact": "mache@laelectricford.com",
+            "phone": "+1-555-9006"
+          }
+        },
+        {
+          "id": 82,
+          "model": "F-150 Lightning",
+          "year": 2023,
+          "price": 68000,
+          "mileage": 9000,
+          "fuel_type": "Electric",
+          "transmission": "Automatic",
+          "location": "Detroit, MI",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2022-ford-f-150-lightning-tested-simari-101-1656624432.jpg?crop=0.674xw:0.570xh;0.151xw,0.364xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2022-ford-f-150-lightning-tested-113-1656624448.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2022-ford-f-150-lightning-tested-111-1656624447.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Motor City EV",
+            "contact": "lightning@mcev.com",
+            "phone": "+1-555-9011"
+          }
+        },
+        {
+          "id": 83,
+          "model": "Mustang Mach-E GT",
+          "year": 2021,
+          "price": 59000,
+          "mileage": 24000,
+          "fuel_type": "Electric",
+          "transmission": "Automatic",
+          "location": "San Jose, CA",
+          "images": [
+            "https://build.ford.com/dig/Ford/Mache/2025/HD-FULL-ACC%5BEXTBCK%5D/Image%5B%7CFord%7CMache%7C2025%7C1%7C1.%7C400A...PFA...895.646.AWD.99X.66D.67B.%5D/EXT/4/vehicle.png",
+            "https://build.ford.com/dig/Ford/Mache/2025/HD-FULL-ACC%5BINTBCK%5D/Image%5B%7CFord%7CMache%7C2025%7C1%7C1.%7C400A...PFA...895.646.AWD.99X.66D.67B.%5D/INT/2/vehicle.png",
+            "https://build.ford.com/dig/Ford/Mache/2025/HD-FULL-ACC%5BEXTBCK%5D/Image%5B%7CFord%7CMache%7C2025%7C1%7C1.%7C400A...PFA...895.646.AWD.99X.66D.67B.%5D/EXT/3/vehicle.png"
+          ],
+          "seller": {
+            "name": "Silicon Valley Ford EV",
+            "contact": "gt@svfordev.com",
+            "phone": "+1-555-9012"
+          }
+        }
+      ],
+      "Chevrolet": [
+        {
+          "id": 50,
+          "model": "Bolt EV",
+          "year": 2022,
+          "price": 25500,
+          "mileage": 43000,
+          "fuel_type": "Electric",
+          "transmission": "Automatic",
+          "location": "Seattle, WA",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2022-chevrolet-bolt-ev-111-1613168160.jpg?crop=0.704xw:0.594xh;0.178xw,0.262xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2022-chevrolet-bolt-ev-102-1613168157.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2022-chevrolet-bolt-ev-115-1613168163.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Emerald City EV",
+            "contact": "bolt@emeraldcityev.com",
+            "phone": "+1-555-9106"
+          }
+        },
+        {
+          "id": 84,
+          "model": "Bolt EUV",
+          "year": 2022,
+          "price": 29000,
+          "mileage": 16000,
+          "fuel_type": "Electric",
+          "transmission": "Automatic",
+          "location": "Portland, OR",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2022-chevrolet-bolt-euv-109-1613167403.jpg?crop=1.00xw:0.853xh;0,0.147xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2022-chevrolet-bolt-euv-108-1613167410.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2022-chevrolet-bolt-euv-115-1613167411.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*"
+          ],
+          "seller": {
+            "name": "Rose City Electric",
+            "contact": "bolteuv@rosecityev.com",
+            "phone": "+1-555-9111"
+          }
+        },
+        {
+          "id": 85,
+          "model": "Silverado EV",
+          "year": 2024,
+          "price": 75000,
+          "mileage": 5000,
+          "fuel_type": "Electric",
+          "transmission": "Automatic",
+          "location": "Austin, TX",
+          "images": [
+            "https://hips.hearstapps.com/hmg-prod/images/2024-chevrolet-silverado-ev-101-664e0b5832239.jpg?crop=0.752xw:0.637xh;0.0593xw,0.327xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2024-chevrolet-silverado-ev-117-664e0b6055906.jpg?crop=1.00xw:0.847xh;0,0.105xh&resize=1200:*",
+            "https://hips.hearstapps.com/hmg-prod/images/2023-chevrolet-silverado-ev-111-649360d74709a.jpg?crop=0.723xw:0.610xh;0.104xw,0.372xh&resize=1200:*"
+          ],
+          "seller": {
+            "name": "ATX EV Trucks",
+            "contact": "silverado@atxevtrucks.com",
+            "phone": "+1-555-9112"
+          }
+        }
+      ]
     }
   }
-]
+}
