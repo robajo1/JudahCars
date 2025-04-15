@@ -1,6 +1,8 @@
 import { Outlet, Link, useLocation } from "react-router-dom";
 import "./header.css"; 
 import { useEffect } from "react";
+import { ul } from "framer-motion/client";
+import SellerDashboard from "../pages/SellerDashBoard";
 
 function Header() {
   const location = useLocation();
@@ -8,6 +10,22 @@ function Header() {
   const user = localStorage.getItem("user");
   useEffect(() => {}, [user]);
 
+
+  if(JSON.parse(user) && JSON.parse(user).isSeller){
+    return (
+      <>
+      <ul>
+        <li>
+        {JSON.parse(user) ? (
+              <button className="cart" onClick={() => { localStorage.removeItem("user"); window.location.href = "/"; }}>LogOut</button>
+          ) : (
+            <></>)}
+        </li>
+      </ul>
+      <SellerDashboard/>
+      </>
+    );    
+  }else{
   return (
     <>
       <nav className={`header-nav ${navClass? 'details-page' : ''}`}>
@@ -36,13 +54,19 @@ function Header() {
                 </Link>
               )}
             </li>
+            <li>
+            {JSON.parse(user) ? (
+                  <button className="cart" onClick={() => { localStorage.removeItem("user"); window.location.href = "/"; }}>LogOut</button>
+              ) : (
+                <></>)}
+            </li>
           </div>
         </ul>
       </nav>
 
       <Outlet />
     </>
-  );
+  );}
 }
 
 export default Header;

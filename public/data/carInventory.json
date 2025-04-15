@@ -16,8 +16,8 @@
       "https://hips.hearstapps.com/hmg-prod/images/2020-toyota-camry-mmp-3-1566921132.jpg?crop=1xw:0.3751875xh;center,top&resize=1200:*"
     ],
     "seller": {
-      "name": "John Doe",
-      "contact": "sales@toyotadealer.com",
+      "name": "a",
+      "contact": "a@example.com",
       "phone": "+1-555-1001"
     }
   },
@@ -38,8 +38,8 @@
       "https://hips.hearstapps.com/hmg-prod/images/2021-toyota-corolla-se-apex-451-1601389669.jpg?crop=1xw:0.8433812511706312xh;center,top&resize=1200:*"
     ],
     "seller": {
-      "name": "Jane Smith",
-      "contact": "jsmith@toyotafl.com",
+      "name": "a",
+      "contact": "a@example.com",
       "phone": "+1-555-1002"
     }
   },
@@ -58,8 +58,8 @@
       "https://hips.hearstapps.com/hmg-prod/images/2019-toyota-avalon-hybrid-99leadgallery-1530545662.jpg?crop=1.00xw:0.924xh;0,0.0759xh&resize=1200:*"
     ],
     "seller": {
-      "name": "Georgia Peach Toyota",
-      "contact": "info@gptoyota.com",
+      "name": "a",
+      "contact": "a@example.com",
       "phone": "+1-555-1008"
     }
   },
@@ -80,8 +80,8 @@
       "https://hips.hearstapps.com/hmg-prod/images/2020-bmw-m340i-v-2020-genesis-g70-3p3t-107-1571838324.jpg?crop=1xw:0.9204692440356425xh;center,top&resize=1200:*"
     ],
     "seller": {
-      "name": "Peter Chen",
-      "contact": "pchen@bimmerla.com",
+      "name": "a",
+      "contact": "a@example.com",
       "phone": "+1-555-3001"
     }
   },
@@ -124,8 +124,8 @@
       "https://hips.hearstapps.com/hmg-prod/images/2017-bmw-7-series-117-1525982952.jpg?crop=1xw:0.9204545454545454xh;center,top&resize=1200:*"
     ],
     "seller": {
-      "name": "Windy City BMW",
-      "contact": "sales@wcbmw.com",
+      "name": "b",
+      "contact": "b@example.com",
       "phone": "+1-555-3006"
     }
   },
@@ -144,8 +144,8 @@
       "https://hips.hearstapps.com/hmg-prod/images/2019-audi-a4-107-1530210093.jpg?crop=0.891xw:0.814xh;0,0.186xh&resize=1200:*"
     ],
     "seller": {
-      "name": "Laura Woods",
-      "contact": "audi@dealer.com",
+      "name": "b",
+      "contact": "b@example.com",
       "phone": "+1-555-1126"
     }
   },
@@ -270,8 +270,8 @@
       "https://hips.hearstapps.com/hmg-prod/images/2021-hyundai-sonata-n-line-127-1606156390.jpg?crop=1xw:0.843328335832084xh;center,top&resize=1200:*"
     ],
     "seller": {
-      "name": "Dallas Hyundai",
-      "contact": "sales@dallashyundai.com",
+      "name": "b",
+      "contact": "b@example.com",
       "phone": "+1-555-5001"
     }
   },
@@ -292,8 +292,8 @@
       "https://hips.hearstapps.com/hmg-prod/images/2022-hyundai-elantra-mmp-12022-hyundai-elantra-mmp-3-1634851803.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*"
     ],
     "seller": {
-      "name": "Arizona Auto",
-      "contact": "info@azauto.com",
+      "name": "c",
+      "contact": "c@example.com",
       "phone": "+1-555-5002"
     }
   },
@@ -380,8 +380,8 @@
       "https://hips.hearstapps.com/hmg-prod/images/2021-kia-forte-mmp-3-1603207696.jpg?crop=1xw:0.7721368335146899xh;center,top&resize=1200:*"
     ],
     "seller": {
-      "name": "Capital City Kia",
-      "contact": "forte@cckia.com",
+      "name": "c",
+      "contact": "c@example.com",
       "phone": "+1-555-6005"
     }
   },
@@ -444,8 +444,8 @@
       "https://hips.hearstapps.com/hmg-prod/images/2020-nissan-sentra-124-1574102515.jpg?crop=1xw:0.8434487682970367xh;center,top&resize=1200:*"
     ],
     "seller": {
-      "name": "Alamo Nissan",
-      "contact": "sentra@alamonissan.com",
+      "name": "c",
+      "contact": "b@example.com",
       "phone": "+1-555-7003"
     }
   },

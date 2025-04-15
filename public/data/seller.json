@@ -1,18 +1,18 @@
 [
     {
-      "fullName": "Diana Evans",
-      "email": "diana.evans@example.com",
-      "password": "diana456"
+      "fullName": "a",
+      "email": "a@example.com",
+      "password": "123"
     },
     {
-      "fullName": "Ethan Wright",
-      "email": "ethan.wright@example.com",
-      "password": "ethan789"
+      "fullName": "b",
+      "email": "b@example.com",
+      "password": "123"
     },
     {
-      "fullName": "Fiona Garcia",
-      "email": "fiona.garcia@example.com",
-      "password": "fiona2024"
+      "fullName": "c",
+      "email": "c@example.com",
+      "password": "123"
     }
 ]
   

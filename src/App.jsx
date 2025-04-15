@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import DetailsBody from "./components/DetailComponents/DetailsBody";
 import LoginRegister from "./pages/LoginRegiste";
 import Cart from "./pages/Cart"; 
+import SellerDashboard from "./pages/SellerDashBoard";
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
             <Route path="detail" element={<DetailsBody />} />
             <Route path="login" element={<LoginRegister />} />
             <Route path="register" element={<LoginRegister />} />
-            <Route path="cart" element={<Cart />} /> 
+            <Route path="cart" element={<Cart />} />
+            <Route path="dashboard" element={<SellerDashboard/>}/> 
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 function LoginRegister() {
+  
+  const navigate = useNavigate();
   const [isRegistering, setIsRegistering] = useState(false);
   var [formData, setFormData] = useState({
     fullName: "",
@@ -43,8 +45,28 @@ function LoginRegister() {
       }
     }else{
       if(formData.isSeller){
-        // Check if the user is a seller and handle accordingly
-        alert("Seller login is not implemented yet.");
+        try {
+          const response = await fetch("data/seller.json");
+          const data = await response.json();
+        
+          const matchedUser = data.find(
+            (user) =>
+              user.email === formData.email &&
+              user.password === formData.password
+          );
+        
+          if (!matchedUser) {
+            alert("Invalid email or password");
+          } else {
+            formData = { ...matchedUser, isSeller: true };
+            localStorage.setItem("user", JSON.stringify(formData));
+            alert("Login successful as seller");
+            window.location.href = "/dashboard";
+          }
+        }catch(e){
+          console.error("Error logging in:", e);
+          alert("Login failed. Please try again.");
+        }
       }
       else{
         try {
