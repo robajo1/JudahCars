@@ -26,15 +26,18 @@
     font-family: sans-serif;
     color: #1e293b;
     padding: 20px;
+    padding-bottom: 12px;
+    padding-top: 15px;
     background-color: #f9f9f9;
   }
-  
+
   .details-container {
     display: flex;
     flex-direction: column;
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
+    margin-top: 30px;
   }
   
   @media (max-width: 920px) {
@@ -131,22 +134,22 @@
   }
   
   .car-model {
-    font-size: 1.1rem;
-    font-weight: 500;
+    font-size: 1.75rem;
+    font-weight: 700;
     margin-bottom: 5px;
-    color: #718096;
+    color: #2d3748;
   }
   
   .car-make {
-    font-size: 1.75rem;
-    font-weight: 700;
+    font-size: 1.2rem;
+    font-weight: 600;
     margin-bottom: 10px;
-    color: #2d3748;
+    color: #586576;
   }
   
   .car-type-year {
     font-size: 0.9rem;
-    color: #a0aec0;
+    color: #2d3748;
     margin-bottom: 15px;
   }
   

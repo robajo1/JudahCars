@@ -8,7 +8,7 @@
     "mileage": 35000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A 5-seat sedan with a 5-star ANCAP safety rating. It offers hybrid or petrol engines with fuel economy ranging from 4.2L to 8.9L/100km and has 493L of rear storage space. It features a Dynamic Force Engine and a muscular, chiseled exterior design.",
     "location": "Austin, TX",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2020-toyta-camry-mmp-1-1566921359.jpg?crop=0.878xw:0.737xh;0.0554xw,0.263xh&resize=1200:*",
@@ -30,7 +30,7 @@
     "mileage": 28000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "Available as a sedan or hatchback, it comes with a 1.6L, 2.0L, or 1.8L hybrid engine. Features can include push-button start, keyless entry, ambient lighting, heated seats, and dual-zone climate controls. The hatchback offers more room behind the rear seats.",
     "location": "Miami, FL",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2021-toyota-corolla-se-apex-mmp-1-1601668779.jpg?crop=0.861xw:0.724xh;0.0641xw,0.194xh&resize=1200:*",
@@ -52,7 +52,7 @@
     "mileage": 48000,
     "fuel_type": "Hybrid",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A spacious full-size sedan known for good handling and styling, though the ride can be firm. It comes with a 3.5L V6 engine (301 hp) or a hybrid option (2.5L engine). Features include the Entune infotainment system, available JBL audio, and Toyota Safety Sense. Trim levels range from XLE to Limited and Touring.",
     "location": "Atlanta, GA",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2019-toyota-avalon-hybrid-99leadgallery-1530545662.jpg?crop=1.00xw:0.924xh;0,0.0759xh&resize=1200:*"
@@ -72,7 +72,7 @@
     "mileage": 31000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "Offered as a sedan or wagon, with petrol or plug-in hybrid engines. Fuel economy ranges from 2.1L to 7.7L/100km. It features a spacious, luxurious cabin with many standard tech features. Engine options include a 2.0L four-cylinder (255 hp) and a 3.0L inline-six (382 hp in M340i). An 8-speed automatic is standard.",
     "location": "Los Angeles, CA",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2020-bmw-m340i-v-2020-genesis-g70-3p3t-1016-hdr-1571838328.jpg?crop=0.827xw:0.761xh;0,0.239xh&resize=1200:*",
@@ -94,7 +94,7 @@
     "mileage": 22000,
     "fuel_type": "Hybrid",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A midsize luxury sedan with a range of engines, including a mild hybrid option for the 540i and a plug-in hybrid (530e). Known for its quiet, comfortable interior, innovative tech, and generous trunk space. It received updated styling and a larger touchscreen for 2021. Engine options range from a four-cylinder (530i) to a V8 (M550i).",
     "location": "New York, NY",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2021-bmw-530e-481-edit-1611852114.jpg?crop=0.654xw:0.549xh;0.343xw,0.444xh&resize=1200:*",
@@ -116,7 +116,7 @@
     "mileage": 55000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A luxury full-size sedan available in long-wheelbase form, offering exceptional rear passenger space. Engine options include inline-six (740i), V8 (750i), V12 (M760i), and a plug-in hybrid (740e). Features include adaptive air suspension, premium materials, advanced tech like iDrive, and numerous driver assists.",
     "location": "Chicago, IL",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2017-bmw-7-series-01-placement-1525961624.jpg?crop=0.739xw:0.686xh;0.183xw,0.113xh&resize=1200:*",
@@ -138,7 +138,7 @@
     "mileage": 47439,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A 5-seat sedan or wagon with a 5-star ANCAP rating. Petrol engines offer fuel economy from 5.3L to 6.7L/100km. Features include Audi pre sense® city, leather seating, available Bang & Olufsen sound system, and Audi virtual cockpit. Engine options include a 188 hp or 248 hp turbocharged engine.",
     "location": "Cleveland, OH",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2019-audi-a4-107-1530210093.jpg?crop=0.891xw:0.814xh;0,0.186xh&resize=1200:*"
@@ -158,7 +158,7 @@
     "mileage": 18000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A midsize luxury sedan or wagon with diesel or petrol engines. Fuel economy ranges from 6.3L to 7.4L/100km. It features a high-tech cabin and a smooth ride. Engine options include a 2.0L 4-cylinder (261 hp) and a 3.0L V6 (335 hp).",
     "location": "Chicago, IL",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2019-audi-a6-3-0t-99leadgallery-1545842828.jpg?crop=0.981xw:0.901xh;0.0112xw,0.0314xh&resize=1200:*",
@@ -180,7 +180,7 @@
     "mileage": 39000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "Available as a convertible, hatch, or sedan. Features petrol engines with fuel economy from 4.8L to 6.4L/100km. Known for spirited handling and classic Audi luxury, although the cabin can feel cramped. Engine options include a 184 hp or 228 hp turbocharged 2.0L four-cylinder.",
     "location": "Boston, MA",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2020-audi-a3-mmp-1-1570819350.jpg?crop=1.00xw:0.798xh;0,0.202xh&resize=1200:*"
@@ -200,7 +200,7 @@
     "mileage": 39000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "Offered as a convertible, sedan, or wagon with diesel, petrol, or plug-in hybrid options. Known for its impeccably crafted interior and cutting-edge features. Fuel economy varies widely from 2.1L to 10.7L/100km. Engine choices range from a 2.0L four-cylinder to powerful AMG V6 and V8 options.",
     "location": "San Francisco, CA",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2020-mercedes-benz-c-class-mmp-1-1572373169.jpg?crop=0.782xw:0.777xh;0,0.223xh&resize=1200:*"
@@ -220,7 +220,7 @@
     "mileage": 25000,
     "fuel_type": "Hybrid",
     "transmission": "Automatic",
-    "description": "",
+    "description": "Available as a convertible, or sedan with petrol or plug-in hybrid engines. Features include a luxurious interior, advanced tech like the MBUX system, and a smooth ride. Engine options range from a 2.0L turbo-four (E 350) to a 3.0L inline-six turbo with EQ Boost (E 450) and high-performance AMG variants. Fuel economy ranges from 2.2L to 12.3L/100km.",
     "location": "Boston, MA",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2021-genesis-g80-3p5t-prestige-v-2021-mercedes-benz-e450-sedan-1466-1621886878.jpg?crop=0.609xw:0.515xh;0.225xw,0.429xh&resize=1200:*",
@@ -242,7 +242,7 @@
     "mileage": 42000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "The flagship luxury sedan, coupe, or cabriolet known for its palatial interior, cutting-edge technology, and powerful engine options. Features AIRMATIC® suspension, COMAND® infotainment with a 12.3-inch display, and advanced safety systems like PRESAFE®. Engines range from a 3.0L V6 biturbo (S 450) to a handcrafted 6.0L AMG V12 biturbo (AMG S 65).",
     "location": "Miami, FL",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2018-mercedes-benz-s-class-mmp-1545171931.jpg?crop=0.941xw:0.859xh;0,0.141xh&resize=1200:*"
@@ -262,7 +262,7 @@
     "mileage": 32000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A stylish midsize sedan featuring a modern design, innovative tech like Hyundai Digital Key and Remote Smart Parking Assist. Engine options include a 2.5L GDI (191 hp), a 1.6L Turbo GDI (180 hp), a 2.5L Turbo (290 hp in N Line), and a hybrid version. Offers features like a large touchscreen (up to 10.25-inch), available Bose audio, and Hyundai SmartSense safety suite.",
     "location": "Dallas, TX",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2021-hyundai-sonata-n-line-108-1606156377.jpg?crop=1.00xw:0.847xh;0,0.108xh&resize=1200:*",
@@ -284,7 +284,7 @@
     "mileage": 21000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A compact sedan noted for its sharp, modern, and dynamic styling, particularly its wide cascading grille and sculpted body lines. It offers a spacious and tech-filled interior.",
     "location": "Phoenix, AZ",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2022-hyundai-elantra-mmp-1-1634851642.jpg?crop=0.869xw:0.733xh;0.0753xw,0.147xh&resize=1200:*",
@@ -306,7 +306,7 @@
     "mileage": 36000,
     "fuel_type": "Hybrid",
     "transmission": "Automatic",
-    "description": "",
+    "description": "Available as a hybrid, plug-in hybrid, or EV. The hybrid model prioritizes economy and comfort. It features a 1.6L GDI engine combined with an electric motor for 139 hp. Known for excellent fuel economy (up to 59 MPG highway), spacious interior, and accessible technology.",
     "location": "Seattle, WA",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2022-hyundai-ioniq-plug-in-mmp-1-1634324700.jpg?crop=0.864xw:0.785xh;0.0625xw,0.0674xh&resize=1200:*",
@@ -328,7 +328,7 @@
     "mileage": 19000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A midsize sedan replacing the Optima. Base models (LX, LXS, GT-Line, EX) feature a 1.6L turbocharged engine (180 hp) with an 8-speed automatic transmission. A more powerful GT trim is also available.",
     "location": "Atlanta, GA",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2022-kia-k5-mmp-1-1624460092.jpg?crop=0.710xw:0.599xh;0.143xw,0.240xh&resize=1200:*",
@@ -350,7 +350,7 @@
     "mileage": 45000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A 5-seat sport sedan with a 5-star ANCAP rating. Engine options include a 2.0L turbo (182 kW/244 hp) and a 3.3L twin-turbo V6 (272 kW/365 hp), paired with an 8-speed automatic. Known for its value, performance (especially the V6), and stylish design.",
     "location": "Orlando, FL",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2020-kia-stinger-gts-107-1555528650.jpg?crop=0.891xw:0.816xh;0.0945xw,0.184xh&resize=1200:*",
@@ -372,7 +372,7 @@
     "mileage": 31000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A compact sedan offering good value and technology. Standard engine is a 147-hp 2.0L four-cylinder with a CVT, while a 201-hp 1.6L turbo four-cylinder with a 7-speed dual-clutch or 6-speed manual is available in GT trims. Comes standard with Apple CarPlay, Android Auto, and Bluetooth.",
     "location": "Raleigh, NC",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2021-kia-forte-mmp-1-1603206396.jpg?crop=0.913xw:0.772xh;0.0673xw,0.228xh&resize=1200:*",
@@ -394,7 +394,7 @@
     "mileage": 36000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A midsize sedan offering a choice between a standard 2.5L four-cylinder engine (188 hp) and an optional 2.0L VC-Turbo engine (up to 248 hp). Both engines use a CVT. Front-wheel drive is standard, with all-wheel drive available on 2.5L models.",
     "location": "Houston, TX",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2021-nissan-altima-mmp-1-1603227990.jpg?crop=0.845xw:0.714xh;0.0849xw,0.212xh&resize=1200:*",
@@ -416,7 +416,7 @@
     "mileage": 51000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "Marketed as a \"4-Door Sports Car,\" it features a 300 hp 3.5L V6 engine and a sport-tuned suspension. Offers a refined interior with features like Zero Gravity seats, an 8-inch touchscreen with navigation, Apple CarPlay/Android Auto, and available premium materials like Ascot Leather. Nissan Safety Shield 360 features were added for 2019.",
     "location": "Philadelphia, PA",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2019-nissan-maxima-platinum-174-1548780176.jpg?crop=0.625xw:0.573xh;0.364xw,0.427xh&resize=1200:*"
@@ -436,7 +436,7 @@
     "mileage": 25000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A compact sedan powered by a 149-hp 2.0L four-cylinder engine with a CVT. Known for ride comfort, interior quality, and standard safety features like automatic emergency braking and blind-spot warning. Offers Apple CarPlay and Android Auto standard.",
     "location": "San Antonio, TX",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2020-nissan-sentra-120-1574102513.jpg?crop=0.824xw:0.792xh;0.176xw,0.162xh&resize=1200:*",
@@ -458,7 +458,7 @@
     "mileage": 62000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A midsize sedan featuring a standard 2.0L TSI engine (updated from 1.8L) or an available 3.6L VR6 (280 hp) in the GT trim. Known for a spacious interior and comfortable ride. The GT trim adds sporty elements like 19-inch wheels and sport suspension. Comes with a six-year/72,000-mile warranty.",
     "location": "Charlotte, NC",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/images/media/672264/2018-volkswagen-passat-in-depth-model-review-car-and-driver-photo-701537-s-original.jpg?crop=0.763xw:0.704xh;0.144xw,0.168xh&resize=1200:*"
@@ -478,7 +478,7 @@
     "mileage": 33000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A compact sedan built on the MQB platform, offering bold design and enhanced interior space. Powered by a 1.4L TSI engine (147 hp) with a 6-speed manual or 8-speed automatic. Features standard next-gen Car-Net telematics, Wi-Fi capability, LED lighting, and available tech like BeatsAudio and Digital Cockpit.",
     "location": "Portland, OR",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2020-volkswagen-jetta-mmp-1-1570049916.jpg?crop=1.00xw:0.846xh;0,0.154xh&resize=1200:*"
@@ -498,7 +498,7 @@
     "mileage": 41000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A stylish fastback sedan featuring a 2.0L TSI turbocharged engine (268 hp) paired with an 8-speed automatic. Available with 4MOTION all-wheel drive. Offers a plush interior with advanced tech like the VW Digital Cockpit, adaptive chassis control, and driver assistance features. Fuel economy is around 7.5L/100km.",
     "location": "Denver, CO",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2019-volkswagen-arteon-se-4motion-102-1560203646.jpg?crop=0.891xw:0.819xh;0.0449xw,0.181xh&resize=1200:*"
@@ -518,7 +518,7 @@
     "mileage": 26000,
     "fuel_type": "Hybrid",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A popular compact SUV with a 5-star ANCAP rating. Offers petrol, hybrid, and plug-in hybrid (Prime) options. Powered by a 2.5L four-cylinder engine (203 hp) in the standard model. Known for its practical, roomy interior and standard driver-assistance features (Toyota Safety Sense). TRD Off-Road model adds rugged capability.",
     "location": "Dallas, TX",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2021-toyota-rav4-trd-off-road-101-1626364941.jpg?crop=0.813xw:0.688xh;0.127xw,0.228xh&resize=1200:*",
@@ -540,7 +540,7 @@
     "mileage": 41000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A three-row midsize SUV redesigned for 2020. Offers seating for 7 or 8 passengers. Powered by a 3.5L V6 (295 hp) or a hybrid four-cylinder powertrain. Known for its smooth ride, quiet cabin, reliability, and standard Toyota Safety Sense 2.0. Features include available 12.3-inch touchscreen and captain's chairs.",
     "location": "Chicago, IL",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2020-toyota-highlander-platinum-157-1576621500.jpg?crop=0.800xw:0.734xh;0.106xw,0.266xh&resize=1200:*",
@@ -562,7 +562,7 @@
     "mileage": 65000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A body-on-frame midsize SUV known for its ruggedness and off-road capability. Powered by a 4.0L V6 engine (270 hp) with a 5-speed automatic transmission. Offers seating for up to seven (depending on model). Features standard 4WD (on most trims), available off-road tech like Crawl Control and Multi-Terrain Select (TRD trims), and a towing capacity of 5,000 lbs.",
     "location": "Denver, CO",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/images/media/672264/2018-toyota-4runner-in-depth-model-review-car-and-driver-photo-690348-s-original.jpg?crop=0.726xw:0.670xh;0.220xw,0.160xh&resize=1200:*"
@@ -582,7 +582,7 @@
     "mileage": 18000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A popular compact SUV powered by a 1.5L turbocharged four-cylinder engine (190 hp). Offers excellent fuel economy (up to 34 MPG highway) and a spacious interior with class-leading cargo space. Available with front-wheel or all-wheel drive. Honda Sensing safety suite is standard on EX and above trims. A hybrid version is also available.",
     "location": "Phoenix, AZ",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2021-honda-cr-v-hybrid-awd-touring-ltup-mmp-1-1629832353.jpg?crop=0.958xw:0.806xh;0.00962xw,0.0959xh&resize=1200:*",
@@ -604,7 +604,7 @@
     "mileage": 55000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A three-row midsize SUV known for its roomy and practical interior, smooth ride, and efficient V6 engine (280 hp). Features refreshed styling and an updated infotainment system with a volume knob for 2019. Offers seating for 7 or 8 passengers. Honda Sensing safety suite became standard on all trims for 2019.",
     "location": "Atlanta, GA",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2019-honda-pilot-103-1534804398.jpg?crop=1.00xw:0.923xh;0,0.0767xh&resize=1200:*"
@@ -624,7 +624,7 @@
     "mileage": 29000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A subcompact SUV with a 5-star ANCAP rating. Powered by a 1.8L four-cylinder engine (141 hp) with a CVT. Offers impressive interior versatility with Honda's Magic Seat system. Features include available Real Time AWD, Apple CarPlay/Android Auto (Sport trim and up), and available Honda Sensing suite (EX trim and up).",
     "location": "Orlando, FL",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2021-honda-hr-v-mmp-1-1595869461.jpg?crop=0.968xw:0.969xh;0.00160xw,0&resize=1200:*",
@@ -646,7 +646,7 @@
     "mileage": 30000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A three-row midsize SUV seating six or seven. Engine options include a 2.3L turbo four-cylinder (300 hp), a 3.0L twin-turbo V6 (365 hp or 400 hp in ST), and a 3.3L hybrid (318 hp). Features standard rear-wheel drive (AWD available) and a 10-speed automatic transmission. Offers standard tech like an 8-inch touchscreen, Apple CarPlay/Android Auto, and Ford Co-Pilot360 safety suite. New Timberline (off-road) and King Ranch (luxury) trims were added for 2021.",
     "location": "Detroit, MI",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2021-ford-explorer-mmp-1-1595540826.jpg?crop=1.00xw:0.846xh;0,0.120xh&resize=1200:*",
@@ -668,7 +668,7 @@
     "mileage": 38000,
     "fuel_type": "Hybrid",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A redesigned compact SUV for 2020 with sleek styling. Engine options include a 1.5L turbo three-cylinder (181 hp) and a 2.0L turbo four-cylinder (250 hp), both with an 8-speed automatic. Hybrid and plug-in hybrid versions also available. Features standard Ford Co-Pilot360 safety suite and available SYNC 3 infotainment with an 8-inch touchscreen. Offers more interior space than the previous generation.",
     "location": "Nashville, TN",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2020-ford-escape-2p0t-titanium-awd-102-1572013378.jpg?crop=0.692xw:0.636xh;0.244xw,0.295xh&resize=1200:*",
@@ -690,7 +690,7 @@
     "mileage": 15000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A compact SUV designed for off-road capability, often called the \"Baby Bronco\". Features standard 4x4, G.O.A.T. Modes (Goes Over Any Type of Terrain), and a safari-style roof. Engine options are a 1.5L EcoBoost three-cylinder (181 hp) or a 2.0L EcoBoost four-cylinder (250 hp). Offers practical features like easy-to-clean surfaces and ample cargo space. Ford Co-Pilot360 safety suite is standard.",
     "location": "Austin, TX",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2021-ford-bronco-sport-1p5l-1332-edit-1617333027.jpg?crop=0.644xw:0.542xh;0.0417xw,0.252xh&resize=1200:*",
@@ -712,7 +712,7 @@
     "mileage": 27000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A luxury compact SUV offering a blend of performance and practicality. Engine options include a 2.0L turbo-four (sDrive30i/xDrive30i), a 3.0L turbo inline-six (M40i), and a plug-in hybrid (xDrive30e). Known for its engaging handling, premium interior, and advanced technology like BMW's iDrive system. xDrive all-wheel drive is available/standard on most trims.",
     "location": "Miami, FL",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2021-bmw-x3-mmp-1-1603213364.jpg?crop=0.814xw:0.812xh;0.0945xw,0.188xh&resize=1200:*",
@@ -734,7 +734,7 @@
     "mileage": 34000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A luxury midsize SUV (or SAV - Sports Activity Vehicle) known for its strong performance, refined interior, and advanced tech. Engine options include inline-six (xDrive40i), V8 (M50i), and a plug-in hybrid (xDrive45e). Features standard xDrive all-wheel drive (except base sDrive40i) and available features like air suspension and third-row seating. Offers a comfortable ride and capable handling.",
     "location": "San Diego, CA",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2020-bmw-x5-mmp-1-1579125510.jpg?crop=0.940xw:0.945xh;0.0603xw,0.0552xh&resize=1200:*",
@@ -756,7 +756,7 @@
     "mileage": 19000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "BMW's smallest SUV, offering a powerful turbo engine, confident handling, and good passenger/cargo space for its size. Powered by a 2.0L turbocharged four-cylinder engine (228 hp in xDrive28i). Available with front-wheel drive (sDrive) or all-wheel drive (xDrive). Features standard safety tech like forward collision warning and lane departure warning.",
     "location": "San Francisco, CA",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2020-bmw-x1-euro-spec-106-1559085961.jpg?crop=0.726xw:0.668xh;0.0721xw,0.209xh&resize=1200:*",
@@ -778,7 +778,7 @@
     "mileage": 31000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A compact SUV powered by a 170-hp 1.5L turbocharged four-cylinder engine with a 6-speed automatic. Available in front- or all-wheel drive. Known for its intuitive multimedia system (with standard Apple CarPlay/Android Auto) and solid ride control. Standard safety features include forward collision warning and lane-keeping assist.",
     "location": "Houston, TX",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2021-chevrolet-equinox-mmp-1-1589917518.jpg?crop=0.801xw:0.674xh;0.135xw,0.326xh&resize=1200:*",
@@ -800,7 +800,7 @@
     "mileage": 44000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A midsize SUV with three rows of seating, offering best-in-class maximum cargo space (98.2 cu. ft.). Powered by a 3.6L V6 engine (310 hp) paired with a 9-speed automatic transmission. Features standard Teen Driver technology and available safety features like Forward Collision Alert and Lane Keep Assist. Offers convenient features like Smart Slide second-row seating and an available hands-free power liftgate.",
     "location": "St. Louis, MO",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2020-chverolet-traverse-mmp-1-1579128594.jpg?crop=0.779xw:0.879xh;0.221xw,0.121xh&resize=1200:*",
@@ -822,7 +822,7 @@
     "mileage": 58000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A full-size, body-on-frame SUV offering seating for up to nine passengers. Engine options include a 5.3L V8 (355 hp) and an available 6.2L V8 (420 hp in RST/Premier Plus). Known for its towing capability (up to 8,600 lbs), quiet cabin, and available luxury features. Offers standard Apple CarPlay/Android Auto and available safety features like Forward Collision Alert and Low Speed Forward Automatic Braking.",
     "location": "Dallas, TX",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/wp-content/uploads/2018/03/2018-Chevrolet-Tahoe-RST-Edition-107.jpg?crop=0.974xw:0.898xh;0.00962xw,0.102xh&resize=1200:*"
@@ -842,7 +842,7 @@
     "mileage": 23000,
     "fuel_type": "Hybrid",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A midsize SUV, notable for being one of the few in its class to offer three rows of seating in a smaller package than rivals like the Telluride. Engine options include a 2.5L four-cylinder, a 2.5L turbo four-cylinder (quick acceleration), a hybrid, and a plug-in hybrid. Features a sharp-looking design, easy-to-use infotainment (10.25-inch screen standard on most trims), and impressive standard/optional features. The X-Line package adds rugged styling.",
     "location": "Raleigh, NC",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2022-sorento-phev-mmp-1-1629903751.jpg?crop=0.704xw:0.594xh;0.170xw,0.200xh&resize=1200:*",
@@ -864,7 +864,7 @@
     "mileage": 11000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A popular midsize three-row SUV praised for its upscale design, spacious interior, and value. Powered by a 3.8L V6 engine (291 hp). Received updates for 2023 including revised styling, a new dashboard with dual 12.3-inch screens, and new X-Line and X-Pro off-road oriented packages. Offers standard features like SynTex seating, adaptive cruise control, and blind-spot monitoring.",
     "location": "Las Vegas, NV",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2023-kia-telluride-x-line-103-1666960055.jpg?crop=0.675xw:0.570xh;0.252xw,0.339xh&resize=1200:*",
@@ -886,7 +886,7 @@
     "mileage": 35000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A compact SUV seating five. Engine choices include a 2.4L four-cylinder (181 hp) or a 2.0L turbo four-cylinder (240 hp), both with a 6-speed automatic. Known for accurate steering and comfortable backseat. Standard features include an 8-inch touchscreen with Apple CarPlay/Android Auto and automatic emergency braking. New Nightfall Edition package added blacked-out accents.",
     "location": "Philadelphia, PA",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2021-kia-sportage-mmp-1-1601580353.jpg?crop=0.926xw:0.779xh;0.00962xw,0.201xh&resize=1200:*",
@@ -908,7 +908,7 @@
     "mileage": 37000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A midsize crossover wagon known for its standard Symmetrical All-Wheel Drive, spacious cabin, and ample cargo space. Engine options are a 2.5L flat-four (182 hp) or a 2.4L turbocharged flat-four (260 hp), both with a CVT. Features standard EyeSight safety suite, 8.7 inches of ground clearance, and X-Mode for enhanced traction. Adaptive headlights became standard across the lineup for 2021.",
     "location": "Denver, CO",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2021-suabru-outback-mmp-1-1598639461.jpg?crop=0.801xw:0.675xh;0.0673xw,0.159xh&resize=1200:*",
@@ -930,7 +930,7 @@
     "mileage": 42000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A compact SUV with standard Symmetrical All-Wheel Drive. Powered by a 2.5L Boxer engine (182 hp) with a CVT. Offers a spacious interior, comfortable ride, and good visibility. Features standard EyeSight driver assist technology, Apple CarPlay/Android Auto, and available X-Mode. A hybrid version was also offered. Rear Seat Reminder became standard for 2020.",
     "location": "Portland, OR",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2020-subaru-forester-mmp-1-1567099000.jpg?crop=0.824xw:0.620xh;0.0244xw,0.224xh&resize=1200:*"
@@ -950,7 +950,7 @@
     "mileage": 21000,
     "fuel_type": "Hybrid",
     "transmission": "Automatic",
-    "description": "",
+    "description": "An extra-small crossover SUV based on the Impreza hatchback, but with higher ground clearance (8.7 inches) and standard Symmetrical All-Wheel Drive. Engine options include a 2.0L flat-four (152 hp) or an available 2.5L flat-four (182 hp) offering better acceleration. Known for its comfortable ride, spacious seating for its size, and off-road capability. Features standard EyeSight on CVT models.",
     "location": "Seattle, WA",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2022-subaru-crosstrek-mmp-1-1638577219.jpg?crop=1.00xw:0.846xh;0,0.00721xh&resize=1200:*",
@@ -972,7 +972,7 @@
     "mileage": 58000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A full-size pickup truck available in numerous configurations (Regular Cab, SuperCab, SuperCrew) and trims (XL to Limited). Features a high-strength, military-grade aluminum-alloy body. Engine options include various V6s (including EcoBoost and a diesel) and a V8. Offers best-in-class payload (up to 3,270 lbs) and towing (up to 13,200 lbs) when properly equipped. Available tech includes SYNC 3, Ford Co-Pilot360 safety features, and Pro Trailer Backup Assist.",
     "location": "Dallas, TX",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2020-ford-f-150-mmp-1-1565730299.jpg?crop=0.827xw:0.699xh;0.114xw,0.152xh&resize=1200:*",
@@ -994,7 +994,7 @@
     "mileage": 33000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A midsize pickup truck powered by a 2.3L EcoBoost four-cylinder engine (270 hp, 310 lb-ft torque) paired with a 10-speed automatic. Available in SuperCab or SuperCrew configurations with 4x2 or 4x4 drive. Offers best-in-class payload (up to 1,860 lbs) and towing (up to 7,500 lbs) for a gasoline engine in its class. Available packages include FX4 Off-Road and the new Tremor Off-Road Package for enhanced capability. Standard safety includes Pre-Collision Assist with AEB.",
     "location": "Phoenix, AZ",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2021-ford-ranger-tremor-474-1612842302.jpg?crop=0.657xw:0.554xh;0.231xw,0.348xh&resize=1200:*",
@@ -1016,7 +1016,7 @@
     "mileage": 72000,
     "fuel_type": "Diesel",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A heavy-duty pickup built on a high-strength steel frame with an aluminum-alloy body. Engine options include a 6.2L gasoline V8 or a powerful 6.7L Power Stroke turbo diesel V8. Known for significant towing (up to 21,000 lbs conventional) and payload capabilities. Available features include SYNC 3, multiple cameras (including trailer views), and driver-assist technologies like Trailer Sway Control. New Lariat Sport Appearance Package and B&O PLAY audio system available for 2019.",
     "location": "Houston, TX",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/18fordsuperduty-limited-04-hr-1554819780.jpg?crop=1.00xw:0.921xh;0,0.0785xh&resize=1200:*",
@@ -1038,7 +1038,7 @@
     "mileage": 40000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "(Description based on 2011 model search results due to search query/result discrepancy): A full-size pickup offered in various cab styles (Regular, Extended, Crew) and bed lengths. Engine options included V6 and several V8s (4.8L, 5.3L, 6.2L). Known for a smooth ride and comfortable seats. Available trims ranged from basic Work Truck to luxurious LTZ. Standard safety included StabiliTrak and OnStar.",
     "location": "Nashville, TN",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2021-chevrolet-silverado-mmp-1-1602270920.jpg?crop=1.00xw:0.846xh;0,0.154xh&resize=1200:*",
@@ -1060,7 +1060,7 @@
     "mileage": 61000,
     "fuel_type": "Diesel",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A midsize pickup available in extended or crew cab configurations with two bed lengths. Engine choices include a 2.5L four-cylinder, a 3.6L V6 (308 hp), or a 2.8L turbo-diesel offering class-leading torque (369 lb-ft) and towing (up to 7,700 lbs). Known for its capable ZR2 and ZR2 Bison off-road models. Features updated infotainment systems for 2019 with standard Apple CarPlay/Android Auto.",
     "location": "Denver, CO",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2019-chevrolet-colorado-zr2-bison-102-1536244058.jpg?crop=1.00xw:0.932xh;0,0&resize=1200:*"
@@ -1080,7 +1080,7 @@
     "mileage": 55000,
     "fuel_type": "Diesel",
     "transmission": "Automatic",
-    "description": "",
+    "description": "An all-new heavy-duty pickup for 2020 with bolder styling and increased capability. Engine options are a new 6.6L gasoline V8 (401 hp, 464 lb-ft) with a 6-speed auto, or the carryover 6.6L Duramax turbo-diesel V8 (445 hp, 910 lb-ft) paired with a new Allison 10-speed automatic. Offers significantly higher tow ratings (up to 35,500 lbs with diesel). Features include a redesigned interior, available advanced trailering technology with multiple camera views, and updated infotainment.",
     "location": "Atlanta, GA",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2020-chevrolet-silverado-hd-103-1561405154.jpg?crop=0.818xw:0.687xh;0.0391xw,0.257xh&resize=1200:*",
@@ -1102,7 +1102,7 @@
     "mileage": 24000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A midsize pickup truck known for its off-road prowess and reliability. Engine options include a 2.7L four-cylinder (159 hp) or a 3.5L V6 (278 hp). Available in Access Cab or Double Cab configurations. Offers TRD Sport, TRD Off-Road, and TRD Pro trims for varying levels of capability. Features standard Toyota Safety Sense P, Apple CarPlay/Android Auto, and a durable composite bed. Max towing is 6,800 lbs.",
     "location": "San Diego, CA",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2022-toyota-tacoma-trail-edition-104-1622509060.jpg?crop=0.726xw:0.613xh;0.144xw,0.257xh&resize=1200:*",
@@ -1124,7 +1124,7 @@
     "mileage": 52000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A full-size pickup powered exclusively by a 5.7L i-Force V8 engine (381 hp, 401 lb-ft) paired with a 6-speed automatic transmission. Available in Double Cab or CrewMax configurations. Standard features include Toyota Safety Sense P, Apple CarPlay/Android Auto (new for 2020), and an integrated trailer brake controller. TRD Pro trim offers enhanced off-road capability with Fox shocks. Towing capacity reaches up to 10,200 lbs.",
     "location": "Houston, TX",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2020-toyota-tundra-mmp-1-1565713870.jpeg?crop=0.866xw:0.864xh;0.111xw,0.136xh&resize=1200:*",
@@ -1146,7 +1146,7 @@
     "mileage": 12000,
     "fuel_type": "Hybrid",
     "transmission": "Automatic",
-    "description": "",
+    "description": "Part of the redesigned Tundra generation launched in 2022. Features the i-FORCE MAX hybrid powertrain, pairing a 3.5L twin-turbo V6 with an electric motor for a total of 437 hp and 583 lb-ft of torque. Offers improved performance and potentially better fuel efficiency compared to the previous V8. Built on a new fully boxed frame with multi-link rear suspension. Features advanced tech like a large available 14-inch touchscreen and Toyota Safety Sense 2.5. Max towing is up to 12,000 lbs.",
     "location": "Austin, TX",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2022-toyota-tundra-platinum-103-1643664435.jpg?crop=0.678xw:0.572xh;0.226xw,0.325xh&resize=1200:*",
@@ -1168,7 +1168,7 @@
     "mileage": 19000,
     "fuel_type": "Gasoline",
     "transmission": "Manual",
-    "description": "",
+    "description": "Redesigned for 2022 with a cleaner, more understated style than the previous generation. Offers a choice between a 2.0L engine (158 hp) and a 1.5L turbocharged engine (180 hp), paired with a CVT or available 6-speed manual. Features excellent outward visibility, a minimalist upscale interior, and standard adaptive cruise control and lane-keeping assist. Available Bose premium audio and wireless Apple CarPlay/Android Auto.",
     "location": "Portland, OR",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/wp-content/uploads/2017/03/2017-Honda-Civic-Hatchback-Sport-Touring-119.jpg?crop=0.955xw:0.877xh;0,0.123xh&resize=1200:*",
@@ -1190,7 +1190,7 @@
     "mileage": 48000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A subcompact hatchback known for its impressive cargo capacity and versatile Magic Seat rear bench. Powered by a 1.5L four-cylinder engine (130 hp manual, 128 hp CVT). Features sporty styling, available paddle shifters, and tech like Bluetooth streaming audio and available 7-inch display.",
     "location": "San Francisco, CA",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2018-honda-fit-132-1-1557845823.jpg?crop=1.00xw:0.923xh;0,0.0767xh&resize=1200:*"
@@ -1210,11 +1210,11 @@
     "mileage": 22000,
     "fuel_type": "Gasoline",
     "transmission": "Manual",
-    "description": "",
+    "description": "The high-performance version of the Civic Hatchback. Powered by a 306 hp 2.0L VTEC turbocharged engine paired exclusively with a 6-speed manual transmission with rev-match control. Features aggressive aerodynamics (including a large rear wing), Brembo brakes, adaptive damper system, limited-slip differential, and sport seats. Includes Honda Sensing safety suite and Honda LogR datalogger.",
     "location": "Los Angeles, CA",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2021-honda-civic-type-r-mmp-1-1596639951.jpg?crop=0.942xw:0.796xh;0.0272xw,0.192xh&resize=1200:*",
-      "https://hips.hearstapps.com/hmg-prod/images/2022-vw-golf-r-vs-honda-civic-type-r-le-2694-edit-1637733175.jpg?crop=1xw:0.37518310546875xh;center,top&resize=1200:*",
+      "https://bringatrailer.com/wp-content/uploads/2021/10/2021_honda_civic_type_r_special_edition_16359789742f3b2253e7Brayden-Tomicic-3K5A1753-scaled.jpg?fit=2048%2C1365",
       "https://hips.hearstapps.com/hmg-prod/images/2022-vw-golf-r-vs-honda-civic-type-r-le-3105-edit-1637734331.jpg?crop=1xw:0.8433382137628112xh;center,top&resize=1200:*"
     ],
     "seller": {
@@ -1232,7 +1232,7 @@
     "mileage": 29000,
     "fuel_type": "Gasoline",
     "transmission": "Manual",
-    "description": "",
+    "description": "The final model year for the seventh generation. A sporty hatchback powered by a 2.0L turbocharged four-cylinder engine (228 hp). Available with a 6-speed manual or 7-speed DSG automatic. Known for its fun-to-drive nature, practical hatchback design, and upscale interior feel. Features include heated seats, standard Apple CarPlay/Android Auto, and available MIB3 infotainment with navigation.",
     "location": "Boston, MA",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2021-volkswagen-golf-gti-mmp-1-1590522492.jpg?crop=0.837xw:0.712xh;0.163xw,0.149xh&resize=1200:*",
@@ -1254,7 +1254,7 @@
     "mileage": 40000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "The high-performance, all-wheel-drive variant of the Golf hatchback. Powered by a 2.0L turbocharged four-cylinder engine producing 288 hp and 280 lb-ft of torque. Available with a 6-speed manual or 7-speed DSG automatic. Features adaptive chassis control (DCC), upgraded brakes, 19-inch wheels, and premium interior appointments.",
     "location": "Chicago, IL",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2018-volkswagen-golf-r-6mt-1545153574.jpg?crop=1.00xw:0.929xh;0,0.0419xh&resize=1200:*",
@@ -1276,7 +1276,7 @@
     "mileage": 31000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "The standard Golf hatchback, available in one well-equipped TSI trim for 2020. Powered by a 1.4L turbocharged engine (147 hp) from the Jetta. Offers a compelling blend of style, sporty handling, roominess, and fuel efficiency. Standard features include KESSY keyless access, heated seats, panoramic sunroof, Car-Net telematics with Wi-Fi, and Apple CarPlay/Android Auto.",
     "location": "New York, NY",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2020-volkswagen-golf-mmp-1581097913.jpg?crop=0.922xw:0.776xh;0,0.224xh&resize=1200:*",
@@ -1298,7 +1298,7 @@
     "mileage": 52000,
     "fuel_type": "Hybrid",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A hybrid hatchback known for exceptional fuel efficiency (up to 58 MPG city). For 2019, it gained available AWD-e (all-wheel drive) and updated styling. Powered by a 1.8L engine combined with an electric motor. Features include standard Toyota Safety Sense P, available 11.6-inch touchscreen, and ample cargo space.",
     "location": "San Francisco, CA",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2019-toyota-prius-limited-1545163015.jpg?crop=0.933xw:0.856xh;0.0449xw,0.144xh&resize=1200:*"
@@ -1318,7 +1318,7 @@
     "mileage": 8000,
     "fuel_type": "Gasoline",
     "transmission": "Manual",
-    "description": "",
+    "description": "A high-performance, rally-inspired version of the Corolla Hatchback. Features a 1.6L 3-cylinder turbocharged engine producing 300 hp, a 6-speed manual transmission, and GR-FOUR All-Wheel Drive with adjustable torque split. Available in Core, Circuit Edition, and limited Morizo Edition trims. The Morizo Edition is a two-seater focused on weight reduction and performance.",
     "location": "Denver, CO",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2023-lightning-lap-toyota-gr-corolla-mu-103-1675451520.jpg?crop=0.595xw:0.505xh;0.236xw,0.329xh&resize=1200:*",
@@ -1340,7 +1340,7 @@
     "mileage": 25000,
     "fuel_type": "Gasoline",
     "transmission": "Manual",
-    "description": "",
+    "description": "The 2024 Porsche 718 Cayman is a stylish and sporty coupe known for its exceptional handling and mid-engine design. It offers a thrilling driving experience with a focus on performance and agility.",
     "location": "Miami, FL",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/718-style-edition-18-1667334774.jpg?crop=0.704xw:0.594xh;0.192xw,0.125xh&resize=1200:*",
@@ -1362,11 +1362,11 @@
     "mileage": 38000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "The 2017 Porsche 911 is an iconic sports car renowned for its timeless design, powerful engine, and exceptional performance. It offers a blend of luxury and driving dynamics that few cars can match.",
     "location": "Dallas, TX",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/wp-content/uploads/2016/07/2017-Porsche-911-104.jpg?crop=0.612xw:0.564xh;0.324xw,0.436xh&resize=1200:*",
-      "https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/wp-content/uploads/2016/07/2017-Porsche-911-127.jpg?crop=1xw:0.92045xh;center,top&resize=1200:*",
+      "https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/wp-content/uploads/2016/07/2017-Porsche-911-109.jpg?resize=980:*",
       "https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/wp-content/uploads/2016/07/2017-Porsche-911-150.jpg?crop=1xw:0.92045xh;center,top&resize=1200:*"
     ],
     "seller": {
@@ -1384,7 +1384,7 @@
     "mileage": 12000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "The 2024 Porsche 911 Turbo S is the high-performance variant of the legendary 911, delivering exhilarating acceleration, advanced technology, and all-weather capability. It represents the pinnacle of Porsche's engineering and design expertise.",
     "location": "Charlotte, NC",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2024-porsche-911-turbo-102-67360755ca94f.jpg?crop=0.804xw:0.680xh;0.0833xw,0.238xh&resize=1200:*",
@@ -1401,22 +1401,22 @@
     "type": "coupe",
     "make": "Chevrolet",
     "model": "Camaro",
-    "year": 2022,
-    "price": 34000,
-    "mileage": 32000,
+    "year": 2020,
+    "price": 0,
+    "mileage": 0,
     "fuel_type": "Gasoline",
-    "transmission": "Automatic",
-    "description": "",
-    "location": "Charlotte, NC",
+    "transmission": "Manual",
+    "description": "The V8-powered performance model of the Camaro. Equipped with a 6.2L LT1 V8 engine delivering 455 hp and 455 lb-ft of torque. Available with a 6-speed manual or 10-speed automatic transmission. Features updated front-end styling for 2020 (compared to the initial 2019 refresh). Known for excellent handling, especially with the available 1LE track package which adds Magnetic Ride Control, upgraded Brembo brakes, and wider tires.",
+    "location": "Location Not Specified",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2019-chevrolet-camaro-2-0t-1le-6mt-109-1539790971.jpg?crop=0.641xw:0.589xh;0.359xw,0.335xh&resize=1200:*",
       "https://hips.hearstapps.com/hmg-prod/images/2019-chevrolet-camaro-2-0t-1le-6mt-111-1539790974.jpg?crop=1xw:0.9203789893617021xh;center,top&resize=1200:*",
       "https://hips.hearstapps.com/hmg-prod/images/2019-chevrolet-camaro-2-0t-1le-6mt-123-1539790979.jpg?crop=1xw:0.920337528604119xh;center,top&resize=1200:*"
     ],
     "seller": {
-      "name": "Queen City Muscle",
-      "contact": "camaro@queencitymuscle.com",
-      "phone": "+1-555-9105"
+      "name": "Seller Not Specified",
+      "contact": "Contact Not Specified",
+      "phone": "Phone Not Specified"
     }
   },
   {
@@ -1450,7 +1450,7 @@
     "mileage": 25000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "The top-tier performance Camaro. Powered by a supercharged 6.2L LT4 V8 engine generating 650 hp and 650 lb-ft of torque. Available with a 6-speed manual or 10-speed automatic transmission. Features Magnetic Ride Control, large Brembo brakes, Recaro performance seats, and aggressive aerodynamic enhancements including a large rear spoiler. The ZL1 1LE package adds even more extreme track focus with Multimatic DSSV dampers and extreme aero. Available as a coupe or convertible.",
     "location": "Houston, TX",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2018-chevrolet-camaro-zl1-1le-001-1561050025.jpg?crop=1.00xw:0.850xh;0,0.150xh&resize=1200:*",
@@ -1472,7 +1472,7 @@
     "mileage": 14000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A luxury coupe sharing its platform with the 3 Series sedan but featuring distinct, controversial styling (large kidney grille). Engine options include a 2.0L turbo four-cylinder (430i - 255 hp) and a 3.0L turbo inline-six mild-hybrid (M440i - 382 hp). Both use an 8-speed automatic. Available with rear-wheel or xDrive all-wheel drive. Offers a premium interior and modern tech, but handling may feel less sharp than previous BMW coupes.",
     "location": "New York, NY",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2022-bmw-m440i-xdrive-gran-coupe-108-1623173717.jpg?crop=0.760xw:0.642xh;0.0465xw,0.296xh&resize=1200:*",
@@ -1494,7 +1494,7 @@
     "mileage": 33000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "",
+    "description": "BMW's smallest coupe, known for engaging handling and offering both four-cylinder (230i - 248 hp) and six-cylinder (M240i - 335 hp) turbocharged engines. Both engines can be paired with a manual or automatic transmission. Features a driver-focused cockpit but has limited rear-seat legroom. Updated visually for 2020 with darkened taillights and new grille/wheel options. (Note: The 2 Series *Gran Coupe* is a different, front-wheel-drive based sedan).",
     "location": "Boston, MA",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2020-bmw-228i-xdrive-gran-coupe-433-1585753118.jpg?crop=0.752xw:0.636xh;0.248xw,0.364xh&resize=1200:*",
@@ -1538,7 +1538,7 @@
     "mileage": 22000,
     "fuel_type": "Electric",
     "transmission": "Automatic",
-    "description": "",
+    "description": "An electric sedan praised for its blend of performance, range, and price. Known for quick acceleration (especially the Performance trim) and agile handling. Features a minimalist interior dominated by a large central touchscreen.",
     "location": "San Francisco, CA",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2022-tesla-model-3-mmp-1-1640025520.jpg?crop=0.755xw:0.637xh;0.106xw,0.159xh&resize=1200:*",
@@ -1560,7 +1560,7 @@
     "mileage": 31000,
     "fuel_type": "Electric",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A stylish and roomy electric SUV based on the Model 3. Offers impressive range (Long Range EPA rated over 300 miles) and quick acceleration. Features a minimalist interior and access to Tesla's Supercharger network. A seven-seat configuration became available in 2021.",
     "location": "Austin, TX",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2021-tesla-model-y-mmp-1-1604701558.jpg?crop=0.840xw:0.894xh;0.0737xw,0.0515xh&resize=1200:*",
@@ -1582,7 +1582,7 @@
     "mileage": 45000,
     "fuel_type": "Electric",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A large luxury electric sedan/hatchback known for its performance and long range. Available with various battery sizes, offering ranges from 270 miles (Standard Range) up to 335 miles (Long Range) for the 2019 model year. Features a large touchscreen interface and available Autopilot driver assistance features.",
     "location": "Los Angeles, CA",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2018-tesla-model-s-100d-1545165580.jpg?crop=1.00xw:0.924xh;0,0.0759xh&resize=1200:*"
@@ -1602,7 +1602,7 @@
     "mileage": 17000,
     "fuel_type": "Electric",
     "transmission": "Automatic",
-    "description": "",
+    "description": "An all-electric crossover SUV inspired by the Mustang. Offers sporty handling, a well-appointed interior with a large vertical touchscreen, and various battery/drivetrain options. Available with Standard Range (70 kWh usable) or Extended Range (91 kWh usable) batteries, and rear- or all-wheel drive. GT models offer up to 480 hp. Range varies from approx. 224 to 314 miles (EPA estimated).",
     "location": "Los Angeles, CA",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2024-ford-mustang-mach-e-rally-121-66f1845f19ea4.jpg?crop=0.696xw:0.587xh;0.184xw,0.238xh&resize=1200:*",
@@ -1624,7 +1624,7 @@
     "mileage": 9000,
     "fuel_type": "Electric",
     "transmission": "Automatic",
-    "description": "",
+    "description": "The all-electric version of the F-150. Features standard dual-motor all-wheel drive. Available with a Standard Range battery (approx. 240 miles EPA range, 452 hp) or Extended Range battery (approx. 320 miles EPA range, 580 hp). Both offer 775 lb-ft of torque. Capable of 0-60 mph in around 4 seconds. Features a large front trunk (\"frunk\") and Pro Power Onboard to power tools or even a house (V2G capability). Towing up to 10,000 lbs.",
     "location": "Detroit, MI",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2022-ford-f-150-lightning-tested-simari-101-1656624432.jpg?crop=0.674xw:0.570xh;0.151xw,0.364xh&resize=1200:*",
@@ -1646,7 +1646,7 @@
     "mileage": 24000,
     "fuel_type": "Electric",
     "transmission": "Automatic",
-    "description": "",
+    "description": "The performance-oriented version of the Mustang Mach-E electric SUV. Features dual electric motors providing all-wheel drive, with a combined output of 480 hp and up to 634 lb-ft of torque (Performance Edition). Capable of 0-60 mph in the mid-3-second range. Comes standard with the extended-range battery. Features unique GT styling cues, sport seats, and available MagneRide damping system.",
     "location": "San Jose, CA",
     "images": [
       "https://build.ford.com/dig/Ford/Mache/2025/HD-FULL-ACC%5BEXTBCK%5D/Image%5B%7CFord%7CMache%7C2025%7C1%7C1.%7C400A...PFA...895.646.AWD.99X.66D.67B.%5D/EXT/4/vehicle.png",
@@ -1671,7 +1671,7 @@
     "description": "",
     "location": "Seattle, WA",
     "images": [
-      "https://hips.hearstapps.com/hmg-prod/images/2022-chevrolet-bolt-ev-111-1613168160.jpg?crop=0.704xw:0.594xh;0.178xw,0.262xh&resize=1200:*",
+      "https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/wp-content/uploads/2016/09/2017-Chevrolet-Bolt-102.jpg?crop=0.912xw:0.843xh;0.0385xw,0.0864xh&resize=1200:*",
       "https://hips.hearstapps.com/hmg-prod/images/2022-chevrolet-bolt-ev-102-1613168157.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*",
       "https://hips.hearstapps.com/hmg-prod/images/2022-chevrolet-bolt-ev-115-1613168163.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*"
     ],
@@ -1690,7 +1690,7 @@
     "mileage": 16000,
     "fuel_type": "Electric",
     "transmission": "Automatic",
-    "description": "",
+    "description": "A slightly larger version of the Bolt EV, offering more rear legroom. EPA-estimated range is around 247 miles. Shares the Bolt EV's powertrain but offers available Super Cruise hands-free driving assistance. Features a redesigned interior compared to the older Bolt EV.",
     "location": "Portland, OR",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2022-chevrolet-bolt-euv-109-1613167403.jpg?crop=1.00xw:0.853xh;0,0.147xh&resize=1200:*",
@@ -1712,7 +1712,7 @@
     "mileage": 5000,
     "fuel_type": "Electric",
     "transmission": "Automatic",
-    "description": "",
+    "description": "An all-electric pickup built on GM's Ultium platform. Offers impressive range, with WT (Work Truck) models estimated up to 450-492 miles EPA. Features dual motors for standard e4WD. Power output varies by trim, up to 754 hp in RST trim. Offers DC fast charging (adding 100 miles in 10 min) and available features like a large 17.7-inch screen, four-wheel steering, adaptive air suspension, and a Multi-Flex Midgate (similar to the Avalanche). Towing up to 10,000-12,500 lbs depending on trim.",
     "location": "Austin, TX",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2024-chevrolet-silverado-ev-101-664e0b5832239.jpg?crop=0.752xw:0.637xh;0.0593xw,0.327xh&resize=1200:*",

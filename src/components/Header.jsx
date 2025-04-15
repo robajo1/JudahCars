@@ -1,10 +1,12 @@
-import { Outlet, Link } from "react-router-dom";
-import "./header.css";
+import { Outlet, Link, useLocation } from "react-router-dom";
+import "./header.css"; 
 import { useEffect } from "react";
 import { ul } from "framer-motion/client";
 import SellerDashboard from "../pages/SellerDashBoard";
 
 function Header() {
+  const location = useLocation();
+  const navClass = location.pathname === "/detail";
   const user = localStorage.getItem("user");
   useEffect(() => {}, [user]);
 
@@ -26,7 +28,7 @@ function Header() {
   }else{
   return (
     <>
-      <nav className="header-nav">
+      <nav className={`header-nav ${navClass? 'details-page' : ''}`}>
         <ul>
           <li>
             <Link to="/">JUDAH Shop</Link>
