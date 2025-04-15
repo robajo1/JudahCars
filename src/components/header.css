@@ -8,6 +8,16 @@
     color: white;
     z-index: 10;
   }
+.header-nav.details-page {
+    top: 0;
+    left: 0;
+    width: 100%;
+    gap: 200px;
+    background: linear-gradient(to top right, #3ba13b, #192831);
+    /* linear-gradient(to bottom right, #0f2027, #2c7744) */
+    color: white;
+    z-index: 10;
+  }
   
   .header-nav ul {
     display: flex;

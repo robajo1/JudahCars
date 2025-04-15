@@ -1,30 +1,60 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaPhoneAlt, FaEnvelope, FaArrowRight } from "react-icons/fa";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate} from "react-router-dom";
 import "./detailsbody.css";
 
 function DetailsBody() {
   const location = useLocation();
   const car = location.state?.car;
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  if (!car) {
-    return <p className="no-data">No car data available.</p>;
-  }
-  const {
-    type,
-    make,
-    model,
-    year,
-    price,
-    mileage,
-    fuel_type,
-    transmission,
-    description,
-    location: carLocation,
+  useEffect(() => {
+    if (car) {
+      setCurrentImageIndex(0);
+      window.scrollTo(0, 0);
+    }
+  }, [car]);
+  
+   
+  const navigate=useNavigate();
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [inventory, setInventory] = useState([]);
+
+  useEffect(() => {
+      fetch("/data/carInventory.json")
+        .then((res) => res.json())
+        .then((data) => setInventory(data))
+        .catch((err) => console.error("Error loading car inventory:", err));
+    }, []);
+
+    
+    
+    if (!car) {
+      return <p className="no-data">No car data available.</p>;
+    }
+    const {
+      type,
+      make,
+      model,
+      year,
+      price,
+      mileage,
+      fuel_type,
+      transmission,
+      description,
+      location: carLocation,
     images,
     seller,
   } = car;
+  //filters similar cars by type randomly 
+  const typeFilter=type;
+  const shuffledSimilarCars = [...inventory]
+  .filter(
+    (c) => c.model !== car.model && c.type.toLowerCase() === typeFilter.toLowerCase()
+  )
+  .sort(() => 0.5 - Math.random()) // shuffle
+
+const similarCars = shuffledSimilarCars.slice(0, 5); // take first 5
+
 
   const nextImage = () => {
     setCurrentImageIndex((prevIndex) =>
@@ -38,6 +68,10 @@ function DetailsBody() {
     );
   };
 
+  const navigateToDetail = (car) => {
+    console.log(car);
+    navigate("/detail", { state: { car } });
+  };
   return (
     <div className="details-page">
       <div className="details-container">
@@ -75,8 +109,8 @@ function DetailsBody() {
 
           <div className="info">
             <aside className="details-sidebar">
-              <h3 className="car-model">{model}</h3>
-              <h1 className="car-make">{make}</h1>
+              <h3 className="car-make">{make}</h3>
+              <h1 className="car-model">{model}</h1>
               <p className="car-type-year">
                 {type.toUpperCase()} | {year}
               </p>
@@ -84,8 +118,12 @@ function DetailsBody() {
 
               <div className="specs-badges">
                 <span className="badge fuel-badge">🚗 {fuel_type}</span>
-                <span className="badge transmission-badge">⚙️ {transmission}</span>
-                <span className="badge drivetrain-badge">🧭 All-Wheel Drive</span>
+                <span className="badge transmission-badge">
+                  ⚙️ {transmission}
+                </span>
+                <span className="badge drivetrain-badge">
+                  🧭 All-Wheel Drive
+                </span>
               </div>
 
               <p className="car-price">${price}</p>
@@ -102,7 +140,9 @@ function DetailsBody() {
         </div>
 
         <div className="seller-contact-section">
-          <div className="seller-info-container"> {/* New container */}
+          <div className="seller-info-container">
+            {" "}
+            {/* New container */}
             <div className="seller-info">
               <div className="seller-avatar-info">
                 <img
@@ -140,44 +180,38 @@ function DetailsBody() {
         <h2 className="section-title">Similar models</h2>
         <p className="section-subtitle">Recent Cars</p>
         <div className="similar-models-grid">
-          {[1, 2, 3, 4].map((item, idx) => (
-            <div key={idx} className="similar-model-card">
-              <div className="model-image-container">
-                <img
-                  src={`./images/1.png`}
-                  alt="Car"
-                  className="model-image"
-                />
-                {(idx === 0 || idx === 3) && (
-                  <span className="great-price-badge">Great Price</span>
-                )}
-              </div>
-              <div className="model-details">
-                <h4 className="model-name-small">
-                  {[
-                    "Toyota Camry New",
-                    "T-Cross – 2023",
-                    "C-Class – 2023",
-                    "Ford Transit – 2021",
-                  ][idx]}
-                </h4>
-                <p className="model-specs-small">
-                  4.0 D5 PowerPulse Momentum 5dr AWD
-                </p>
-                <div className="model-info-icons">
-                  <span>{["20 KM", "15 KM", "50 KM", "2500 KM"][idx]}</span>
-                  <span>{["Petrol", "Petrol", "Petrol", "Diesel"][idx]}</span>
-                  <span>
-                    {["Automatic", "CVT", "Automatic", "Manual"][idx]}
-                  </span>
+          {similarCars.length > 0 ? (
+            similarCars.slice(0, 5).map((item, idx) => (
+              <div key={item.id || idx} className="similar-model-card" onClick={() => navigateToDetail(item)} style={{ cursor: "pointer" }}>
+                <div className="model-image-container">
+                  <img
+                    src={item.images?.[0] || "./images/placeholder.png"}
+                    alt="Car"
+                    className="model-image"
+                  />
+                  {(idx === 0 || idx === 3) && (
+                    <span className="great-price-badge">Great Price</span>
+                  )}
                 </div>
-                <div className="model-price-small">2.2M ETB</div>
-                <a href="#" className="view-details-link">
-                  View Details
-                </a>
+                <div className="model-details">
+                  <h4 className="model-name-small">
+                    {item.make} {item.model} – {item.year}
+                  </h4>
+                  <div className="model-info-icons">
+                    <span>{item.mileage} KM</span>
+                    <span>{item.fuel_type}</span>
+                    <span>{item.transmission}</span>
+                  </div>
+                  <div className="model-price-small">{item.price} ETB</div>
+                  <a href="#" className="view-details-link">
+                    View Details
+                  </a>
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          ) : (
+            <p>No similar cars found.</p>
+          )}
         </div>
       </section>
     </div>

@@ -1,14 +1,16 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useLocation } from "react-router-dom";
 import "./header.css"; 
 import { useEffect } from "react";
 
 function Header() {
     const user = localStorage.getItem("user");
+    const location = useLocation();
+    const navClass = location.pathname === "/detail";
     useEffect(() => {},[user])
     return(
         <>   
-        <nav className="header-nav">
-                <ul>
+            <nav className={`header-nav ${navClass? 'details-page' : ''}`}>
+            <ul>
                     <li>
                         <Link to="/">JUDAH Shop</Link>
                     </li>
