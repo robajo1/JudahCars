@@ -4,11 +4,11 @@ import { motion } from 'framer-motion';
 
 // Placeholder image URLs - replace with actual paths
 const teamMemberImages = {
-  Robel: './images/rob.jpg', // Replace with actual URL
-  Dawit: 'https://via.placeholder.com/150', // Replace with actual URL
-  Nahom: 'https://via.placeholder.com/150', // Replace with actual URL
-  Asteway: 'https://via.placeholder.com/150', // Replace with actual URL
-  Leol: 'https://via.placeholder.com/150', // Replace with actual URL
+  Robel:'./images/rob.jpg', 
+  Dawit:'./images/daw.jpg',    
+  Nahom:'./images/nah.jpg',    
+  Asteway:'./images/ast.jpg',  
+  Leol:'./images/l.jpg',     
 };
 
 const AboutUs = () => {

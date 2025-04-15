@@ -7,16 +7,6 @@
     margin-top: 5vh;
 }
   
-  .section-title {
-    font-size: 2em;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #2c3e50; /* Darker heading color */
-    border-bottom: 2px solid #ecf0f1;
-    padding-bottom: 10px;
-  }
-
-  
   .description {
     font-size: 1.1em;
     line-height: 1.7;
