@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import './products.css';
 
 function ProductsBody() {
   const headingRef = useRef(null);
@@ -12,7 +13,7 @@ function ProductsBody() {
   const fuelFilter = searchParams.get('fuel');
   const makeFilter = searchParams.get('make');
   const transmissionFilter = searchParams.get('transmission');
-  const priceRange = searchParams.get('price'); 
+  const priceRange = searchParams.get('price');
 
   useEffect(() => {
     fetch("/data/carInventory.json")
@@ -32,7 +33,6 @@ function ProductsBody() {
   };
 
   if (!inventory) return <p>Loading...</p>;
-
 
   let filteredInventory = [...inventory];
 
@@ -58,7 +58,7 @@ function ProductsBody() {
       (car) => car.make.toLowerCase() === makeFilter.toLowerCase()
     );
   }
-  
+
 
   if (priceRange) {
     const [min, max] = priceRange.split('-').map(Number);
@@ -68,36 +68,37 @@ function ProductsBody() {
   }
 
   if (filteredInventory.length === 0) {
-    return <p className="text-center text-gray-500 mt-10">No vehicles found matching the filters.</p>;
+    return <p className="no-vehicles-found">No vehicles found matching the filters.</p>;
   }
 
   return (
-    <div className="m-5 h-auto">
-      <h1 ref={headingRef} className="text-2xl font-bold text-center">Explore All Vehicles</h1>
+    <div className="products-vehicles-section">
+      <h2 ref={headingRef} className="section-title">Explore All Vehicles</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+      <div className="vehicle-grid-4x4">
         {filteredInventory.map((car, index) => (
           <div
             key={index}
-            className="bg-white rounded-2xl shadow-md p-4 flex flex-col items-center"
+            className="vehicle-card"
+            onClick={() => navigateToDetail(car)}
+            style={{ cursor: 'pointer' }}
           >
             <img
               src={car.images[0]}
               alt={car.model}
-              className="h-40 w-full object-cover rounded-xl mb-4"
+              className="vehicle-image"
             />
-            <h2 className="text-xl font-semibold mb-1">{car.make} {car.model} ({car.year})</h2>
-            <p className="text-gray-600 mb-1">Type: {car.type}</p>
-            <p className="text-gray-600 mb-1">Fuel: {car.fuel_type}</p>
-            <p className="text-gray-600 mb-1">Transmission: {car.transmission}</p>
-            <p className="text-gray-600 mb-1">Mileage: {car.mileage.toLocaleString()} miles</p>
-            <p className="text-blue-600 font-bold mb-2">${car.price.toLocaleString()}</p>
-            <button
-              className="mt-auto bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
-              onClick={() => navigateToDetail(car)}
-            >
-              View Details
-            </button>
+            <div className="vehicle-details">
+              <h3>{car.make} {car.model}</h3>
+              <p className="vehicle-description">
+                {car.year} • {car.mileage.toLocaleString()} miles
+              </p>
+              Lingan guli guli Lingan guli <br />
+              wacha lingan gu
+              <div className="vehicle-price">
+                <span>${car.price.toLocaleString()}</span>
+              </div>
+            </div>
           </div>
         ))}
       </div>

@@ -1,0 +1,132 @@
+
+.site-footer {
+    background-color: #1a232e; /* Dark background color */
+    color: #fff;
+    padding: 40px 20px;
+   /* border-top-left-radius: 40px;
+    border-top-right-radius: 40px;*/
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-section h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #37474f;
+    padding-bottom: 5px;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 8px;
+  }
+  
+  .footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-section ul li a:hover {
+    color: #eee;
+  }
+  
+  .mobile-app .app-buttons {
+    display: flex;
+    gap: 10px;
+    flex-direction: column; /* Stack buttons on smaller screens */
+  }
+  
+  .mobile-app .app-store-button,
+  .mobile-app .google-play-button {
+    background-color: #37474f;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease;
+    width: fit-content; /* Adjust width */
+  }
+  
+  .mobile-app .app-store-button:hover,
+  .mobile-app .google-play-button:hover {
+    background-color: #455a64;
+  }
+  
+  .mobile-app img {
+    height: 20px;
+  }
+  
+  .connect-us .social-icons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .connect-us .social-icon {
+    display: inline-block;
+    background-color: #37474f;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .connect-us .social-icon:hover {
+    background-color: #455a64;
+  }
+  
+  .connect-us .social-icon img {
+    height: 16px;
+    width: 16px;
+    filter: brightness(0) invert(1); /* Make icons white */
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 0.8rem;
+    color: #78909c;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-bottom p {
+    margin: 5px 0;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+    }
+    .mobile-app .app-buttons {
+      flex-direction: row;
+    }
+  }

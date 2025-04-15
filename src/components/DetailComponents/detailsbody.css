@@ -1,0 +1,354 @@
+/* detailsbody.css */
+
+/* Base styles and overall layout */
+.details-page {
+    font-family: sans-serif;
+    color: #1e293b;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .details-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  @media (max-width: 920px) {
+    .details-main {
+      flex-direction: column;
+    }
+  }
+  
+  .details-main {
+    background-color: transparent;
+    margin-top: 8vh;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .image-carousel {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    flex: 1.5;
+    background-color: #fff;
+  }
+  
+  .car-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    object-fit: cover;
+    max-height: 400px;
+  }
+  
+  .image-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    z-index: 10;
+    border-radius: 5px;
+  }
+  
+  .image-control.prev {
+    left: 10px;
+  }
+  
+  .image-control.next {
+    right: 10px;
+  }
+  
+  .image-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+  }
+  
+  .dot.active {
+    background-color: #007bff; /* Primary blue color */
+  }
+  
+  .no-image {
+    color: #718096;
+    font-size: 1rem;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .info {
+    flex: 1;
+  }
+  
+  .details-sidebar {
+    background-color: #fff;
+    border: 1px solid #455a64;
+    border-radius: 8px;
+    padding: 20px;
+  }
+  
+  .car-model {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #718096;
+  }
+  
+  .car-make {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #2d3748;
+  }
+  
+  .car-type-year {
+    font-size: 0.9rem;
+    color: #a0aec0;
+    margin-bottom: 15px;
+  }
+  
+  .car-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #4a5568;
+    margin-bottom: 20px;
+  }
+  
+  .specs-badges {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .badge {
+    background-color: #edf2f7;
+    color: #4a5568;
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+  
+  .car-price {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2f855a;
+    margin-bottom: 6px;
+  }
+  
+  .mileage-info {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #718096;
+  }
+  
+  .mileage-label {
+    font-weight: 500;
+  }
+  
+  .mileage-value {
+    color: #2d3748;
+  }
+  
+  .add-to-cart-button {
+    background-color: #2f855a;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-to-cart-button:hover {
+    background-color: #276f49;
+  }
+  
+  .seller-contact-section {
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column; /* Changed back to column */
+    gap: 15px;
+  }
+  
+  .seller-info-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the start */
+    gap: 20px; /* Space between seller info and message button */
+  }
+  
+  .seller-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .seller-avatar-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .seller-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+  
+  .seller-details-text h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 3px;
+    color: #2d3748;
+  }
+  
+  .seller-details-text p {
+    font-size: 0.85rem;
+    color: #718096;
+  }
+  
+  .message-button {
+    background-color: #455a64;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .message-button:hover {
+    background-color: black;
+  }
+  
+  .arrow-icon {
+    font-size: 0.9rem;
+  }
+  
+  .contact-options {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border: 1px solid black;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: black;
+  }
+  
+  .contact-icon {
+    font-size: 0.9rem;
+  }
+  
+  /* Similar models section */
+  .similar-models-section {
+    padding: 30px 20px;
+    background-color: #f7f7f7;
+  }
+  
+  .section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #2d3748;
+  }
+  
+  .section-subtitle {
+    font-size: 0.85rem;
+    color: #718096;
+    margin-bottom: 20px;
+  }
+  
+  .similar-models-grid {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+  }
+  
+  .similar-model-card {
+    min-width: 250px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  
+  .model-image-container {
+    position: relative;
+  }
+  
+  .model-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .great-price-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #1a232e;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+  }
+  
+  .model-details {
+    padding: 15px;
+  }
+  
+  .model-name-small {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #2d3748;
+  }
+  
+  .model-specs-small {
+    font-size: 0.8rem;
+    color: #718096;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+  

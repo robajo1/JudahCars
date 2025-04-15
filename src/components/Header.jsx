@@ -1,13 +1,15 @@
 import { Outlet, Link } from "react-router-dom";
+import "./header.css"; 
+
 function Header() {
     return(
-        <>
-            <nav className=" absolute top-0 left-0 w-full bg-black/0 p-4 text-black  z-10">
-                <ul className="flex justify-between items-center">
+        <>   
+        <nav className="header-nav">
+                <ul>
                     <li>
                         <Link to="/">JUDAH Shop</Link>
                     </li>
-                    <div className="flex space-x-4 mx-10 ">
+                    <div className="nav-links-container">
                         <li>
                             <Link to="/">Home</Link>
                         </li>
@@ -17,6 +19,9 @@ function Header() {
                         <li>
                             <Link to="/aboutus">About Us</Link>
                         </li>
+                        <li>
+                            <Link to="/"><button className="cart">Cart</button></Link>
+                        </li>
                     </div>
                 </ul>
             </nav>
@@ -25,4 +30,5 @@ function Header() {
     </>
     )
 }
+
 export default Header;

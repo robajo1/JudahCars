@@ -1,0 +1,32 @@
+[
+    {
+      "id": 1,
+      "image": "/images/ad1.png",
+      "brand": "Mercedes-Benz",
+      "model": "C Class",
+      "priceETB": 7300000,
+      "transmission": "Automatic",
+      "fuelType": "Petrol",
+      "km": 10000
+    },
+    {
+      "id": 2,
+      "image": "/images/ad2.png",
+      "brand": "BMW",
+      "model": "X5",
+      "priceETB": 9500000,
+      "transmission": "Automatic",
+      "fuelType": "Diesel",
+      "km": 5500
+    },
+    {
+      "id": 3,
+      "image": "/images/ad3.png",
+      "brand": "Audi",
+      "model": "A4",
+      "priceETB": 6800000,
+      "transmission": "Automatic",
+      "fuelType": "Petrol",
+      "km": 15000
+    }
+  ]
