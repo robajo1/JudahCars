@@ -10,6 +10,7 @@ function ProductsBody() {
   const searchParams = new URLSearchParams(location.search);
   const typeFilter = searchParams.get('type');
   const fuelFilter = searchParams.get('fuel');
+  const makeFilter = searchParams.get('make');
   const transmissionFilter = searchParams.get('transmission');
   const priceRange = searchParams.get('price'); 
 
@@ -52,6 +53,12 @@ function ProductsBody() {
       (car) => car.transmission.toLowerCase() === transmissionFilter.toLowerCase()
     );
   }
+  if (makeFilter) {
+    filteredInventory = filteredInventory.filter(
+      (car) => car.make.toLowerCase() === makeFilter.toLowerCase()
+    );
+  }
+  
 
   if (priceRange) {
     const [min, max] = priceRange.split('-').map(Number);

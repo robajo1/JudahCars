@@ -4,6 +4,7 @@ import React from 'react';
 
 const Search = () => {
   const navigate = useNavigate();
+  
   const handleCategoryClick = (category) => {
     navigate(`/products?type=${category.toLowerCase()}`);
   };
