@@ -16,8 +16,8 @@
       "https://hips.hearstapps.com/hmg-prod/images/2020-toyota-camry-mmp-3-1566921132.jpg?crop=1xw:0.3751875xh;center,top&resize=1200:*"
     ],
     "seller": {
-      "name": "John Doe",
-      "contact": "sales@toyotadealer.com",
+      "name": "a",
+      "contact": "a@example.com",
       "phone": "+1-555-1001"
     }
   },
@@ -38,8 +38,8 @@
       "https://hips.hearstapps.com/hmg-prod/images/2021-toyota-corolla-se-apex-451-1601389669.jpg?crop=1xw:0.8433812511706312xh;center,top&resize=1200:*"
     ],
     "seller": {
-      "name": "Jane Smith",
-      "contact": "jsmith@toyotafl.com",
+      "name": "a",
+      "contact": "a@example.com",
       "phone": "+1-555-1002"
     }
   },
@@ -58,8 +58,8 @@
       "https://hips.hearstapps.com/hmg-prod/images/2019-toyota-avalon-hybrid-99leadgallery-1530545662.jpg?crop=1.00xw:0.924xh;0,0.0759xh&resize=1200:*"
     ],
     "seller": {
-      "name": "Georgia Peach Toyota",
-      "contact": "info@gptoyota.com",
+      "name": "a",
+      "contact": "a@example.com",
       "phone": "+1-555-1008"
     }
   },
@@ -80,8 +80,8 @@
       "https://hips.hearstapps.com/hmg-prod/images/2020-bmw-m340i-v-2020-genesis-g70-3p3t-107-1571838324.jpg?crop=1xw:0.9204692440356425xh;center,top&resize=1200:*"
     ],
     "seller": {
-      "name": "Peter Chen",
-      "contact": "pchen@bimmerla.com",
+      "name": "a",
+      "contact": "a@example.com",
       "phone": "+1-555-3001"
     }
   },
