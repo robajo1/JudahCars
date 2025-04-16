@@ -56,7 +56,7 @@ function Header() {
             </li>
             <li>
             {JSON.parse(user) ? (
-                  <button className="cart" onClick={() => { localStorage.removeItem("user"); window.location.href = "/"; }}>LogOut</button>
+                  <button className="cart" onClick={() => { localStorage.removeItem("user"); window.location.href = "/"; }}>Log Out</button>
               ) : (
                 <></>)}
             </li>

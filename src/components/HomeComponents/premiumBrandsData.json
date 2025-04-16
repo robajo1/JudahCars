@@ -2,7 +2,7 @@
   { "logo": "/images/a.jpg", "name": "Audi" },
   { "logo": "/images/b.jpg", "name": "BMW" },
   { "logo": "/images/f.jpg", "name": "Ford" },
-  { "logo": "/images/m.jpg", "name": "Missyoubibi" },
+  { "logo": "/images/tesla.png", "name": "Tesla" },
   { "logo": "/images/t.jpg", "name": "Toyota" },
-  { "logo": "/images/v.jpg", "name": "Volkswagen" }
+  { "logo": "/images/m.png", "name": "Mercedes-Benz" }
 ]

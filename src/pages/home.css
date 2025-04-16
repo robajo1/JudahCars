@@ -37,7 +37,8 @@
   grid-auto-flow: column;
   grid-auto-columns: 110px;
   overflow-x: auto;
-  gap: 3rem;
+  gap: 4rem;
+  padding: 10px;
 }
 
 /* Hide scrollbar for WebKit browsers */

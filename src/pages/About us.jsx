@@ -23,7 +23,7 @@ const AboutUs = () => {
       name: 'Dawit Enku',
       role: 'Figma Design, React Front End',
       contribution: 'Designed the user interface and developed the front-end using React.',
-      image: teamMemberImages.Dawit,
+      image: {},
     },
     {
       name: 'Nahom Kiflu',
@@ -32,7 +32,7 @@ const AboutUs = () => {
       image: teamMemberImages.Nahom,
     },
     {
-      name: 'Asteway Ayastewlm',
+      name: 'Asteway Aemro', 
       role: 'API Simulation, Validation',
       contribution: 'Handled API simulation/ validation, provided mock data for development.',
       image: teamMemberImages.Asteway,
@@ -40,8 +40,14 @@ const AboutUs = () => {
     {
       name: 'Leol Lemma',
       role: 'Messaging App, Emotional Support',
-      contribution: 'Developed the messaging app feature and provided bombardiro crocodilo',
+      contribution: 'Developed the messaging app feature',
       image: teamMemberImages.Leol,
+    },
+    {
+      name: 'Mera Fedlu',
+      role: 'Support, CSS Design',
+      contribution: 'Developed the CSS features also color and font',
+      image: {}
     },
   ];
 

@@ -1,10 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './productsSearch.css';
 
 function ProductsSearch() {
   const navigate = useNavigate();
   const location = useLocation();
+  const [car, setInventory] = useState([]);
+
+  useEffect(() => {
+      fetch("/data/carInventory.json")
+        .then((res) => res.json())
+        .then((data) => setInventory(data))
+        .catch((err) => console.error("Error loading car inventory:", err));
+    }, []);
+  const uniqueYears = [...new Set(Object.values(car).map(item => item.year))];
+  const uniqueMakes = [...new Set(Object.values(car).map(item => item.make))].sort();
+  const uniqueModels = [...new Set(Object.values(car).map(item => item.model))].sort();
+  // const uniqueEngines = [...new Set(Object.values(car).map(item => item.engineType))];
+  const uniqueFuels = [...new Set(Object.values(car).map(item => item.fuel_type))];
+  const uniqueTransmissions = [...new Set(Object.values(car).map(item => item.transmission))];
+  const uniqueCities = [...new Set(
+    Object.values(car).map(item => {
+      const location = item.location || "";
+      return location.split(",")[0].trim();
+    })
+  )].filter(Boolean).sort();
 
   const [condition, setCondition] = useState('');
   const [make, setMake] = useState('');
@@ -61,32 +81,26 @@ function ProductsSearch() {
   return (
     <div className="products-search-container">
       <div className="filter-bar">
-        <select onChange={(e) => setCondition(e.target.value)} className="filter-select">
-          <option value="">Condition</option>
-          <option value="New">New</option>
-          <option value="Used">Used</option>
-        </select>
-
         <select onChange={(e) => setMake(e.target.value)} className="filter-select">
           <option value="">Any Makes</option>
-          <option value="Toyota">Toyota</option>
-          <option value="Nissan">Nissan</option>
-          <option value="Hyundai">Hyundai</option>
-          <option value="Kia">Kia</option>
+          {uniqueMakes.map(make => (
+            <option key={make} value={make}>{make}</option>
+          ))}
         </select>
 
         <select onChange={(e) => setModel(e.target.value)} className="filter-select">
           <option value="">Any Models</option>
-          <option value="Corolla">Corolla</option>
-          <option value="Sunny">Sunny</option>
+          {uniqueModels.map(model => (
+            <option key={model} value={model}>{model}</option>
+          ))}
         </select>
 
         <select onChange={(e) => setPriceRange(e.target.value)} className="filter-select">
           <option value="">Prices: All Prices</option>
-          <option value="0-500000">0 - 500,000 ETB</option>
-          <option value="500001-1000000">500,001 - 1,000,000 ETB</option>
-          <option value="1000001-2000000">1,000,001 - 2,000,000 ETB</option>
-          <option value="2000001-5000000">2,000,001 - 5,000,000 ETB</option>
+          <option value="0-19999">0 - 19,999 ETB</option>
+          <option value="20000-49999">20,000 - 49,999 ETB</option>
+          <option value="40000-79999">40,000 - 79,999 ETB</option>
+          <option value="80000">Above 80,000 ETB</option>
         </select>
 
         <button className="more-filters-button" onClick={toggleMoreFilters}>
@@ -101,49 +115,50 @@ function ProductsSearch() {
         </button>
       </div>
 
-      {moreFiltersVisible && (
-        <div className="more-filters">
-          <select onChange={(e) => setMileage(e.target.value)} className="filter-select">
-            <option value="">Mileage: Any</option>
-            <option value="0-50000">0 - 50,000 KM</option>
-            <option value="50001-100000">50,001 - 100,000 KM</option>
-            <option value="100001-150000">100,001 - 150,000 KM</option>
-            <option value="150001-above">150,001+ KM</option>
-          </select>
+        {moreFiltersVisible && (
+          <div className="more-filters">
+            <select onChange={(e) => setMileage(e.target.value)} className="filter-select">
+              <option value="">Mileage: Any</option>
+              <option value="0-50000">0 - 50,000 KM</option>
+              <option value="50001-100000">50,001 - 100,000 KM</option>
+              <option value="100001-150000">100,001 - 150,000 KM</option>
+              <option value="150001-above">150,001+ KM</option>
+            </select>
 
-          <select onChange={(e) => setYear(e.target.value)} className="filter-select">
-            <option value="">Year: Any</option>
-            <option value="2020-above">2020 and Above</option>
-            <option value="2015-2019">2015 - 2019</option>
-            <option value="2010-2014">2010 - 2014</option>
-            <option value="below-2010">Below 2010</option>
-          </select>
+            <select onChange={(e) => setYear(e.target.value)} className="filter-select">
+              <option value="">Year: Any</option>
+              {uniqueYears.map(year => (
+                <option key={year} value={year}>{year}</option>
+              ))}
+            </select>
 
-          <select onChange={(e) => setLocationFilter(e.target.value)} className="filter-select">
-            <option value="">Location: Any</option>
-            <option value="Addis Ababa">Addis Ababa</option>
-          </select>
+            <select onChange={(e) => setLocationFilter(e.target.value)} className="filter-select">
+              <option value="">Location: Any</option>
+              {uniqueCities.map(city => (
+                <option key={city} value={city}>{city}</option>
+              ))}
+            </select>
+{/* 
+            <select onChange={(e) => setEngineType(e.target.value)} className="filter-select">
+              <option value="">Engine: Any</option>
+              {uniqueEngines.map(engine => (
+                <option key={engine} value={engine}>{engine}</option>
+              ))}
+            </select> */}
 
-          <select onChange={(e) => setEngineType(e.target.value)} className="filter-select">
-            <option value="">Engine: Any</option>
-            <option value="I4">I4</option>
-            <option value="V6">V6</option>
-            <option value="V8">V8</option>
-          </select>
+            <select onChange={(e) => setFuel(e.target.value)} className="filter-select">
+              <option value="">Fuel: Any</option>
+              {uniqueFuels.map(fuel => (
+                <option key={fuel} value={fuel}>{fuel}</option>
+              ))}
+            </select>
 
-          <select onChange={(e) => setFuel(e.target.value)} className="filter-select">
-            <option value="">Fuel: Any</option>
-            <option value="Petrol">Petrol</option>
-            <option value="Diesel">Diesel</option>
-            <option value="Electric">Electric</option>
-            <option value="Hybrid">Hybrid</option>
-          </select>
-
-          <select onChange={(e) => setTransmission(e.target.value)} className="filter-select">
-            <option value="">Transmission: Any</option>
-            <option value="Automatic">Automatic</option>
-            <option value="Manual">Manual</option>
-          </select>
+            <select onChange={(e) => setTransmission(e.target.value)} className="filter-select">
+              <option value="">Transmission: Any</option>
+              {uniqueTransmissions.map(trans => (
+                <option key={trans} value={trans}>{trans}</option>
+              ))}
+            </select>
         </div>
       )}
     </div>
