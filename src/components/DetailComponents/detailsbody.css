@@ -1,3 +1,108 @@
+
+.chat-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.chat-modal {
+  background: #fff;
+  width: 320px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  animation: slideInLeft 0.3s ease-out forwards;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.chat-header {
+  background-color: #1e1e1e;
+  color: white;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-header h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.close-chat {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.chat-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  background-color: #f2f2f2;
+}
+
+
+.bubble {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.message.sent .bubble {
+  background-color: #2196f3;
+}
+
+.meta {
+  font-size: 0.7rem;
+  margin-top: 2px;
+  color: #555;
+}
+
+.chat-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.chat-input button {
+  margin-left: 8px;
+  padding: 8px 12px;
+  background-color: #2196f3;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
 .sketchfab-embed-wrapper {
   width: 100%;
   height: 500px;

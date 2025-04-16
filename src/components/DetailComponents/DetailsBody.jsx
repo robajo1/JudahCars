@@ -5,6 +5,50 @@ import { useLocation, useNavigate } from "react-router-dom";
 import "./detailsbody.css";
 
 function DetailsBody() {
+  const [messages, setMessages] = useState([]); // Store chat messages
+  const [input, setInput] = useState(''); // User input
+  const [socket, setSocket] = useState(null); // WebSocket connection
+  
+
+  useEffect(() => {
+      const ws = new WebSocket('ws://localhost:8080');
+      setSocket(ws);
+      
+      ws.onopen = () => {
+          console.log('WebSocket connection established');
+      };
+      
+      ws.onmessage = async (event) => {
+          const data = typeof event.data === 'string' ? event.data : await blobToString(event.data);
+      
+          setMessages((prevMessages) => [...prevMessages, data]);
+        };
+       
+      return () => {
+          ws.close();
+      };
+  }, []);
+
+
+  const blobToString = (blob) => {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = (error) => reject(error);
+        reader.readAsText(blob);
+      });
+    };
+
+
+  const sendMessage = () => {
+      if (socket && input) {
+          socket.send(input); 
+          setInput(''); 
+      }
+  };
+  const [showMessageModal, setShowMessageModal] = useState(false);
+
+
   const location = useLocation();
   const car = location.state?.car;
   const navigate = useNavigate();
@@ -100,6 +144,7 @@ function DetailsBody() {
   };
 
   return (
+    <>
     <div className="details-page">
       <div className="details-container">
         <div className="details-main">
@@ -188,7 +233,8 @@ function DetailsBody() {
               </div>
             </div>
             <div className="message">
-              <button className="message-button">
+              <button className="message-button"
+              onClick={() => setShowMessageModal(true)}>
                 Message <span className="arrow-icon">↗</span>
               </button>
             </div>
@@ -245,6 +291,28 @@ function DetailsBody() {
         </div>
       </section>
     </div>
+    {showMessageModal && (
+      <div className="chat-modal-overlay" onClick={() => setShowMessageModal(false)}>
+        <div className="chat-modal" onClick={(e) => e.stopPropagation()}>
+          <div className="chat-header">
+            <h3>Live Chat</h3>
+            <button className="close-chat" onClick={() => setShowMessageModal(false)}>×</button>
+          </div>
+          <div className="chat-body">
+            {/* messages */}
+            {messages.map((msg, index) => (
+                    <div key={index} className="bubble">{msg}</div>
+                ))}
+            
+          </div>
+          <div className="chat-input">
+            <input type="text" placeholder="Type a message..." value={input} onChange={(e) => setInput(e.target.value)}/>
+            <button onClick={sendMessage}>Send</button>
+          </div>
+        </div>
+      </div>
+    )}
+    </>
   );
 }
 

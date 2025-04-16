@@ -4,6 +4,48 @@ export default function SellerDashboard() {
   const [user, setUser] = useState(null);
   const [products, setProducts] = useState([]);
 
+  const [messages, setMessages] = useState([]); // Store chat messages
+  const [input, setInput] = useState(''); // User input
+  const [socket, setSocket] = useState(null); // WebSocket connection
+
+  const [showMessageModal, setShowMessageModal] = useState(false);
+
+  useEffect(() => {
+    const ws = new WebSocket('ws://localhost:8080');
+    setSocket(ws);
+    
+
+    ws.onopen = () => {
+        console.log('WebSocket connection established');
+    };
+    
+
+    ws.onmessage = async (event) => {
+
+        const data = typeof event.data === 'string' ? event.data : await blobToString(event.data);
+    
+        setMessages((prevMessages) => [...prevMessages, data]);
+      };
+     
+    return () => {
+        ws.close();
+    };
+    }, []);  
+    const blobToString = (blob) => {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = (error) => reject(error);
+        reader.readAsText(blob);
+      });
+    };
+    const sendMessage = () => {
+      if (socket && input) {
+          socket.send(input); 
+          setInput('');
+      }
+    };
+
   const [formData, setFormData] = useState({
     make: "",
     model: "",
@@ -81,7 +123,8 @@ export default function SellerDashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
+    <>
+      <div className="min-h-screen bg-gray-50 p-6">
       <h2 className="text-3xl font-bold mb-6 text-center">Seller Dashboard</h2>
 
      
@@ -103,6 +146,8 @@ export default function SellerDashboard() {
           Add Vehicle
         </button>
       </form>
+      <button className="mt-6 bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-purple-700 font-semibold w-full" onClick={() => {setShowMessageModal(true);console.log("hello");}}>Messages</button>
+
 
      
       <div className="mt-10">
@@ -124,5 +169,27 @@ export default function SellerDashboard() {
         )}
       </div>
     </div>
-  );
+    {showMessageModal && (
+      <div className="chat-modal-overlay" onClick={() => setShowMessageModal(false)}>
+        <div className="chat-modal" onClick={(e) => e.stopPropagation()}>
+          <div className="chat-header">
+            <h3>Live Chat</h3>
+            <button className="close-chat" onClick={() => setShowMessageModal(false)}>×</button>
+          </div>
+          <div className="chat-body">
+            {/* Example message structure */}
+            {messages.map((msg, index) => (
+                    <div key={index} className="bubble">{msg}</div>
+                ))}
+
+          </div>
+          <div className="chat-input">
+            <input type="text" placeholder="Type a message..." value={input} onChange={(e) => setInput(e.target.value)}/>
+            <button onClick={sendMessage}>Send</button>
+          </div>
+        </div>
+      </div>
+    )}  
+    </>
+      );
 }
