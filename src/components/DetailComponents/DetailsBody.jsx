@@ -8,6 +8,7 @@ function DetailsBody() {
   const [messages, setMessages] = useState([]); // Store chat messages
   const [input, setInput] = useState(''); // User input
   const [socket, setSocket] = useState(null); // WebSocket connection
+  const user = localStorage.getItem("user");
   
 
   useEffect(() => {
@@ -207,10 +208,10 @@ function DetailsBody() {
 
               <button
                 className={`add-to-cart-button ${getAddToCartButtonStyle()}`}
-                onClick={handleAddToCart}
+                onClick={user ? handleAddToCart : null}
                 disabled={isAddingToCart || addToCartStatus === "Added to Cart"}
               >
-                {addToCartStatus}
+                {user ? addToCartStatus : "Login to Add to Cart"}
               </button>
             </aside>
           </div>
@@ -233,8 +234,8 @@ function DetailsBody() {
             </div>
             <div className="message">
               <button className="message-button"
-              onClick={() => setShowMessageModal(true)}>
-                Message <span className="arrow-icon">↗</span>
+                onClick={user ? () => setShowMessageModal(true) : null}>
+                {user ? "Message" : "Login to Message Seller"} <span className="arrow-icon">↗</span>
               </button>
             </div>
           </div>

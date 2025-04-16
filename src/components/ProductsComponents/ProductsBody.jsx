@@ -7,6 +7,7 @@ function ProductsBody() {
   const navigate = useNavigate();
   const location = useLocation();
   const [inventory, setInventory] = useState(null);
+  let key = 0;
 
   const searchParams = new URLSearchParams(location.search);
   const typeFilter = searchParams.get('type');
@@ -76,7 +77,7 @@ function ProductsBody() {
   
   
   if (priceRange) {
-    if (priceRange === "80001") {
+    if (priceRange === "80000") {
       filteredInventory = filteredInventory.filter(car => Number(car.price) > 80001);
     } 
     else{
@@ -130,7 +131,7 @@ function ProductsBody() {
       <div className="vehicle-grid-4x4">
         {filteredInventory.map((car, index) => (
           <div
-            key={index}
+            key={key++}
             className="vehicle-card"
             onClick={() => navigateToDetail(car)}
             style={{ cursor: 'pointer' }}
