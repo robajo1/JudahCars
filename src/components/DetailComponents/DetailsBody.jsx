@@ -274,11 +274,11 @@ function DetailsBody() {
                 </div>
                 <div className="model-details">
                   <h4>{item.make} {item.model} – {item.year}</h4>
-                  <div className="model-info-icons">
-                    <span>{item.mileage} KM</span>
-                    <span>{item.fuel_type}</span>
-                    <span>{item.transmission}</span>
+                  <div className='line'></div>
+                  <div className="model-info-icons" style={{fontSize:'0.9rem'}}>
+                    <p>{item.mileage} KM {item.fuel_type} {item.transmission}</p>
                   </div>
+                  <div className='line'></div>
                   <div className="model-price-small">{item.price} ETB</div>
                   <a href="#" className="view-details-link">View Details</a>
                 </div>

@@ -19,7 +19,7 @@ const VehicleCard = ({ image, title, price, year, mileage ,car,navigate}) => (
     <img src={image} alt={title} className="vehicle-image" />
     <div className="vehicle-details">
       <h3>{title}</h3>
-      <p className="vehicle-description">{year} • {mileage} km</p>
+      <p className="vehicle-description">{year} • {mileage}</p>
       <div className="vehicle-price">
         <span>{price}</span>
       </div>
@@ -99,7 +99,7 @@ export default function Body() {
                 key={vehicle.id}
                 image={vehicle.images[0]}
                 title={`${vehicle.make} ${vehicle.model}`}
-                price={`${vehicle.price.toLocaleString()} ETB`}
+                price={`$${vehicle.price.toLocaleString()}`}
                 year={vehicle.year}
                 mileage={`${vehicle.mileage.toLocaleString()} KM`}
                 car={vehicle}
