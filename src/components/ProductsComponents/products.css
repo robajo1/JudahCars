@@ -128,7 +128,13 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.vehicle-card img {
+.vehicle-icons{
+  display: grid;
+  grid-auto-flow: column;
+  place-items: center;
+}
+
+.vehicle-details.vehicle-card img {
   width: 100%;
   display: block;
   height: auto;

@@ -15,7 +15,6 @@ function DetailsBody() {
       setSocket(ws);
       
       ws.onopen = () => {
-          console.log('WebSocket connection established');
       };
       
       ws.onmessage = async (event) => {

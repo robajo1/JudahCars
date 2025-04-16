@@ -33,7 +33,6 @@ function ProductsBody() {
     }
   }, [inventory]);
 
-  console.log(inventory);
   const navigateToDetail = (car) => {
     navigate("/detail", { state: { car } });
   };
@@ -144,10 +143,22 @@ function ProductsBody() {
             <div className="vehicle-details">
               <h3>{car.make} {car.model} - {car.year}</h3>
               <div className='line'></div>
-              {/* <img src="/images/meter.png" alt="" /> */}
-              <p className="vehicle-description">
-                {car.mileage.toLocaleString()} KM • {car.fuel_type} • {car.transmission}
-              </p>
+              <div className='vehicle-icons'>
+                <img src="/images/meter.png" alt="meter" style={{width:'20px'}}/>
+                <img src="/images/fuel.png" alt="fuel" style={{height:'25px', width:'auto'}}/>
+                <img src="/images/trans.png" alt="trans" style={{width:'30px'}}/>
+              </div>
+              <div className="vehicle-description" style={{display:'flex'}}>
+                <p >
+                  {car.mileage.toLocaleString()} KM     
+                </p>
+                <p>
+                  {car.fuel_type} 
+                </p>
+                <p>
+                  {car.transmission}
+                </p>
+              </div>
               <div className='line'></div>
               <div className="vehicle-price">
                 <span>${car.price.toLocaleString()}</span>

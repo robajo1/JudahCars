@@ -16,7 +16,6 @@ export default function SellerDashboard() {
     
 
     ws.onopen = () => {
-        console.log('WebSocket connection established');
     };
     
 

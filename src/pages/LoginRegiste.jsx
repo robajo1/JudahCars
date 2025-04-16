@@ -98,7 +98,6 @@ function LoginRegister() {
     }
 
     // alert(`${isRegistering ? "Registered" : "Logged in"} as ${formData.isSeller ? "Seller" : "User"} successfully!`);
-    // console.log("Form Data:", formData);
   };
 
   return (
