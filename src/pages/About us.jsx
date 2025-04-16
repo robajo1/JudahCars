@@ -5,10 +5,11 @@ import { motion } from 'framer-motion';
 // Placeholder image URLs - replace with actual paths
 const teamMemberImages = {
   Robel:'./images/rob.png', 
-  Dawit:'./images/daw.jpg',    
+  Dawit:'./images/daw.JPEG',    
   Nahom:'./images/nah.jpg',    
   Asteway:'./images/ast.jpg',  
   Leol:'./images/l.jpg',     
+  Mera:'./images/mr.png',     
 };
 
 const AboutUs = () => {
@@ -23,7 +24,7 @@ const AboutUs = () => {
       name: 'Dawit Enku',
       role: 'Figma Design, React Front End',
       contribution: 'Designed the user interface and developed the front-end using React.',
-      image: {},
+      image: teamMemberImages.Dawit,
     },
     {
       name: 'Nahom Kiflu',
@@ -47,7 +48,7 @@ const AboutUs = () => {
       name: 'Mera Fedlu',
       role: 'Support, CSS Design',
       contribution: 'Developed the CSS features also color and font',
-      image: {}
+      image: teamMemberImages.Mera
     },
   ];
 
