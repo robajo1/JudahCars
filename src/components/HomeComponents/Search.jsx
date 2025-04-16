@@ -4,6 +4,15 @@ import { useNavigate } from 'react-router-dom';
 
 const Search = ({ showFull = true }) => {
   const user = localStorage.getItem("user");
+  const [taglineVisible, setTaglineVisible] = useState(false);
+  const [titleVisible, setTitleVisible] = useState(false);
+
+  useEffect(() => {
+     setTimeout(() => {
+      setTaglineVisible(true);
+      setTitleVisible(true);
+    }, 10);
+  }, []);
   useEffect(() => {},[user])
 
   const navigate = useNavigate();
@@ -29,8 +38,8 @@ const Search = ({ showFull = true }) => {
     <div className={`search-container ${!showFull ? 'search-input-only-container' : ''}`}>
       {showFull && (
         <>
-          <p className="search-tagline">Find cars for sale ~ sale your car ~ swap your car</p>
-          <h1 className="search-title">{user ? `Welcome ${JSON.parse(user).fullName} ` : "Find Your Perfect Car" }</h1>
+          <p className={`search-tagline ${taglineVisible ? 'slide-in' : ''}`}>Find cars for sale ~ sale your car ~ swap your car</p>
+          <h1 className={`search-title ${titleVisible ? 'slide-in' : ''}`}>{user ? `Welcome ${JSON.parse(user).fullName} ` : "Find Your Perfect Car" }</h1>
         </>
       )}
 

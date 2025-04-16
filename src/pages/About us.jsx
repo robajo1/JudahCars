@@ -15,8 +15,8 @@ const AboutUs = () => {
   const teamMembers = [
     {
       name: 'Robel Saka',
-      role: 'Project Manager, Mock Data',
-      contribution: 'Led the project and provided mock data for development.',
+      role: 'Project Manager, Mock Data, caching user authentication',
+      contribution: 'Led the project and Handled API simulation, data validation, ',
       image: teamMemberImages.Robel,
     },
     {
@@ -33,8 +33,8 @@ const AboutUs = () => {
     },
     {
       name: 'Asteway Ayastewlm',
-      role: 'API Simulation, Validation, Cache, Authentication',
-      contribution: 'Handled API simulation, data validation, caching, and user authentication.',
+      role: 'API Simulation, Validation',
+      contribution: 'Handled API simulation/ validation, provided mock data for development.',
       image: teamMemberImages.Asteway,
     },
     {

@@ -6,7 +6,7 @@ import SellerDashboard from "../pages/SellerDashBoard";
 
 function Header() {
   const location = useLocation();
-  const navClass = location.pathname === "/detail";
+  const navClass = location.pathname === "/detail"  || location.pathname === "/aboutus" || location.pathname === "/cart";
   const user = localStorage.getItem("user");
   useEffect(() => {}, [user]);
 

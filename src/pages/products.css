@@ -1,3 +1,4 @@
+/* products.css */
 .products-page {
   display: flex;
   flex-direction: column;
@@ -23,11 +24,28 @@
   align-items: center;
 }
 
+.ad-banner-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 .ad-banner-image {
   width: 100%;
   height: 100%;
   object-fit: contain;
   display: block;
+}
+
+.ad-banner-image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  pointer-events: none;
 }
 
 .ad-banner-details {
@@ -106,7 +124,6 @@
   width: 85vw;
 }
 
-/* 4x4 Grid Layout */
 .vehicle-grid-4x4 {
   width: 85vw;
   display: grid;
@@ -174,15 +191,14 @@
   font-size: 1rem;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
   .products-vehicles-section {
     padding: 1.5rem 5vw;
   }
 
   .section-title {
-    width: 95vw;
-    font-size: 1.3rem;
+    width: 60vw;
+    font-size: 0.3rem;
     margin-bottom: 1rem;
   }
 
@@ -204,24 +220,23 @@
     left: 5vw;
     bottom: 15%;
     text-align: center;
-    font-size: 0.5rem;
   }
 
   .ad-banner-price {
-    font-size: 1.6rem;
+    font-size: 0.6rem;
   }
 
   .ad-banner-title {
-    font-size: 2rem;
-  }
-
-  .ad-banner-specs {
     font-size: 1rem;
   }
 
+  .ad-banner-specs {
+    font-size: 0.3rem;
+  }
+
   .ad-banner-toggle {
-    font-size: 1.2rem;
-    padding: 0.8rem;
+    font-size: 0.2rem;
+    padding: 0.2rem;
   }
 
   .ad-banner-toggle.left {
@@ -240,7 +255,7 @@
 
   .section-title {
     width: 95vw;
-    font-size: 1.2rem;
+    font-size: 0.1rem;
     margin-bottom: 0.8rem;
   }
 
@@ -261,24 +276,23 @@
     left: 3vw;
     bottom: 10%;
     text-align: center;
-    font-size: 0.3rem;
   }
 
   .ad-banner-price {
-    font-size: 1.4rem;
+    font-size: 0.1rem;
   }
 
   .ad-banner-title {
-    font-size: 1.6rem;
+    font-size: 0.1rem;
   }
 
   .ad-banner-specs {
-    font-size: 0.9rem;
+    font-size: 0.1rem;
   }
 
   .ad-banner-toggle {
-    font-size: 1rem;
-    padding: 0.6rem;
+    font-size: 0.1rem;
+    padding: 0.1rem;
   }
 
   .ad-banner-toggle.left {
@@ -289,8 +303,40 @@
     right: 3vw;
   }
 }
-.ADD{
+
+.ADD {
   background-color: black;
   border-top-left-radius: 90px;
   border-top-right-radius: 90px;
+  width: 98.8vw;
+  display: block;
+}
+
+.ad-banner-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.ad-banner-image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1.5), transparent);
+  pointer-events: none;
+}
+
+.ad-banner-price {
+  font-size: 2rem;
+}
+
+.ad-banner-title {
+  font-size: 3rem;
+}
+
+.ad-banner-specs {
+  font-size: 1.2rem;
 }
