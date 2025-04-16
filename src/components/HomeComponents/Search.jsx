@@ -20,7 +20,8 @@ const Search = ({ showFull = true }) => {
 
   const handleSearchClick = () => {
     if (searchQuery.trim()) {
-      navigate(`/products?query=${searchQuery}`);
+      const formattedQuery = searchQuery.replace(/\s+/g, '&');
+      navigate(`/products?query=${formattedQuery}`);
     } else {
       navigate('/products');
     }
