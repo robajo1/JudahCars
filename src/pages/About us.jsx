@@ -27,8 +27,8 @@ const AboutUs = () => {
     },
     {
       name: 'Nahom Kiflu',
-      role: 'Back End, JSON',
-      contribution: 'Developed the back-end logic and managed JSON data.',
+      role: 'Back End, search, filter',
+      contribution: 'Developed the back-end logic and managed to find his glasses.',
       image: teamMemberImages.Nahom,
     },
     {
@@ -46,6 +46,7 @@ const AboutUs = () => {
   ];
 
   return (
+    <>
     <div className="about-us-page">
       <section className="intro-section">
         <h2 className="section-title">About Our Website</h2>
@@ -85,6 +86,7 @@ const AboutUs = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

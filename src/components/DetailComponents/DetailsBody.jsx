@@ -299,7 +299,6 @@ function DetailsBody() {
             <button className="close-chat" onClick={() => setShowMessageModal(false)}>×</button>
           </div>
           <div className="chat-body">
-            {/* messages */}
             {messages.map((msg, index) => (
                     <div key={index} className="bubble">{msg}</div>
                 ))}
