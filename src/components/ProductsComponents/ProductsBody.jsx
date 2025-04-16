@@ -148,7 +148,7 @@ function ProductsBody() {
                 <img src="/images/fuel.png" alt="fuel" style={{height:'25px', width:'auto'}}/>
                 <img src="/images/trans.png" alt="trans" style={{width:'30px'}}/>
               </div>
-              <div className="vehicle-description" style={{display:'flex'}}>
+              <div className="vehicle-description" style={{display:'flex', gap:'20px'}}>
                 <p >
                   {car.mileage.toLocaleString()} KM     
                 </p>
