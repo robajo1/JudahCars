@@ -8,17 +8,87 @@
     "mileage": 35000,
     "fuel_type": "Gasoline",
     "transmission": "Automatic",
-    "description": "A 5-seat sedan with a 5-star ANCAP safety rating. It offers hybrid or petrol engines with fuel economy ranging from 4.2L to 8.9L/100km and has 493L of rear storage space. It features a Dynamic Force Engine and a muscular, chiseled exterior design.",
+    "description": "A 5-seat sedan with a 5-star ANCAP safety rating...",
     "location": "Austin, TX",
     "images": [
-      "https://hips.hearstapps.com/hmg-prod/images/2020-toyta-camry-mmp-1-1566921359.jpg?crop=0.878xw:0.737xh;0.0554xw,0.263xh&resize=1200:*",
-      "https://hips.hearstapps.com/hmg-prod/images/2020-toyota-camry-mmp-2-1566921081.jpg?crop=1xw:0.84346875xh;center,top&resize=1200:*",
-      "https://hips.hearstapps.com/hmg-prod/images/2020-toyota-camry-mmp-3-1566921132.jpg?crop=1xw:0.3751875xh;center,top&resize=1200:*"
+      "https://hips.hearstapps.com/hmg-prod/images/2020-toyta-camry-mmp-1-1566921359.jpg",
+      "https://hips.hearstapps.com/hmg-prod/images/2020-toyota-camry-mmp-2-1566921081.jpg",
+      "https://hips.hearstapps.com/hmg-prod/images/2020-toyota-camry-mmp-3-1566921132.jpg"
     ],
+    "sketchfabEmbed": "https://sketchfab.com/models/477c71f715e4415eb5661f5a9aed1013/embed",
     "seller": {
       "name": "a",
       "contact": "a@example.com",
       "phone": "+1-555-1001"
+    }
+  },
+  {
+    "type": "sedan",
+    "make": "BMW",
+    "model": "3 Series",
+    "year": 2020,
+    "price": 38000,
+    "mileage": 31000,
+    "fuel_type": "Gasoline",
+    "transmission": "Automatic",
+    "description": "Offered as a sedan or wagon, with petrol or plug-in hybrid engines. Fuel economy ranges from 2.1L to 7.7L/100km. It features a spacious, luxurious cabin with many standard tech features. Engine options include a 2.0L four-cylinder (255 hp) and a 3.0L inline-six (382 hp in M340i). An 8-speed automatic is standard.",
+    "location": "Los Angeles, CA",
+    "images": [
+      "https://hips.hearstapps.com/hmg-prod/images/2020-bmw-m340i-v-2020-genesis-g70-3p3t-1016-hdr-1571838328.jpg?crop=0.827xw:0.761xh;0,0.239xh&resize=1200:*",
+      "https://hips.hearstapps.com/hmg-prod/images/2020-bmw-m340i-v-2020-genesis-g70-3p3t-989-hdr-1571838326.jpg?crop=1xw:0.9203658183921342xh;center,top&resize=1200:*",
+      "https://hips.hearstapps.com/hmg-prod/images/2020-bmw-m340i-v-2020-genesis-g70-3p3t-107-1571838324.jpg?crop=1xw:0.9204692440356425xh;center,top&resize=1200:*"
+    ], 
+    "sketchfabEmbed": "https://sketchfab.com/3d-models/bmw-m3-e46-rocket-bunny-73d011a957384510ab657290c139e7f7/embed",
+    "seller": {
+      "name": "a",
+      "contact": "a@example.com",
+      "phone": "+1-555-3001"
+    }
+  },
+  {
+    "type": "suv",
+    "make": "Ford",
+    "model": "Explorer",
+    "year": 2021,
+    "price": 42000,
+    "mileage": 30000,
+    "fuel_type": "Gasoline",
+    "transmission": "Automatic",
+    "description": "A three-row midsize SUV seating six or seven. Engine options include a 2.3L turbo four-cylinder (300 hp), a 3.0L twin-turbo V6 (365 hp or 400 hp in ST), and a 3.3L hybrid (318 hp). Features standard rear-wheel drive (AWD available) and a 10-speed automatic transmission. Offers standard tech like an 8-inch touchscreen, Apple CarPlay/Android Auto, and Ford Co-Pilot360 safety suite. New Timberline (off-road) and King Ranch (luxury) trims were added for 2021.",
+    "location": "Detroit, MI",
+    "images": [
+      "https://hips.hearstapps.com/hmg-prod/images/2021-ford-explorer-mmp-1-1595540826.jpg?crop=1.00xw:0.846xh;0,0.120xh&resize=1200:*",
+      "https://hips.hearstapps.com/hmg-prod/images/2021-ford-explorer-mmp-2-1595541025.jpg?crop=1xw:0.9949986838641748xh;center,top&resize=1200:*",
+      "https://hips.hearstapps.com/hmg-prod/images/2021-ford-explorer-mmp-3-1595541087.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*"
+    ],
+    "sketchfabEmbed": "https://sketchfab.com/3d-models/ford-explorer-st-2025-ae0aefa4cec24b3c98c19f8b98f9e610/embed",
+    "seller": {
+      "name": "Motor City Ford",
+      "contact": "sales@motorcityford.com",
+      "phone": "+1-555-9001"
+    }
+  },
+  {
+    "type": "suv",
+    "make": "Toyota",
+    "model": "RAV4",
+    "year": 2021,
+    "price": 29000,
+    "mileage": 26000,
+    "fuel_type": "Hybrid",
+    "transmission": "Automatic",
+    "description": "A popular compact SUV with a 5-star ANCAP rating. Offers petrol, hybrid, and plug-in hybrid (Prime) options. Powered by a 2.5L four-cylinder engine (203 hp) in the standard model. Known for its practical, roomy interior and standard driver-assistance features (Toyota Safety Sense). TRD Off-Road model adds rugged capability.",
+    "location": "Dallas, TX",
+    "images": [
+      "https://hips.hearstapps.com/hmg-prod/images/2021-toyota-rav4-trd-off-road-101-1626364941.jpg?crop=0.813xw:0.688xh;0.127xw,0.228xh&resize=1200:*",
+      "https://hips.hearstapps.com/hmg-prod/images/2021-toyota-rav4-trd-off-road-118-1626364951.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*",
+      "https://hips.hearstapps.com/hmg-prod/images/2021-toyota-rav4-trd-off-road-133-1626364959.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*"
+    ],
+    "sketchfabEmbed": "https://sketchfab.com/3d-models/toyota-rav4-trd-2020-be9c40b8546d45da808e17a91a412ecb/embed",
+    "seller": {
+      "name": "Texas Auto Group",
+      "contact": "sales@texasauto.com",
+      "phone": "+1-555-1003"
     }
   },
   {
@@ -61,28 +131,6 @@
       "name": "a",
       "contact": "a@example.com",
       "phone": "+1-555-1008"
-    }
-  },
-  {
-    "type": "sedan",
-    "make": "BMW",
-    "model": "3 Series",
-    "year": 2020,
-    "price": 38000,
-    "mileage": 31000,
-    "fuel_type": "Gasoline",
-    "transmission": "Automatic",
-    "description": "Offered as a sedan or wagon, with petrol or plug-in hybrid engines. Fuel economy ranges from 2.1L to 7.7L/100km. It features a spacious, luxurious cabin with many standard tech features. Engine options include a 2.0L four-cylinder (255 hp) and a 3.0L inline-six (382 hp in M340i). An 8-speed automatic is standard.",
-    "location": "Los Angeles, CA",
-    "images": [
-      "https://hips.hearstapps.com/hmg-prod/images/2020-bmw-m340i-v-2020-genesis-g70-3p3t-1016-hdr-1571838328.jpg?crop=0.827xw:0.761xh;0,0.239xh&resize=1200:*",
-      "https://hips.hearstapps.com/hmg-prod/images/2020-bmw-m340i-v-2020-genesis-g70-3p3t-989-hdr-1571838326.jpg?crop=1xw:0.9203658183921342xh;center,top&resize=1200:*",
-      "https://hips.hearstapps.com/hmg-prod/images/2020-bmw-m340i-v-2020-genesis-g70-3p3t-107-1571838324.jpg?crop=1xw:0.9204692440356425xh;center,top&resize=1200:*"
-    ],
-    "seller": {
-      "name": "a",
-      "contact": "a@example.com",
-      "phone": "+1-555-3001"
     }
   },
   {
@@ -142,7 +190,7 @@
     "location": "Cleveland, OH",
     "images": [
       "https://hips.hearstapps.com/hmg-prod/images/2019-audi-a4-107-1530210093.jpg?crop=0.891xw:0.814xh;0,0.186xh&resize=1200:*"
-    ],
+    ], "sketchfabEmbed": "https://sketchfab.com/3d-models/2004-audi-a4-b7-7541d469f89d439c9dd4b3af05f4a991/embed",
     "seller": {
       "name": "b",
       "contact": "b@example.com",
@@ -525,6 +573,7 @@
       "https://hips.hearstapps.com/hmg-prod/images/2021-toyota-rav4-trd-off-road-118-1626364951.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*",
       "https://hips.hearstapps.com/hmg-prod/images/2021-toyota-rav4-trd-off-road-133-1626364959.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*"
     ],
+    "sketchfabEmbed": "https://sketchfab.com/3d-models/toyota-rav4-trd-2020-be9c40b8546d45da808e17a91a412ecb/embed",
     "seller": {
       "name": "Texas Auto Group",
       "contact": "sales@texasauto.com",
@@ -635,28 +684,6 @@
       "name": "Sunshine Honda",
       "contact": "hrv@sunshinehonda.net",
       "phone": "+1-555-2006"
-    }
-  },
-  {
-    "type": "suv",
-    "make": "Ford",
-    "model": "Explorer",
-    "year": 2021,
-    "price": 42000,
-    "mileage": 30000,
-    "fuel_type": "Gasoline",
-    "transmission": "Automatic",
-    "description": "A three-row midsize SUV seating six or seven. Engine options include a 2.3L turbo four-cylinder (300 hp), a 3.0L twin-turbo V6 (365 hp or 400 hp in ST), and a 3.3L hybrid (318 hp). Features standard rear-wheel drive (AWD available) and a 10-speed automatic transmission. Offers standard tech like an 8-inch touchscreen, Apple CarPlay/Android Auto, and Ford Co-Pilot360 safety suite. New Timberline (off-road) and King Ranch (luxury) trims were added for 2021.",
-    "location": "Detroit, MI",
-    "images": [
-      "https://hips.hearstapps.com/hmg-prod/images/2021-ford-explorer-mmp-1-1595540826.jpg?crop=1.00xw:0.846xh;0,0.120xh&resize=1200:*",
-      "https://hips.hearstapps.com/hmg-prod/images/2021-ford-explorer-mmp-2-1595541025.jpg?crop=1xw:0.9949986838641748xh;center,top&resize=1200:*",
-      "https://hips.hearstapps.com/hmg-prod/images/2021-ford-explorer-mmp-3-1595541087.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*"
-    ],
-    "seller": {
-      "name": "Motor City Ford",
-      "contact": "sales@motorcityford.com",
-      "phone": "+1-555-9001"
     }
   },
   {
