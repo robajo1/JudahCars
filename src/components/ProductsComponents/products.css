@@ -149,7 +149,7 @@
 .vehicle-details h3 {
   margin-top: 0;
   margin-bottom: 0.3rem;
-  font-size: 1.1rem;
+  font-size: 1.05rem !important;
   font-weight: 500;
   color: #333;
 }
