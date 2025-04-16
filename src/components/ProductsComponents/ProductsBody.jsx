@@ -142,12 +142,13 @@ function ProductsBody() {
               className="vehicle-image"
             />
             <div className="vehicle-details">
-              <h3>{car.make} {car.model}</h3>
+              <h3>{car.make} {car.model} - {car.year}</h3>
+              <div className='line'></div>
+              {/* <img src="/images/meter.png" alt="" /> */}
               <p className="vehicle-description">
-                {car.year} • {car.mileage.toLocaleString()} miles
+                {car.mileage.toLocaleString()} KM • {car.fuel_type} • {car.transmission}
               </p>
-              Lingan guli guli Lingan guli <br />
-              wacha lingan gu
+              <div className='line'></div>
               <div className="vehicle-price">
                 <span>${car.price.toLocaleString()}</span>
               </div>

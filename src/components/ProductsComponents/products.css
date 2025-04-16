@@ -292,3 +292,8 @@
   border-top-left-radius: 90px;
   border-top-right-radius: 90px;
 }
+
+.line{
+  margin: 5px;
+  border-bottom: 1px solid #95a5a6d0;
+}
