@@ -58,11 +58,11 @@ function Footer() {
           <h3>Our Mobile App</h3>
           <div className="app-buttons">
             <a href="/apple-store" className="app-store-button">
-              <img src="/apple-logo.png" alt="Apple Store" />
+              <img src="images/apple.png" alt="Apple Store" />
               Coming soon <br /> Apple Store
             </a>
             <a href="/google-play" className="google-play-button">
-              <img src="/google-play-logo.png" alt="Google Play" />
+              <img src="/images/g.png" alt="Google Play" />
               Coming soon <br /> Google Play
             </a>
           </div>
@@ -71,10 +71,10 @@ function Footer() {
         <div className="footer-section connect-us">
           <h3>Connect With Us</h3>
           <div className="social-icons">
-            <a href="/facebook" className="social-icon"><img src="/facebook-icon.png" alt="Facebook" /></a>
-            <a href="/twitter" className="social-icon"><img src="/twitter-icon.png" alt="Twitter" /></a>
-            <a href="/instagram" className="social-icon"><img src="/instagram-icon.png" alt="Instagram" /></a>
-            <a href="/linkedin" className="social-icon"><img src="/linkedin-icon.png" alt="LinkedIn" /></a>
+            <a href="/facebook" className="social-icon"><img src="/images/f2.png" alt="Facebook" /></a>
+            <a href="/X" className="social-icon"><img src="/images/x.png" alt="X" /></a>
+            <a href="/instagram" className="social-icon"><img src="/images/instagram.png" alt="Instagram" /></a>
+            <a href="/linkedin" className="social-icon"><img src="/images/link.png" alt="LinkedIn" /></a>
           </div>
         </div>
       </div>

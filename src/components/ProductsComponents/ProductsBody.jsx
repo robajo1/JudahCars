@@ -10,10 +10,15 @@ function ProductsBody() {
 
   const searchParams = new URLSearchParams(location.search);
   const typeFilter = searchParams.get('type');
-  const fuelFilter = searchParams.get('fuel');
   const makeFilter = searchParams.get('make');
-  const transmissionFilter = searchParams.get('transmission');
+  const modelFilter = searchParams.get('model');
+  const yearFilter = searchParams.get('year');
   const priceRange = searchParams.get('price');
+  const mileageFilter = searchParams.get('mileage');
+  const fuelFilter = searchParams.get('fuel');
+  const transmissionFilter = searchParams.get('transmission');
+  const locationFilter = searchParams.get('location');
+  const queryFilter = searchParams.get('query');
 
   useEffect(() => {
     fetch("/data/carInventory.json")
@@ -28,6 +33,7 @@ function ProductsBody() {
     }
   }, [inventory]);
 
+  console.log(inventory);
   const navigateToDetail = (car) => {
     navigate("/detail", { state: { car } });
   };
@@ -36,21 +42,14 @@ function ProductsBody() {
 
   let filteredInventory = [...inventory];
 
+  
+  // const yearFilter = searchParams.get('year');
+  // const priceRange = searchParams.get('price');
+  // const mileageFilter = searchParams.get('mileage');
+  
   if (typeFilter) {
     filteredInventory = filteredInventory.filter(
       (car) => car.type.toLowerCase() === typeFilter.toLowerCase()
-    );
-  }
-
-  if (fuelFilter) {
-    filteredInventory = filteredInventory.filter(
-      (car) => car.fuel_type.toLowerCase() === fuelFilter.toLowerCase()
-    );
-  }
-
-  if (transmissionFilter) {
-    filteredInventory = filteredInventory.filter(
-      (car) => car.transmission.toLowerCase() === transmissionFilter.toLowerCase()
     );
   }
   if (makeFilter) {
@@ -58,14 +57,68 @@ function ProductsBody() {
       (car) => car.make.toLowerCase() === makeFilter.toLowerCase()
     );
   }
-
-
-  if (priceRange) {
-    const [min, max] = priceRange.split('-').map(Number);
+  
+  if (modelFilter) {
     filteredInventory = filteredInventory.filter(
-      (car) => car.price >= min && car.price <= max
+      (car) => car.model.toLowerCase() === modelFilter.toLowerCase()
     );
   }
+  
+  if (queryFilter) {
+    filteredInventory = filteredInventory.filter((car) =>
+      car.make.toLowerCase().includes(queryFilter) || car.model.toLowerCase().includes(queryFilter)
+    );
+  }
+
+  if (yearFilter) {
+      filteredInventory = filteredInventory.filter(
+        (car) => car.year == yearFilter);
+    }
+  
+  
+  if (priceRange) {
+    if (priceRange === "80001") {
+      filteredInventory = filteredInventory.filter(car => Number(car.price) > 80001);
+    } 
+    else{
+      const [minPrice, maxPrice] = priceRange.split('-').map(Number);
+      filteredInventory = filteredInventory.filter((car) => {
+        const price = Number(car.price);
+        return price >= minPrice && price <= maxPrice;
+      });
+    }
+  }
+  
+  if (mileageFilter) {
+    if (mileageFilter === '150001-above') {
+      filteredInventory = filteredInventory.filter((car) => car.mileage > 150001);
+    } else {
+      const [minMileage, maxMileage] = mileageFilter.split('-').map(Number);
+      filteredInventory = filteredInventory.filter((car) => {
+        const mileage = Number(car.mileage);
+        return mileage >= minMileage && mileage <= maxMileage;
+      });
+    }
+  }
+  
+  if (locationFilter) {
+    filteredInventory = filteredInventory.filter(
+      (car) => car.location.toLowerCase() === locationFilter.toLowerCase()
+    );
+  }
+  
+  if (fuelFilter) {
+    filteredInventory = filteredInventory.filter(
+      (car) => car.fuel_type.toLowerCase() === fuelFilter.toLowerCase()
+    );
+  }
+  
+  if (transmissionFilter) {
+    filteredInventory = filteredInventory.filter(
+      (car) => car.transmission.toLowerCase() === transmissionFilter.toLowerCase()
+    );
+  }
+  
 
   if (filteredInventory.length === 0) {
     return <p className="no-vehicles-found">No vehicles found matching the filters.</p>;

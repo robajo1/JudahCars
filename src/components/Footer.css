@@ -99,7 +99,7 @@
   .connect-us .social-icon img {
     height: 16px;
     width: 16px;
-    filter: brightness(0) invert(1); /* Make icons white */
+    /* filter: brightness(0) invert(1); */ /*Make icons white */
   }
   
   .footer-bottom {
