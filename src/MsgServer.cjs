@@ -23,4 +23,3 @@ server.on('connection',(socket) => {
 })
 console.log("WebSocket server started on ws://localhost:8080")
 
-//to run node src\MsgServer.cjs
