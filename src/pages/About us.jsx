@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 // Placeholder image URLs - replace with actual paths
 const teamMemberImages = {
-  Robel:'./images/rob.jpg', 
+  Robel:'./images/rob.png', 
   Dawit:'./images/daw.jpg',    
   Nahom:'./images/nah.jpg',    
   Asteway:'./images/ast.jpg',  
@@ -14,7 +14,7 @@ const teamMemberImages = {
 const AboutUs = () => {
   const teamMembers = [
     {
-      name: 'Robel Saka',
+      name: 'Robel Nigusse',
       role: 'Project Manager, Mock Data, caching user authentication',
       contribution: 'Led the project and Handled API simulation, data validation, ',
       image: teamMemberImages.Robel,
