@@ -1,31 +1,21 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './productsSearch.css';
 
 function ProductsSearch() {
   const navigate = useNavigate();
   const location = useLocation();
-  const [car, setInventory] = useState([]);
+  const [inventory, setInventory] = useState([]);
 
-  useEffect(() => {
-      fetch("/data/carInventory.json")
-        .then((res) => res.json())
-        .then((data) => setInventory(data))
-        .catch((err) => console.error("Error loading car inventory:", err));
-    }, []);
-  const uniqueYears = [...new Set(Object.values(car).map(item => item.year))];
-  const uniqueMakes = [...new Set(Object.values(car).map(item => item.make))].sort();
-  const uniqueModels = [...new Set(Object.values(car).map(item => item.model))].sort();
-  // const uniqueEngines = [...new Set(Object.values(car).map(item => item.engineType))];
-  const uniqueFuels = [...new Set(Object.values(car).map(item => item.fuel_type))];
-  const uniqueTransmissions = [...new Set(Object.values(car).map(item => item.transmission))];
-  const uniqueCities = [...new Set(
-    Object.values(car).map(item => {
-      const location = item.location || "";
-      return location.split(",")[0].trim();
-    })
-  )].filter(Boolean).sort();
+  // Filter dropdown options
+  const [uniqueYears, setUniqueYears] = useState([]);
+  const [uniqueMakes, setUniqueMakes] = useState([]);
+  const [uniqueModels, setUniqueModels] = useState([]);
+  const [uniqueFuels, setUniqueFuels] = useState([]);
+  const [uniqueTransmissions, setUniqueTransmissions] = useState([]);
+  const [uniqueCities, setUniqueCities] = useState([]);
 
+  // Filter state
   const [condition, setCondition] = useState('');
   const [make, setMake] = useState('');
   const [model, setModel] = useState('');
@@ -33,43 +23,41 @@ function ProductsSearch() {
   const [mileage, setMileage] = useState('');
   const [year, setYear] = useState('');
   const [locationFilter, setLocationFilter] = useState('');
-  const [engineType, setEngineType] = useState('');
-  const [fuel, setFuel] = useState(''); // Added fuel state
-  const [transmission, setTransmission] = useState(''); // Added transmission state
+  const [fuel, setFuel] = useState('');
+  const [transmission, setTransmission] = useState('');
   const [moreFiltersVisible, setMoreFiltersVisible] = useState(false);
 
+  
+  useEffect(() => {
+    fetch('http://localhost:9090/api/products')
+      .then((res) => res.json())
+      .then((data) => {
+        setInventory(data);
+        setUniqueYears([...new Set(data.map(item => item.year))].sort());
+        setUniqueMakes([...new Set(data.map(item => item.make))].sort());
+        setUniqueModels([...new Set(data.map(item => item.model))].sort());
+        setUniqueFuels([...new Set(data.map(item => item.fuelType))].sort());
+        setUniqueTransmissions([...new Set(data.map(item => item.transmission))].sort());
+        setUniqueCities([...new Set(
+          data.map(item => item.location?.split(',')[0].trim())
+        )].filter(Boolean).sort());
+      })
+      .catch((err) => console.error("Error loading inventory:", err));
+  }, []);
+
+  
   const handleFilterSubmit = () => {
-    const params = new URLSearchParams(location.search);
+    const params = new URLSearchParams();
 
     if (condition) params.set('condition', condition);
-    else params.delete('condition');
-
     if (make) params.set('make', make);
-    else params.delete('make');
-
     if (model) params.set('model', model);
-    else params.delete('model');
-
     if (priceRange) params.set('price', priceRange);
-    else params.delete('price');
-
     if (mileage) params.set('mileage', mileage);
-    else params.delete('mileage');
-
     if (year) params.set('year', year);
-    else params.delete('year');
-
     if (locationFilter) params.set('location', locationFilter);
-    else params.delete('location');
-
-    if (engineType) params.set('engine', engineType);
-    else params.delete('engine');
-
-    if (fuel) params.set('fuel', fuel); // Added fuel to URL params
-    else params.delete('fuel');
-
-    if (transmission) params.set('transmission', transmission); // Added transmission to URL params
-    else params.delete('transmission');
+    if (fuel) params.set('fuel', fuel);
+    if (transmission) params.set('transmission', transmission);
 
     navigate(`/products?${params.toString()}`);
   };
@@ -83,16 +71,12 @@ function ProductsSearch() {
       <div className="filter-bar">
         <select onChange={(e) => setMake(e.target.value)} className="filter-select">
           <option value="">Any Makes</option>
-          {uniqueMakes.map(make => (
-            <option key={make} value={make}>{make}</option>
-          ))}
+          {uniqueMakes.map(make => <option key={make} value={make}>{make}</option>)}
         </select>
 
         <select onChange={(e) => setModel(e.target.value)} className="filter-select">
           <option value="">Any Models</option>
-          {uniqueModels.map(model => (
-            <option key={model} value={model}>{model}</option>
-          ))}
+          {uniqueModels.map(model => <option key={model} value={model}>{model}</option>)}
         </select>
 
         <select onChange={(e) => setPriceRange(e.target.value)} className="filter-select">
@@ -115,50 +99,35 @@ function ProductsSearch() {
         </button>
       </div>
 
-        {moreFiltersVisible && (
-          <div className="more-filters">
-            <select onChange={(e) => setMileage(e.target.value)} className="filter-select">
-              <option value="">Mileage: Any</option>
-              <option value="0-50000">0 - 50,000 KM</option>
-              <option value="50001-100000">50,001 - 100,000 KM</option>
-              <option value="100001-150000">100,001 - 150,000 KM</option>
-              <option value="150001-above">150,001+ KM</option>
-            </select>
+      {moreFiltersVisible && (
+        <div className="more-filters">
+          <select onChange={(e) => setMileage(e.target.value)} className="filter-select">
+            <option value="">Mileage: Any</option>
+            <option value="0-50000">0 - 50,000 KM</option>
+            <option value="50001-100000">50,001 - 100,000 KM</option>
+            <option value="100001-150000">100,001 - 150,000 KM</option>
+            <option value="150001-above">150,001+ KM</option>
+          </select>
 
-            <select onChange={(e) => setYear(e.target.value)} className="filter-select">
-              <option value="">Year: Any</option>
-              {uniqueYears.map(year => (
-                <option key={year} value={year}>{year}</option>
-              ))}
-            </select>
+          <select onChange={(e) => setYear(e.target.value)} className="filter-select">
+            <option value="">Year: Any</option>
+            {uniqueYears.map(year => <option key={year} value={year}>{year}</option>)}
+          </select>
 
-            <select onChange={(e) => setLocationFilter(e.target.value)} className="filter-select">
-              <option value="">Location: Any</option>
-              {uniqueCities.map(city => (
-                <option key={city} value={city}>{city}</option>
-              ))}
-            </select>
-{/* 
-            <select onChange={(e) => setEngineType(e.target.value)} className="filter-select">
-              <option value="">Engine: Any</option>
-              {uniqueEngines.map(engine => (
-                <option key={engine} value={engine}>{engine}</option>
-              ))}
-            </select> */}
+          <select onChange={(e) => setLocationFilter(e.target.value)} className="filter-select">
+            <option value="">Location: Any</option>
+            {uniqueCities.map(city => <option key={city} value={city}>{city}</option>)}
+          </select>
 
-            <select onChange={(e) => setFuel(e.target.value)} className="filter-select">
-              <option value="">Fuel: Any</option>
-              {uniqueFuels.map(fuel => (
-                <option key={fuel} value={fuel}>{fuel}</option>
-              ))}
-            </select>
+          <select onChange={(e) => setFuel(e.target.value)} className="filter-select">
+            <option value="">Fuel: Any</option>
+            {uniqueFuels.map(fuel => <option key={fuel} value={fuel}>{fuel}</option>)}
+          </select>
 
-            <select onChange={(e) => setTransmission(e.target.value)} className="filter-select">
-              <option value="">Transmission: Any</option>
-              {uniqueTransmissions.map(trans => (
-                <option key={trans} value={trans}>{trans}</option>
-              ))}
-            </select>
+          <select onChange={(e) => setTransmission(e.target.value)} className="filter-select">
+            <option value="">Transmission: Any</option>
+            {uniqueTransmissions.map(trans => <option key={trans} value={trans}>{trans}</option>)}
+          </select>
         </div>
       )}
     </div>

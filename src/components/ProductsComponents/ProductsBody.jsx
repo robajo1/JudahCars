@@ -7,6 +7,8 @@ function ProductsBody() {
   const navigate = useNavigate();
   const location = useLocation();
   const [inventory, setInventory] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   let key = 0;
 
   const searchParams = new URLSearchParams(location.search);
@@ -18,15 +20,43 @@ function ProductsBody() {
   const mileageFilter = searchParams.get('mileage');
   const fuelFilter = searchParams.get('fuel');
   const transmissionFilter = searchParams.get('transmission');
-  const locationFilter = searchParams.get('location');
-  const queryFilter = searchParams.get('query');
 
   useEffect(() => {
-    fetch("/data/carInventory.json")
-      .then((res) => res.json())
-      .then((data) => setInventory(data))
-      .catch((err) => console.error("Error loading car inventory:", err));
-  }, []);
+    const params = new URLSearchParams();
+
+    if (typeFilter) params.append('type', typeFilter);
+    if (makeFilter) params.append('make', makeFilter);
+    if (modelFilter) params.append('model', modelFilter);
+    if (yearFilter) params.append('year', yearFilter);
+    if (priceRange) {
+      const [min, max] = priceRange.split('-');
+      params.append('price', max || min);
+    }
+    if (mileageFilter) {
+      const [min, max] = mileageFilter.split('-');
+      params.append('mileage', max || min);
+    }
+    if (fuelFilter) params.append('fuelType', fuelFilter);
+    if (transmissionFilter) params.append('transmission', transmissionFilter);
+
+    setLoading(true);
+    setError(null);
+
+    fetch(`http://localhost:9090/api/products?${params.toString()}`)
+      .then(res => {
+        if (!res.ok) throw new Error('Failed to fetch products');
+        return res.json();
+      })
+      .then(data => {
+        setInventory(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error('Error loading products:', err);
+        setError('Error loading products.');
+        setLoading(false);
+      });
+  }, [location.search]);
 
   useEffect(() => {
     if (inventory && headingRef.current) {
@@ -38,89 +68,9 @@ function ProductsBody() {
     navigate("/detail", { state: { car } });
   };
 
-  if (!inventory) return <p>Loading...</p>;
-
-  let filteredInventory = [...inventory];
-
-  
-  // const yearFilter = searchParams.get('year');
-  // const priceRange = searchParams.get('price');
-  // const mileageFilter = searchParams.get('mileage');
-  
-  if (typeFilter) {
-    filteredInventory = filteredInventory.filter(
-      (car) => car.type.toLowerCase() === typeFilter.toLowerCase()
-    );
-  }
-  if (makeFilter) {
-    filteredInventory = filteredInventory.filter(
-      (car) => car.make.toLowerCase() === makeFilter.toLowerCase()
-    );
-  }
-  
-  if (modelFilter) {
-    filteredInventory = filteredInventory.filter(
-      (car) => car.model.toLowerCase() === modelFilter.toLowerCase()
-    );
-  }
-  
-  if (queryFilter) {
-    filteredInventory = filteredInventory.filter((car) =>
-      car.make.toLowerCase().includes(queryFilter) || car.model.toLowerCase().includes(queryFilter)
-    );
-  }
-
-  if (yearFilter) {
-      filteredInventory = filteredInventory.filter(
-        (car) => car.year == yearFilter);
-    }
-  
-  
-  if (priceRange) {
-    if (priceRange === "80000") {
-      filteredInventory = filteredInventory.filter(car => Number(car.price) > 80001);
-    } 
-    else{
-      const [minPrice, maxPrice] = priceRange.split('-').map(Number);
-      filteredInventory = filteredInventory.filter((car) => {
-        const price = Number(car.price);
-        return price >= minPrice && price <= maxPrice;
-      });
-    }
-  }
-  
-  if (mileageFilter) {
-    if (mileageFilter === '150001-above') {
-      filteredInventory = filteredInventory.filter((car) => car.mileage > 150001);
-    } else {
-      const [minMileage, maxMileage] = mileageFilter.split('-').map(Number);
-      filteredInventory = filteredInventory.filter((car) => {
-        const mileage = Number(car.mileage);
-        return mileage >= minMileage && mileage <= maxMileage;
-      });
-    }
-  }
-  
-  if (locationFilter) {
-    filteredInventory = filteredInventory.filter(
-      (car) => car.location.toLowerCase() === locationFilter.toLowerCase()
-    );
-  }
-  
-  if (fuelFilter) {
-    filteredInventory = filteredInventory.filter(
-      (car) => car.fuel_type.toLowerCase() === fuelFilter.toLowerCase()
-    );
-  }
-  
-  if (transmissionFilter) {
-    filteredInventory = filteredInventory.filter(
-      (car) => car.transmission.toLowerCase() === transmissionFilter.toLowerCase()
-    );
-  }
-  
-
-  if (filteredInventory.length === 0) {
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p className="error">{error}</p>;
+  if (!inventory || inventory.length === 0) {
     return <p className="no-vehicles-found">No vehicles found matching the filters.</p>;
   }
 
@@ -129,7 +79,7 @@ function ProductsBody() {
       <h2 ref={headingRef} className="section-title">Explore All Vehicles</h2>
 
       <div className="vehicle-grid-4x4">
-        {filteredInventory.map((car, index) => (
+        {inventory.map((car) => (
           <div
             key={key++}
             className="vehicle-card"
@@ -137,7 +87,7 @@ function ProductsBody() {
             style={{ cursor: 'pointer' }}
           >
             <img
-              src={car.images[0]}
+              src={car.imageUrl1}
               alt={car.model}
               className="vehicle-image"
             />
@@ -145,24 +95,18 @@ function ProductsBody() {
               <h3>{car.make} {car.model} - {car.year}</h3>
               <div className='line'></div>
               <div className='vehicle-icons'>
-                <img src="/images/meter.png" alt="meter" style={{width:'20px'}}/>
-                <img src="/images/fuel.png" alt="fuel" style={{height:'25px', width:'auto'}}/>
-                <img src="/images/trans.png" alt="trans" style={{width:'30px'}}/>
+                <img src="/images/meter.png" alt="meter" style={{ width: '20px' }} />
+                <img src="/images/fuel.png" alt="fuel" style={{ height: '25px', width: 'auto' }} />
+                <img src="/images/trans.png" alt="trans" style={{ width: '30px' }} />
               </div>
-              <div className="vehicle-description" style={{display:'flex', gap:'1.4rem'}}>
-                <p >
-                  {car.mileage.toLocaleString()} KM     
-                </p>
-                <p>
-                  {car.fuel_type} 
-                </p>
-                <p>
-                  {car.transmission}
-                </p>
+              <div className="vehicle-description" style={{ display: 'flex', gap: '1.4rem' }}>
+                <p>{car.mileage?.toLocaleString()} KM</p>
+                <p>{car.fuel_type}</p>
+                <p>{car.transmission}</p>
               </div>
               <div className='line'></div>
               <div className="vehicle-price">
-                <span>${car.price.toLocaleString()}</span>
+                <span>${car.price?.toLocaleString()}</span>
               </div>
             </div>
           </div>
