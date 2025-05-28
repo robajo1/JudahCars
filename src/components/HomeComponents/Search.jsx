@@ -20,10 +20,10 @@ const Search = ({ showFull = true }) => {
 
   const handleSearchClick = () => {
     if (searchQuery.trim()) {
-      const formattedQuery = searchQuery.replace(/\s+/g, '&');
+      const formattedQuery = searchQuery.replace(/\s+/g, '+');
       navigate(`/products?query=${formattedQuery}`);
     } else {
-      navigate('/products');
+      //navigate('/products');
     }
   };
 
@@ -50,6 +50,11 @@ const Search = ({ showFull = true }) => {
           className={`search-input ${!showFull ? 'search-input-only-field' : ''}`}
           placeholder="Mitsubishi Airtruk EV GMC 2023"
           value={searchQuery}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              {handleSearchClick();}
+            }
+          }}
           onChange={handleInputChange}
         />
         <button className={`search-button ${!showFull ? 'search-button-only' : ''}`} onClick={handleSearchClick}>
@@ -61,7 +66,7 @@ const Search = ({ showFull = true }) => {
         <>
           <p className="search-featured-text">Or Browse Featured Model</p>
           <div className="search-tags">
-            {['Suv', 'Sedan', 'Hatchback', 'Coupe', 'Hybrid'].map((cat, index) => (
+            {['Suv', 'Sedan', 'Hatchback', 'Coupe'].map((cat, index) => (
               <div
                 key={index}
                 className="tag"
@@ -72,7 +77,6 @@ const Search = ({ showFull = true }) => {
                 {cat === 'Sedan' && '🚗 '}
                 {cat === 'Hatchback' && '🚘 '}
                 {cat === 'Coupe' && '🏎️ '}
-                {cat === 'Hybrid' && '⚡ '}
                 <span>{cat}</span>
               </div>
             ))}

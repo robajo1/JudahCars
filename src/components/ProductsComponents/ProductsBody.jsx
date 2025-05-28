@@ -18,12 +18,14 @@ function ProductsBody() {
   const yearFilter = searchParams.get('year');
   const priceRange = searchParams.get('price');
   const mileageFilter = searchParams.get('mileage');
-  const fuelFilter = searchParams.get('fuel');
+  const fuelFilter = searchParams.get('fuelType');
+  const querySearch = searchParams.get('query');
   const transmissionFilter = searchParams.get('transmission');
 
   useEffect(() => {
     const params = new URLSearchParams();
-
+    console.log(querySearch);
+    if (querySearch)params.append('query', querySearch);      
     if (typeFilter) params.append('type', typeFilter);
     if (makeFilter) params.append('make', makeFilter);
     if (modelFilter) params.append('model', modelFilter);
@@ -41,7 +43,7 @@ function ProductsBody() {
 
     setLoading(true);
     setError(null);
-
+    console.log(params);
     fetch(`http://localhost:9090/api/products?${params.toString()}`)
       .then(res => {
         if (!res.ok) throw new Error('Failed to fetch products');
@@ -101,7 +103,7 @@ function ProductsBody() {
               </div>
               <div className="vehicle-description" style={{ display: 'flex', gap: '1.4rem' }}>
                 <p>{car.mileage?.toLocaleString()} KM</p>
-                <p>{car.fuel_type}</p>
+                <p>{car.fuelType}</p>
                 <p>{car.transmission}</p>
               </div>
               <div className='line'></div>

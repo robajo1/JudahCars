@@ -19,7 +19,8 @@
   }
   
   .more-filters-button,
-  .find-listing-button {
+  .find-listing-button,
+  .clear-filters-button {
     padding: 8px 15px;
     border: none;
     border-radius: 5px;
@@ -38,7 +39,9 @@
     background-color: #3f51b5; /* Example blue color */
     color: white;
   }
-  
+  .clear-filters-button{
+    text-decoration: underline;
+  }  
   .filter-icon,
   .search-icon {
     width: 16px;
