@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 function LoginRegister() {
-  
   const navigate = useNavigate();
   const [isRegistering, setIsRegistering] = useState(false);
   var [formData, setFormData] = useState({
@@ -9,12 +9,20 @@ function LoginRegister() {
     email: "",
     password: "",
     confirmPassword: "",
-    isSeller: false,
+    phone: "",
+    role: "SELLER", // default role
   });
 
   const toggleForm = () => {
     setIsRegistering((prev) => !prev);
-    setFormData({ fullName: "", email: "", password: "", confirmPassword: "", isSeller: false });
+    setFormData({
+      fullName: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+      phone: "",
+      role: "BUYER",
+    });
   };
 
   const handleChange = (e) => {
@@ -39,65 +47,74 @@ function LoginRegister() {
         alert("Full Name is required");
         return;
       }
+      if (!formData.phone) {
+        alert("Phone is required");
+        return;
+      }
       if (formData.password !== formData.confirmPassword) {
         alert("Passwords do not match");
         return;
       }
-    }else{
-      if(formData.isSeller){
-        try {
-          const response = await fetch("data/seller.json");
-          const data = await response.json();
-        
-          const matchedUser = data.find(
-            (user) =>
-              user.email === formData.email &&
-              user.password === formData.password
-          );
-        
-          if (!matchedUser) {
-            alert("Invalid email or password");
-          } else {
-            formData = { ...matchedUser, isSeller: true };
-            localStorage.setItem("user", JSON.stringify(formData));
-            alert("Login successful as seller");
-            window.location.href = "/dashboard";
+      // Registration using Spring Boot API
+      try {
+        const response = await fetch(
+          "http://localhost:9090/api/user/register",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              fullName: formData.fullName,
+              email: formData.email,
+              password: formData.password,
+              role: formData.role,
+              phone: formData.phone,
+            }),
           }
-        }catch(e){
-          console.error("Error logging in:", e);
-          alert("Login failed. Please try again.");
+        );
+        const data = await response.json();
+        if (!response.ok) {
+          alert(data.message || "Registration failed");
+        } else {
+          alert("Registration successful. Please log in.");
+          setIsRegistering(false);
+          setFormData({
+            fullName: "",
+            email: "",
+            password: "",
+            confirmPassword: "",
+            phone: "",
+            role: "BUYER",
+          });
         }
+      } catch (e) {
+        console.error("Error registering:", e);
+        alert("Registration failed. Please try again.");
       }
-      else{
-        try {
-          const response = await fetch("data/buyer.json");
-          const data = await response.json();
-        
-          const matchedUser = data.find(
-            (user) =>
-              user.email === formData.email &&
-              user.password === formData.password
-          );
-        
-          if (!matchedUser) {
-            alert("Invalid email or password");
-          } else {
-            formData = { ...matchedUser };
-            localStorage.setItem("user", JSON.stringify(formData));
-            alert("Login successful");
-            window.location.href = "/";
-          }
-        }catch(e){
-          console.error("Error logging in:", e);
-          alert("Login failed. Please try again.");
+    } else {
+      // Login using Spring Boot API
+      try {
+        const response = await fetch("http://localhost:9090/api/user/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email: formData.email,
+            password: formData.password,
+          }),
+        });
+        const data = await response.json();
+        if (!response.ok) {
+          alert(data.message || "Invalid email or password");
+        } else {
+          localStorage.setItem("user", JSON.stringify(data));
+          alert("Login successful");
+          window.location.href = "/";
+          console.log(data);
         }
-     
+      } catch (e) {
+        console.error("Error logging in:", e);
+        alert("Login failed. Please try again.");
       }
-      
-
     }
-
-    // alert(`${isRegistering ? "Registered" : "Logged in"} as ${formData.isSeller ? "Seller" : "User"} successfully!`);
   };
 
   return (
@@ -127,6 +144,16 @@ function LoginRegister() {
           onChange={handleChange}
           className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400"
         />
+        {isRegistering && (
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Phone"
+            value={formData.phone}
+            onChange={handleChange}
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400"
+          />
+        )}
         <input
           type="password"
           name="password"
@@ -136,27 +163,26 @@ function LoginRegister() {
           className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400"
         />
         {isRegistering && (
-          <input
-            type="password"
-            name="confirmPassword"
-            placeholder="Confirm Password"
-            value={formData.confirmPassword}
-            onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400"
-          />
+          <>
+            <input
+              type="password"
+              name="confirmPassword"
+              placeholder="Confirm Password"
+              value={formData.confirmPassword}
+              onChange={handleChange}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400"
+            />
+            <select
+              name="role"
+              value={formData.role}
+              onChange={handleChange}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400"
+            >
+              <option value="BUYER">Buyer</option>
+              <option value="SELLER">Seller</option>
+            </select>
+          </>
         )}
-
-        <label className="flex items-center space-x-2 text-sm text-gray-700">
-          <input
-            type="checkbox"
-            name="isSeller"
-            checked={formData.isSeller}
-            onChange={handleChange}
-            className="h-4 w-4 text-purple-600 border-gray-300 rounded"
-          />
-          <span>I am a seller</span>
-        </label>
-
         <button
           type="submit"
           className="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 transition-colors duration-300 font-semibold"
@@ -164,7 +190,9 @@ function LoginRegister() {
           {isRegistering ? "Sign Up" : "Login"}
         </button>
         <p className="text-center text-gray-600 text-sm">
-          {isRegistering ? "Already have an account?" : "Don't have an account?"}
+          {isRegistering
+            ? "Already have an account?"
+            : "Don't have an account?"}
           <button
             type="button"
             onClick={toggleForm}
@@ -177,4 +205,5 @@ function LoginRegister() {
     </div>
   );
 }
+
 export default LoginRegister;

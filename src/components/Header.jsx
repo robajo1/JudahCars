@@ -6,12 +6,12 @@ import SellerDashboard from "../pages/SellerDashBoard";
 
 function Header() {
   const location = useLocation();
-  const navClass = location.pathname === "/detail"  || location.pathname === "/aboutus" || location.pathname === "/cart";
+  const navClass = location.pathname === "/detail"  || location.pathname === "/aboutus" || location.pathname === "/cart" || location.pathname === "/login";
   const user = localStorage.getItem("user");
   useEffect(() => {}, [user]);
 
 
-  if(JSON.parse(user) && JSON.parse(user).isSeller){
+  if(JSON.parse(user) && JSON.parse(user).role === "SELLER"){
     return (
       <>
       <ul>
@@ -33,34 +33,37 @@ function Header() {
           <li>
             <Link to="/">JUDAH Shop</Link>
           </li>
-          <div className="nav-links-container">
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/products">Products</Link>
-            </li>
-            <li>
-              <Link to="/aboutus">About Us</Link>
-            </li>
-            <li>
-              {JSON.parse(user) ? (
-                <Link to="/cart">
-                  <button className="cart">Cart</button>
-                </Link>
-              ) : (
-                <Link to="/login">
-                  <button className="cart">Login</button>
-                </Link>
-              )}
-            </li>
-            <li>
-            {JSON.parse(user) ? (
-                  <button className="cart" onClick={() => { localStorage.removeItem("user"); window.location.href = "/"; }}>Log Out</button>
-              ) : (
-                <></>)}
-            </li>
-          </div>
+          <li className="nav-links-container">
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/products">Products</Link>
+              </li>
+              <li>
+                <Link to="/aboutus">About Us</Link>
+              </li>
+              <li>
+                {JSON.parse(user) ? (
+                  <Link to="/cart">
+                    <button className="cart">Cart</button>
+                  </Link>
+                ) : (
+                  <Link to="/login">
+                    <button className="cart">Login</button>
+                  </Link>
+                )}
+              </li>
+              <li>
+                {JSON.parse(user) ? (
+                  <button className="cart" onClick={() => { localStorage.removeItem("user"); window.location.href = "/"; }}>Logout</button>
+                ) : (
+                  <></>
+                )}
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
 

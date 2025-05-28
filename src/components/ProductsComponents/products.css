@@ -6,7 +6,7 @@
 
 .ad-banner-container {
   position: relative;
-  width: 98.8vw;
+  width: 100%;
   max-height: 80vh;
   overflow: hidden;
   margin-bottom: 2rem;
