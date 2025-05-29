@@ -91,7 +91,6 @@ function LoginRegister() {
         alert("Registration failed. Please try again.");
       }
     } else {
-      // Login using Spring Boot API
       try {
         const response = await fetch("http://localhost:9090/api/user/login", {
           method: "POST",
@@ -102,6 +101,7 @@ function LoginRegister() {
           }),
         });
         const data = await response.json();
+        data.password = formData.password;
         if (!response.ok) {
           alert(data.message || "Invalid email or password");
         } else {
