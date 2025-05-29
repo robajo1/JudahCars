@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 function LoginRegister() {
   const navigate = useNavigate();
   const [isRegistering, setIsRegistering] = useState(false);
-  var [formData, setFormData] = useState({
+  const [formData, setFormData] = useState({
     fullName: "",
     email: "",
     password: "",
@@ -55,22 +55,21 @@ function LoginRegister() {
         alert("Passwords do not match");
         return;
       }
-      // Registration using Spring Boot API
+
+
       try {
-        const response = await fetch(
-          "http://localhost:9090/api/user/register",
-          {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              fullName: formData.fullName,
-              email: formData.email,
-              password: formData.password,
-              role: formData.role,
-              phone: formData.phone,
-            }),
-          }
-        );
+        const response = await fetch("http://localhost:9090/api/user/register", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            fullName: formData.fullName,
+            email: formData.email,
+            password: formData.password,
+            role: formData.role,
+            phone: formData.phone,
+          }),
+        });
+
         const data = await response.json();
         if (!response.ok) {
           alert(data.message || "Registration failed");
@@ -100,15 +99,24 @@ function LoginRegister() {
             password: formData.password,
           }),
         });
+
         const data = await response.json();
-        data.password = formData.password;
+
         if (!response.ok) {
           alert(data.message || "Invalid email or password");
         } else {
-          localStorage.setItem("user", JSON.stringify(data));
-          alert("Login successful");
-          window.location.href = "/";
-          console.log(data);
+          console.log("Login successful:", data);
+          console.log("Response headers:", [...response.headers]);
+          const token = response.headers.get("Authorization")?.replace("Bearer ", "");
+
+          if (token) {
+            localStorage.setItem("jwt_token", token); 
+            localStorage.setItem("user", JSON.stringify(data)); 
+            alert("Login successful");
+            navigate("/");
+          } else {
+            alert("Login failed: No token received");
+          }
         }
       } catch (e) {
         console.error("Error logging in:", e);
