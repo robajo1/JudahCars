@@ -9,12 +9,26 @@ export default function SellerDashboard() {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [products, setProducts] = useState([]);
-  const [messages, setMessages] = useState([]); // Store chat messages
-  const [input, setInput] = useState(''); // User input
-  const [socket, setSocket] = useState(null); // WebSocket connection
+  const [messages, setMessages] = useState([]);
+  const [input, setInput] = useState("");
+  const [socket, setSocket] = useState(null);
   const [showMessageModal, setShowMessageModal] = useState(false);
+  const [showEditProductPopup, setShowEditProductPopup] = useState(false);
+  const [selectedId, setSelectedId] = useState(null);
 
-  const [formData, setFormData] = useState({
+  useEffect(() => {
+    if (showEditProductPopup) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [showEditProductPopup]);
+
+  const initial = {
+    type: "",
     make: "",
     model: "",
     year: "",
@@ -27,7 +41,9 @@ export default function SellerDashboard() {
     imageUrl1: "",
     imageUrl2: "",
     imageUrl3: "",
-  });
+    sketch: "",
+  };
+  const [formData, setFormData] = useState(initial);
 
   // Load user from localStorage on mount
   useEffect(() => {
@@ -49,34 +65,35 @@ export default function SellerDashboard() {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`,
-      }
+        Authorization: `Bearer ${token}`,
+      },
     })
-    .then(res => {
-      if (!res.ok) throw new Error("Failed to fetch products");
-      return res.json();
-    })
-    .then(data => {
-      setProducts(data);
-    })
-    .catch(err => {
-      console.error("Error fetching products:", err);
-      if (err.response?.status === 401) {
-        navigate("/login"); // Redirect if unauthorized
-      }
-    });
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to fetch products");
+        return res.json();
+      })
+      .then((data) => {
+        setProducts(data);
+      })
+      .catch((err) => {
+        console.error("Error fetching products:", err);
+        if (err.response?.status === 401) {
+          navigate("/login"); // Redirect if unauthorized
+        }
+      });
   }, [user, navigate]);
 
   // Setup WebSocket for messages
   useEffect(() => {
-    const ws = new WebSocket('ws://localhost:8080');
+    const ws = new WebSocket("ws://localhost:8080");
     setSocket(ws);
 
     ws.onmessage = (event) => {
-      const data = event.data instanceof Blob
-        ? URL.createObjectURL(event.data)
-        : event.data;
-      setMessages(prev => [...prev, data]);
+      const data =
+        event.data instanceof Blob
+          ? URL.createObjectURL(event.data)
+          : event.data;
+      setMessages((prev) => [...prev, data]);
     };
 
     return () => {
@@ -96,15 +113,14 @@ export default function SellerDashboard() {
   const sendMessage = () => {
     if (socket && input.trim()) {
       socket.send(input);
-      setInput('');
+      setInput("");
     }
   };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
-
   const handleAddProduct = async (e) => {
     e.preventDefault();
 
@@ -126,7 +142,7 @@ export default function SellerDashboard() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(newProduct),
       });
@@ -139,58 +155,245 @@ export default function SellerDashboard() {
 
       const data = await response.json();
       alert("Product added successfully!");
-      setProducts(prev => [...prev, data]);
-      setFormData({
-        make: "",
-        model: "",
-        year: "",
-        price: "",
-        mileage: "",
-        fuel_type: "",
-        transmission: "",
-        description: "",
-        location: "",
-        imageUrl1: "",
-        imageUrl2: "",
-        imageUrl3: "",
-      });
+      setProducts((prev) => [...prev, data]);
+      setFormData(initial);
     } catch (error) {
       console.error("Error adding product:", error);
       alert("Something went wrong. Please try again.");
     }
   };
+  // Let's assume you have the ID of the product to update, e.g., from props or state
+  const handleUpdateProduct = async (e, productId) => {
+    const token = getToken();
+    console.log("Token:", token);
+
+    const updatedProductData = {
+      ...formData,
+    };
+
+    if (!productId) {
+      alert("Product is missing. Cannot update.");
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        `http://localhost:9090/api/products/${productId}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify(updatedProductData), // Send the data for the product to be updated
+        }
+      );
+      if (!response.ok) {
+        const errorData = await response.json();
+        alert(errorData.message || "Failed to update product.");
+        return;
+      }
+      const updatedProduct = await response.json(); // The updated product from the server
+      alert("Product updated successfully!");
+
+      // Update the products state
+      // You'll need to find the product in your 'products' array and replace it
+      // setProducts((prevProducts) =>
+      //   prevProducts.map((product) =>
+      //     product.id === productId ? updatedProduct : product // Assuming your product object has an 'id' field
+      //   )
+      // );
+      navigate(0);
+    } catch (error) {
+      console.error("Error updating product:", error);
+      alert("Something went wrong. Please try again.");
+    }
+  };
+
+  const deleteProduct = (index) => {
+    if (!user) return;
+
+    const token = getToken();
+    const productId = index;
+
+    fetch(`http://localhost:9090/api/products/${productId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to delete product");
+        alert("Product deleted successfully!");
+        navigate(0);
+      })
+      .catch((err) => {
+        console.error("Error deleting product:", err);
+        alert("Failed to delete product.");
+      });
+  };
+
+  const handleEditSubmit = (e) => {
+    e.preventDefault();
+    if (!user) {
+      alert("User is not authenticated.");
+      return;
+    }
+    handleUpdateProduct(e, selectedId);
+  };
 
   return (
     <>
-      <div className="min-h-screen bg-gray-50 p-6">
-        <h2 className="text-3xl font-bold mb-6 text-center">Seller Dashboard</h2>
+      <div className="min-h-screen bg-gray-100 p-6">
+        <h2 className="text-3xl font-bold mb-6 text-center">
+          Seller Dashboard
+        </h2>
 
-        {/* Add Product Form */}
-        <form onSubmit={handleAddProduct} className="bg-white p-6 rounded-xl shadow-md max-w-2xl mx-auto space-y-4">
+        {/* Original Add Product Form */}
+        <form
+          onSubmit={handleAddProduct}
+          className="bg-white p-6 rounded-xl shadow-xl max-w-4xl mx-auto space-y-4"
+        >
           <h3 className="text-xl font-semibold mb-2">Add New Vehicle</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <input type="text" name="make" placeholder="Make" required value={formData.make} onChange={handleInputChange} className="input-style" />
-            <input type="text" name="model" placeholder="Model" required value={formData.model} onChange={handleInputChange} className="input-style" />
-            <input type="number" name="year" placeholder="Year" required value={formData.year} onChange={handleInputChange} className="input-style" />
-            <input type="number" name="price" placeholder="Price" required value={formData.price} onChange={handleInputChange} className="input-style" />
-            <input type="number" name="mileage" placeholder="Mileage" required value={formData.mileage} onChange={handleInputChange} className="input-style" />
-            <input type="text" name="fuel_type" placeholder="Fuel Type" required value={formData.fuel_type} onChange={handleInputChange} className="input-style" />
-            <input type="text" name="transmission" placeholder="Transmission" required value={formData.transmission} onChange={handleInputChange} className="input-style" />
-            <input type="text" name="location" placeholder="Location" required value={formData.location} onChange={handleInputChange} className="input-style" />
+            <input
+              type="text"
+              name="make"
+              placeholder="Make"
+              required
+              value={formData.make}
+              onChange={handleInputChange}
+              className="input-style text-base"
+            />
+            <input
+              type="text"
+              name="model"
+              placeholder="Model"
+              required
+              value={formData.model}
+              onChange={handleInputChange}
+              className="input-style"
+            />
+            <input
+              type="text"
+              name="type"
+              placeholder="Type (SUV, Sedan,...)"
+              required
+              value={formData.type}
+              onChange={handleInputChange}
+              className="input-style w-full"
+            />
+            <input
+              type="number"
+              min="1"
+              name="year"
+              placeholder="Year (2020)"
+              required
+              value={formData.year}
+              onChange={handleInputChange}
+              className="input-style"
+            />
+            <input
+              type="number"
+              min="1"
+              name="price"
+              placeholder="Price"
+              required
+              value={formData.price}
+              onChange={handleInputChange}
+              className="input-style"
+            />
+            <input
+              type="number"
+              min="1"
+              name="mileage"
+              placeholder="Mileage"
+              required
+              value={formData.mileage}
+              onChange={handleInputChange}
+              className="input-style"
+            />
+            <input
+              type="text"
+              name="fuel_type"
+              placeholder="Fuel Type"
+              required
+              value={formData.fuel_type}
+              onChange={handleInputChange}
+              className="input-style"
+            />
+            <input
+              type="text"
+              name="transmission"
+              placeholder="Transmission"
+              required
+              value={formData.transmission}
+              onChange={handleInputChange}
+              className="input-style"
+            />
+            <input
+              type="text"
+              name="location"
+              placeholder="Location"
+              required
+              value={formData.location}
+              onChange={handleInputChange}
+              className="input-style"
+            />
+            <input
+              type="text"
+              name="sketch"
+              placeholder="3D (SketchfadEmbed)"
+              value={formData.sketch}
+              onChange={handleInputChange}
+              className="input-style w-full"
+            />
           </div>
-          <textarea name="description" placeholder="Description" value={formData.description} onChange={handleInputChange} className="w-full p-2 border rounded-lg resize-none" rows="3" />
-
-          <input type="text" name="imageUrl1" placeholder="Image URL 1" required value={formData.imageUrl1} onChange={handleInputChange} className="input-style w-full" />
-          <input type="text" name="imageUrl2" placeholder="Image URL 2" required value={formData.imageUrl2} onChange={handleInputChange} className="input-style w-full" />
-          <input type="text" name="imageUrl3" placeholder="Image URL 3" required value={formData.imageUrl3} onChange={handleInputChange} className="input-style w-full" />
-
-          <button type="submit" className="bg-purple-600 text-white py-2 px-6 rounded-lg hover:bg-purple-700 font-semibold w-full">
+          <textarea
+            name="description"
+            placeholder="Description"
+            value={formData.description}
+            onChange={handleInputChange}
+            className="w-full p-2 border rounded-lg resize-none"
+            rows="3"
+          />
+          <input
+            type="text"
+            name="imageUrl1"
+            placeholder="Image URL 1"
+            required
+            value={formData.imageUrl1}
+            onChange={handleInputChange}
+            className="input-style w-full"
+          />
+          <input
+            type="text"
+            name="imageUrl2"
+            placeholder="Image URL 2"
+            value={formData.imageUrl2}
+            onChange={handleInputChange}
+            className="input-style w-full"
+          />
+          <input
+            type="text"
+            name="imageUrl3"
+            placeholder="Image URL 3"
+            value={formData.imageUrl3}
+            onChange={handleInputChange}
+            className="input-style w-full"
+          />
+          <button
+            type="submit"
+            className="bg-purple-600 text-white py-2 px-6 rounded-lg hover:bg-purple-700 font-semibold w-full text-lg"
+          >
             Add Vehicle
           </button>
         </form>
 
-        <button 
-          className="mt-6 bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 font-semibold w-full"
+        <button
+          className="mt-6 bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 font-semibold w-full mx-auto block text-center"
+          style={{ width: "53rem" }}
           onClick={() => setShowMessageModal(true)}
         >
           Messages
@@ -198,18 +401,48 @@ export default function SellerDashboard() {
 
         {/* Products List */}
         <div className="mt-10">
-          <h3 className="text-2xl font-semibold mb-4 text-center">Your Listings</h3>
+          <h3 className="text-2xl font-semibold mb-4 text-center">
+            Your Listings
+          </h3>
           {products.length === 0 ? (
             <p className="text-center text-gray-500">No vehicles added yet.</p>
           ) : (
             <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               {products.map((car, idx) => (
                 <div key={idx} className="bg-white rounded-xl shadow p-4">
-                  <img src={car.imageUrl1} alt={`${car.make} ${car.model}`} className="w-full h-40 object-cover rounded-md mb-3" />
-                  <h4 className="text-lg font-bold">{car.make} {car.model} ({car.year})</h4>
-                  <p className="text-gray-600">${car.price} - {car.mileage} mi</p>
-                  <p className="text-gray-500 text-sm">{car.fuel_type} • {car.transmission}</p>
+                  <img
+                    src={car.imageUrl1}
+                    alt={`${car.make} ${car.model}`}
+                    className="w-full h-40 object-cover rounded-md mb-3"
+                  />
+                  <h4 className="text-lg font-bold">
+                    {car.make} {car.model} ({car.year})
+                  </h4>
+                  <p className="text-gray-600">
+                    ${car.price} - {car.mileage} mi
+                  </p>
+                  <p className="text-gray-500 text-sm">
+                    {car.fuel_type} • {car.transmission}
+                  </p>
                   <p className="text-gray-500 text-sm">{car.location}</p>
+                  <div className="flex gap-2 mx-auto">
+                    <button
+                      className="mt-3 bg-blue-500 text-white text-s py-1 px-1 rounded-lg font-semibold w-full"
+                      onClick={() => {
+                        setShowEditProductPopup(true);
+                        setFormData(initial);
+                        setSelectedId(car.productId);
+                      }}
+                    >
+                      Edit
+                    </button>
+                    <button
+                      className="mt-3 bg-red-500 text-white text-s rounded-lg font-semibold w-full"
+                      onClick={() => deleteProduct(car.productId)}
+                    >
+                      Remove
+                    </button>
+                  </div>
                 </div>
               ))}
             </div>
@@ -217,17 +450,184 @@ export default function SellerDashboard() {
         </div>
       </div>
 
+      {/* Popup Modal for the Edit Product Form */}
+      {showEditProductPopup && (
+        <div
+          className="fixed inset-0 flex items-center justify-center bg-transparent backdrop-blur"
+          onClick={() => {
+            setShowEditProductPopup(false);
+            setFormData(initial);
+          }}
+        >
+          <div
+            className="bg-white p-6 rounded-xl shadow-xl max-w-4xl mx-auto space-y-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-xl font-semibold">Edit Vehicle</h3>
+              <button
+                className="text-gray-600"
+                onClick={() => {
+                  setShowEditProductPopup(false);
+                  setFormData(initial);
+                }}
+              >
+                X
+              </button>
+            </div>
+            <form
+              className="max-w-4xl mx-auto space-y-4"
+              onSubmit={handleEditSubmit}
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  name="make"
+                  placeholder="Make"
+                  value={formData.make}
+                  onChange={handleInputChange}
+                  className="input-style text-base"
+                />
+                <input
+                  type="text"
+                  name="model"
+                  placeholder="Model"
+                  value={formData.model}
+                  onChange={handleInputChange}
+                  className="input-style"
+                />
+                <input
+                  type="text"
+                  name="type"
+                  placeholder="Type"
+                  value={formData.type}
+                  onChange={handleInputChange}
+                  className="input-style w-full"
+                />
+                <input
+                  type="number"
+                  min="1"
+                  name="year"
+                  placeholder="Year"
+                  value={formData.year}
+                  onChange={handleInputChange}
+                  className="input-style"
+                />
+                <input
+                  type="number"
+                  min="1"
+                  name="price"
+                  placeholder="Price"
+                  value={formData.price}
+                  onChange={handleInputChange}
+                  className="input-style"
+                />
+                <input
+                  type="number"
+                  min="1"
+                  name="mileage"
+                  placeholder="Mileage"
+                  value={formData.mileage}
+                  onChange={handleInputChange}
+                  className="input-style"
+                />
+                <input
+                  type="text"
+                  name="fuel_type"
+                  placeholder="Fuel Type"
+                  value={formData.fuel_type}
+                  onChange={handleInputChange}
+                  className="input-style"
+                />
+                <input
+                  type="text"
+                  name="transmission"
+                  placeholder="Transmission"
+                  value={formData.transmission}
+                  onChange={handleInputChange}
+                  className="input-style"
+                />
+                <input
+                  type="text"
+                  name="location"
+                  placeholder="Location"
+                  value={formData.location}
+                  onChange={handleInputChange}
+                  className="input-style"
+                />
+                <input
+                  type="text"
+                  name="sketch"
+                  placeholder="3D (SketchfadEmbed)"
+                  value={formData.sketch}
+                  onChange={handleInputChange}
+                  className="input-style w-full"
+                />
+              </div>
+              <textarea
+                name="description"
+                placeholder="Description"
+                value={formData.description}
+                onChange={handleInputChange}
+                className="w-full p-2 border rounded-lg resize-none"
+                rows="3"
+              />
+              <input
+                type="text"
+                name="imageUrl1"
+                placeholder="Image URL 1"
+                value={formData.imageUrl1}
+                onChange={handleInputChange}
+                className="input-style w-full"
+              />
+              <input
+                type="text"
+                name="imageUrl2"
+                placeholder="Image URL 2"
+                value={formData.imageUrl2}
+                onChange={handleInputChange}
+                className="input-style w-full"
+              />
+              <input
+                type="text"
+                name="imageUrl3"
+                placeholder="Image URL 3"
+                value={formData.imageUrl3}
+                onChange={handleInputChange}
+                className="input-style w-full"
+              />
+              <button
+                type="submit"
+                className="mt-4 bg-purple-600 text-white py-2 px-6 rounded-lg hover:bg-purple-700 font-semibold w-full text-lg"
+              >
+                Confirm
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+
       {/* Chat Modal */}
       {showMessageModal && (
-        <div className="chat-modal-overlay" onClick={() => setShowMessageModal(false)}>
+        <div
+          className="chat-modal-overlay"
+          onClick={() => setShowMessageModal(false)}
+        >
           <div className="chat-modal" onClick={(e) => e.stopPropagation()}>
             <div className="chat-header">
               <h3>Live Chat</h3>
-              <button className="close-chat" onClick={() => setShowMessageModal(false)}>×</button>
+              <button
+                className="close-chat"
+                onClick={() => setShowMessageModal(false)}
+              >
+                ×
+              </button>
             </div>
             <div className="chat-body">
               {messages.map((msg, index) => (
-                <div key={index} className="bubble">{msg}</div>
+                <div key={index} className="bubble">
+                  {msg}
+                </div>
               ))}
             </div>
             <div className="chat-input">
@@ -236,7 +636,7 @@ export default function SellerDashboard() {
                 placeholder="Type a message..."
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
+                onKeyDown={(e) => e.key === "Enter" && sendMessage()}
               />
               <button onClick={sendMessage}>Send</button>
             </div>

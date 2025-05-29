@@ -14,14 +14,12 @@ function Header() {
   if(JSON.parse(user) && JSON.parse(user).role === "SELLER"){
     return (
       <>
-      <ul>
-        <li>
+      <div style={{backgroundColor:"#f3f4f6", textAlign: "end"}}>
         {JSON.parse(user) ? (
-              <button className="cart" onClick={() => { localStorage.removeItem("user"); window.location.href = "/"; }}>LogOut</button>
+              <button className="cart " onClick={() => { localStorage.removeItem("user"); window.location.href = "/"; }}>LogOut</button>
           ) : (
             <></>)}
-        </li>
-      </ul>
+      </div>
       <SellerDashboard/>
       </>
     );    
