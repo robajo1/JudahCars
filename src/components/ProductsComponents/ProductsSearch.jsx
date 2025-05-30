@@ -120,7 +120,7 @@ function ProductsSearch() {
             <option value="0-50000">0 - 50,000 KM</option>
             <option value="50001-100000">50,001 - 100,000 KM</option>
             <option value="100001-150000">100,001 - 150,000 KM</option>
-            <option value="150001-above">150,001+ KM</option>
+            <option value="150001-above">Above 150,000 KM</option>
           </select>
 
           <select onChange={(e) => setYear(e.target.value)}value={year} className="filter-select">

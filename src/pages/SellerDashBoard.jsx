@@ -6,7 +6,6 @@ const getToken = () => localStorage.getItem("jwt_token");
 const isAuthenticated = () => !!getToken();
 
 export default function SellerDashboard() {
-
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [products, setProducts] = useState([]);
@@ -20,28 +19,28 @@ export default function SellerDashboard() {
   const [input, setInput] = useState("");
 
   useEffect(() => {
-  if (!user || !showMessageModal) return;
+    if (!user || !showMessageModal) return;
 
-  // Fetch conversations for the seller
-  const token = getToken();
-  fetch(`http://localhost:9090/api/conversations/${user.userId}`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-  })
-    .then((res) => {
-      if (!res.ok) throw new Error("Failed to fetch conversations");
-      return res.json();
+    // Fetch conversations for the seller
+    const token = getToken();
+    fetch(`http://localhost:9090/api/conversations/${user.userId}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
     })
-    .then((data) => {
-      setConversations(data);
-    })
-    .catch((err) => {
-      console.error("Error fetching conversations:", err);
-    });
-  } , [user, showMessageModal]);
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to fetch conversations");
+        return res.json();
+      })
+      .then((data) => {
+        setConversations(data);
+      })
+      .catch((err) => {
+        console.error("Error fetching conversations:", err);
+      });
+  }, [user, showMessageModal]);
 
   useEffect(() => {
     if (showEditProductPopup) {
@@ -61,7 +60,7 @@ export default function SellerDashboard() {
     year: "",
     price: "",
     mileage: "",
-    fuel_type: "",
+    fuelType: "",
     transmission: "",
     description: "",
     location: "",
@@ -137,60 +136,61 @@ export default function SellerDashboard() {
     });
   };
 
- const sendMessage = (content) => {
-      if (!content.trim() || !selectedConversation) return;
+  const sendMessage = (content) => {
+    if (!content.trim() || !selectedConversation) return;
 
-      const token = getToken();
-      const payload = {
-        sentAt: new Date().toISOString(),
-        senderId: user.userId,
-        receiverId: selectedConversation.buyerId,
-        messageText: content,
-      };
+    const token = getToken();
+    const payload = {
+      sentAt: new Date().toISOString(),
+      senderId: user.userId,
+      receiverId: selectedConversation.buyerId,
+      messageText: content,
+    };
 
-      fetch("http://localhost:9090/api/messages", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify(payload),
-        })
-        .then((res) => {
-          if (!res.ok) throw new Error("Failed to send message");
-          
-          setInput("");
-        })
-        .catch((err) => {
-          console.error("Error sending message:", err);
-          alert("Failed to send message.");
-        });
+    fetch("http://localhost:9090/api/messages", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(payload),
+    })
+      .then((res) => {
+        if (!res.ok) {
+          return res.json().then((errorData) => {
+            throw new Error(errorData.message || "Failed to send message");
+          });
+        }
+        setInput("");
+      })
+      .catch((err) => {
+        console.error("Error sending message:", err);
+        alert(err.message);
+      });
   };
 
-
-
-    const loadMessages = (conversationId, buyerId) => {
-      const token = getToken();
-      fetch(`http://localhost:9090/api/messages/${conversationId}`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
+  const loadMessages = (conversationId, buyerId) => {
+    const token = getToken();
+    fetch(`http://localhost:9090/api/messages/${conversationId}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to load messages");
+        return res.json();
       })
-        .then((res) => {
-          if (!res.ok) throw new Error("Failed to load messages");
-          return res.json();
-        })
-        .then((data) => {
-          setMessages(data);
-          setSelectedConversation({ conversationId, buyerId });
-        })
-        .catch((err) => {
-          console.error("Error loading messages:", err);
-          alert("Could not load messages.");
-        });
-    };
+      .then((data) => {
+        setMessages(data);
+        setSelectedConversation({ conversationId, buyerId });
+      })
+      .catch((err) => {
+        console.error("Error loading messages:", err);
+        alert("Could not load messages.");
+      });
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -240,8 +240,6 @@ export default function SellerDashboard() {
   // Let's assume you have the ID of the product to update, e.g., from props or state
   const handleUpdateProduct = async (e, productId) => {
     const token = getToken();
-    console.log("Token:", token);
-
     const updatedProductData = {
       ...formData,
     };
@@ -250,7 +248,7 @@ export default function SellerDashboard() {
       alert("Product is missing. Cannot update.");
       return;
     }
-
+    console.log(updatedProductData);
     try {
       const response = await fetch(
         `http://localhost:9090/api/products/${productId}`,
@@ -268,17 +266,15 @@ export default function SellerDashboard() {
         alert(errorData.message || "Failed to update product.");
         return;
       }
-      const updatedProduct = await response.json(); // The updated product from the server
+      const updatedProduct = await response.json();
       alert("Product updated successfully!");
 
-      // Update the products state
-      // You'll need to find the product in your 'products' array and replace it
-      // setProducts((prevProducts) =>
-      //   prevProducts.map((product) =>
-      //     product.id === productId ? updatedProduct : product // Assuming your product object has an 'id' field
-      //   )
-      // );
-      navigate(0);
+      //
+      setProducts((prevProducts) =>
+        prevProducts.map((product) => {
+          return product.productId === productId ? updatedProduct : product;
+        })
+      );
     } catch (error) {
       console.error("Error updating product:", error);
       alert("Something went wrong. Please try again.");
@@ -299,13 +295,19 @@ export default function SellerDashboard() {
       },
     })
       .then((res) => {
-        if (!res.ok) throw new Error("Failed to delete product");
+        if (!res.ok) {
+          return res.json().then((errorData) => {
+            throw new Error(errorData.message || "Failed to delete product");
+          });
+        }
         alert("Product deleted successfully!");
-        navigate(0);
+        setProducts((prevProducts) =>
+          prevProducts.filter((product) => product.productId !== productId)
+        );
       })
       .catch((err) => {
-        console.error("Error deleting product:", err);
-        alert("Failed to delete product.");
+        console.error("Error deleting product: ", err);
+        alert(err.message);
       });
   };
 
@@ -389,24 +391,31 @@ export default function SellerDashboard() {
               onChange={handleInputChange}
               className="input-style"
             />
-            <input
-              type="text"
-              name="fuel_type"
-              placeholder="Fuel Type"
+            <select
+              name="fuelType"
               required
-              value={formData.fuel_type}
+              value={formData.fuelType}
               onChange={handleInputChange}
               className="input-style"
-            />
-            <input
-              type="text"
+            >
+              <option value="" disabled hidden>Select Fuel Type</option>
+              <option value="Gasoline">Gasoline</option>
+              <option value="Diesel">Diesel</option>
+              <option value="Electric">Electric</option>
+              <option value="Hybrid">Hybrid</option>
+            </select>
+            <select
               name="transmission"
-              placeholder="Transmission"
               required
               value={formData.transmission}
               onChange={handleInputChange}
               className="input-style"
-            />
+            >
+              <option value="" disabled hidden>Select Transmission</option>
+              <option value="Automatic">Automatic</option>
+              <option value="Manual">Manual</option>
+              <option value="CVT">CVT</option>
+            </select>
             <input
               type="text"
               name="location"
@@ -497,7 +506,7 @@ export default function SellerDashboard() {
                     ${car.price} - {car.mileage} mi
                   </p>
                   <p className="text-gray-500 text-sm">
-                    {car.fuel_type} • {car.transmission}
+                    {car.fuelType} • {car.transmission}
                   </p>
                   <p className="text-gray-500 text-sm">{car.location}</p>
                   <div className="flex gap-2 mx-auto">
@@ -606,22 +615,29 @@ export default function SellerDashboard() {
                   onChange={handleInputChange}
                   className="input-style"
                 />
-                <input
-                  type="text"
-                  name="fuel_type"
-                  placeholder="Fuel Type"
-                  value={formData.fuel_type}
+                <select
+                  name="fuelType"
+                  value={formData.fuelType}
                   onChange={handleInputChange}
                   className="input-style"
-                />
-                <input
-                  type="text"
+                >
+                  <option value="">Select fuel type</option>
+                  <option value="Gasoline">Gasoline</option>
+                  <option value="Diesel">Diesel</option>
+                  <option value="Electric">Electric</option>
+                  <option value="Hybrid">Hybrid</option>
+                </select>
+                <select
                   name="transmission"
-                  placeholder="Transmission"
                   value={formData.transmission}
                   onChange={handleInputChange}
                   className="input-style"
-                />
+                >
+                  <option value="">Select transmission</option>
+                  <option value="Automatic">Automatic</option>
+                  <option value="Manual">Manual</option>
+                  <option value="CVT">CVT</option>
+                </select>
                 <input
                   type="text"
                   name="location"
@@ -703,14 +719,19 @@ export default function SellerDashboard() {
                     <li
                       key={conv.conversationId}
                       className={`p-3 my-2 rounded cursor-pointer ${
-                        selectedConversation?.conversationId === conv.conversationId
+                        selectedConversation?.conversationId ===
+                        conv.conversationId
                           ? "bg-purple-100 border-l-4 border-purple-500"
                           : "hover:bg-gray-100"
                       }`}
-                      onClick={() => loadMessages(conv.conversationId, conv.buyerId)}
+                      onClick={() =>
+                        loadMessages(conv.conversationId, conv.buyerId)
+                      }
                     >
                       <strong>Buyer ID: {conv.buyerId}</strong>
-                      <p className="text-sm text-gray-600 truncate">{conv.lastMessage || "Start chatting..."}</p>
+                      <p className="text-sm text-gray-600 truncate">
+                        {conv.lastMessage || "Start chatting..."}
+                      </p>
                     </li>
                   ))}
                 </ul>
@@ -721,7 +742,9 @@ export default function SellerDashboard() {
             <div className="w-full md:w-2/3 flex flex-col">
               <div className="flex justify-between items-center p-4 border-b">
                 <h3 className="text-xl font-semibold">
-                  {selectedConversation ? `Chat with Buyer #${selectedConversation.buyerId}` : "Select a Conversation"}
+                  {selectedConversation
+                    ? `Chat with Buyer #${selectedConversation.buyerId}`
+                    : "Select a Conversation"}
                 </h3>
                 <button
                   className="text-gray-600 hover:text-gray-900"
@@ -734,7 +757,9 @@ export default function SellerDashboard() {
               {/* Messages Body */}
               <div className="flex-1 p-4 overflow-y-auto space-y-3 bg-gray-100">
                 {messages.length === 0 ? (
-                  <p className="text-gray-500 text-center mt-10">No messages yet.</p>
+                  <p className="text-gray-500 text-center mt-10">
+                    No messages yet.
+                  </p>
                 ) : (
                   messages.map((msg, index) => (
                     <div
