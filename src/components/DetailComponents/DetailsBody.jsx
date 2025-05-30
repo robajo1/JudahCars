@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./detailsbody.css";
-import { p } from "framer-motion/client";
+const getToken = () => localStorage.getItem("jwt_token");
+const isAuthenticated = () => !!getToken();
 
 function DetailsBody() {
   const [messages, setMessages] = useState([]);
@@ -18,6 +19,30 @@ function DetailsBody() {
   const [isAddingToCart, setIsAddingToCart] = useState(false);
   const [inventory, setInventory] = useState([]);
   const [showMessageModal, setShowMessageModal] = useState(false);
+
+  const loadMessages = (senderId, receiverId) => {
+      const token = getToken();
+      
+      fetch(`http://localhost:9090/api/messages?senderId=${senderId}&receiverId=${receiverId}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then((res) => {
+          if (!res.ok) throw new Error("Failed to load messages");
+          return res.json();
+        })
+        .then((data) => {
+          setMessages(data);
+          console.log("Messages loaded:", data);
+        })
+        .catch((err) => {
+          console.error("Error loading messages:", err);
+          alert("Could not load messages.");
+        });
+    };
 
   useEffect(() => {
     const ws = new WebSocket('ws://localhost:8080');
@@ -42,11 +67,35 @@ function DetailsBody() {
     });
   };
 
-  const sendMessage = () => {
-    if (socket && input) {
-      socket.send(input);
-      setInput('');
-    }
+   const sendMessage = (user,seller,content) => {
+     
+
+      const token = getToken();
+      const payload = {
+        recieverId: seller,
+        senderId: user,
+        sentAt: new Date().toISOString(),
+        messageText: content,
+      };
+      console.log("Sending message:", payload);
+      console.log("stringify payload:", JSON.stringify(payload));
+      fetch("http://localhost:9090/api/messages", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(payload),
+        })
+        .then((res) => {
+          if (!res.ok) throw new Error("Failed to send message");
+          
+          setInput("");
+        })
+        .catch((err) => {
+          console.error("Error sending message:", err);
+          alert("Failed to send message.");
+        });
   };
 
   useEffect(() => {
@@ -235,7 +284,10 @@ function DetailsBody() {
               </div>
               <div className="message">
                 <button className="message-button"
-                  onClick={user ? () => setShowMessageModal(true) : null}>
+                  onClick={user ? ()=> {
+                    loadMessages(seller.userId, JSON.parse(user).userId);
+                    setShowMessageModal(true)
+                    } : null}>
                   {user ? "Message" : "Login to Message Seller"} <span className="arrow-icon">↗</span>
                 </button>
               </div>
@@ -303,12 +355,13 @@ function DetailsBody() {
             </div>
             <div className="chat-body">
               {messages.map((msg, index) => (
+                console.log("Message:", msg),
                 <div key={index} className="bubble">{msg}</div>
               ))}
             </div>
             <div className="chat-input">
               <input type="text" placeholder="Type a message..." value={input} onChange={(e) => setInput(e.target.value)} />
-              <button onClick={sendMessage}>Send</button>
+              <button onClick={()=>sendMessage(JSON.parse(user).userId,seller.userId,input)}>Send</button>
             </div>
           </div>
         </div>

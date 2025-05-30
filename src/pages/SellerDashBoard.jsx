@@ -6,15 +6,42 @@ const getToken = () => localStorage.getItem("jwt_token");
 const isAuthenticated = () => !!getToken();
 
 export default function SellerDashboard() {
+
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [products, setProducts] = useState([]);
-  const [messages, setMessages] = useState([]);
-  const [input, setInput] = useState("");
   const [socket, setSocket] = useState(null);
   const [showMessageModal, setShowMessageModal] = useState(false);
   const [showEditProductPopup, setShowEditProductPopup] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
+  const [conversations, setConversations] = useState([]);
+  const [messages, setMessages] = useState([]);
+  const [selectedConversation, setSelectedConversation] = useState(null);
+  const [input, setInput] = useState("");
+
+  useEffect(() => {
+  if (!user || !showMessageModal) return;
+
+  // Fetch conversations for the seller
+  const token = getToken();
+  fetch(`http://localhost:9090/api/conversations/${user.userId}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  })
+    .then((res) => {
+      if (!res.ok) throw new Error("Failed to fetch conversations");
+      return res.json();
+    })
+    .then((data) => {
+      setConversations(data);
+    })
+    .catch((err) => {
+      console.error("Error fetching conversations:", err);
+    });
+  } , [user, showMessageModal]);
 
   useEffect(() => {
     if (showEditProductPopup) {
@@ -110,12 +137,60 @@ export default function SellerDashboard() {
     });
   };
 
-  const sendMessage = () => {
-    if (socket && input.trim()) {
-      socket.send(input);
-      setInput("");
-    }
+ const sendMessage = (content) => {
+      if (!content.trim() || !selectedConversation) return;
+
+      const token = getToken();
+      const payload = {
+        sentAt: new Date().toISOString(),
+        senderId: user.userId,
+        receiverId: selectedConversation.buyerId,
+        messageText: content,
+      };
+
+      fetch("http://localhost:9090/api/messages", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(payload),
+        })
+        .then((res) => {
+          if (!res.ok) throw new Error("Failed to send message");
+          
+          setInput("");
+        })
+        .catch((err) => {
+          console.error("Error sending message:", err);
+          alert("Failed to send message.");
+        });
   };
+
+
+
+    const loadMessages = (conversationId, buyerId) => {
+      const token = getToken();
+      fetch(`http://localhost:9090/api/messages/${conversationId}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then((res) => {
+          if (!res.ok) throw new Error("Failed to load messages");
+          return res.json();
+        })
+        .then((data) => {
+          setMessages(data);
+          setSelectedConversation({ conversationId, buyerId });
+        })
+        .catch((err) => {
+          console.error("Error loading messages:", err);
+          alert("Could not load messages.");
+        });
+    };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -610,35 +685,105 @@ export default function SellerDashboard() {
       {/* Chat Modal */}
       {showMessageModal && (
         <div
-          className="chat-modal-overlay"
+          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
           onClick={() => setShowMessageModal(false)}
         >
-          <div className="chat-modal" onClick={(e) => e.stopPropagation()}>
-            <div className="chat-header">
-              <h3>Live Chat</h3>
-              <button
-                className="close-chat"
-                onClick={() => setShowMessageModal(false)}
-              >
-                ×
-              </button>
+          <div
+            className="bg-white w-full max-w-4xl h-[80vh] rounded-xl shadow-lg overflow-hidden flex flex-col md:flex-row"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Conversations List (Left Panel) */}
+            <div className="w-full md:w-1/3 border-r p-4 bg-gray-50 overflow-y-auto">
+              <h3 className="text-xl font-semibold mb-4">Conversations</h3>
+              {conversations.length === 0 ? (
+                <p className="text-gray-500 text-sm">No conversations yet.</p>
+              ) : (
+                <ul>
+                  {conversations.map((conv) => (
+                    <li
+                      key={conv.conversationId}
+                      className={`p-3 my-2 rounded cursor-pointer ${
+                        selectedConversation?.conversationId === conv.conversationId
+                          ? "bg-purple-100 border-l-4 border-purple-500"
+                          : "hover:bg-gray-100"
+                      }`}
+                      onClick={() => loadMessages(conv.conversationId, conv.buyerId)}
+                    >
+                      <strong>Buyer ID: {conv.buyerId}</strong>
+                      <p className="text-sm text-gray-600 truncate">{conv.lastMessage || "Start chatting..."}</p>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
-            <div className="chat-body">
-              {messages.map((msg, index) => (
-                <div key={index} className="bubble">
-                  {msg}
-                </div>
-              ))}
-            </div>
-            <div className="chat-input">
-              <input
-                type="text"
-                placeholder="Type a message..."
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && sendMessage()}
-              />
-              <button onClick={sendMessage}>Send</button>
+
+            {/* Messages View (Right Panel) */}
+            <div className="w-full md:w-2/3 flex flex-col">
+              <div className="flex justify-between items-center p-4 border-b">
+                <h3 className="text-xl font-semibold">
+                  {selectedConversation ? `Chat with Buyer #${selectedConversation.buyerId}` : "Select a Conversation"}
+                </h3>
+                <button
+                  className="text-gray-600 hover:text-gray-900"
+                  onClick={() => setShowMessageModal(false)}
+                >
+                  ×
+                </button>
+              </div>
+
+              {/* Messages Body */}
+              <div className="flex-1 p-4 overflow-y-auto space-y-3 bg-gray-100">
+                {messages.length === 0 ? (
+                  <p className="text-gray-500 text-center mt-10">No messages yet.</p>
+                ) : (
+                  messages.map((msg, index) => (
+                    <div
+                      key={index}
+                      className={`max-w-xs md:max-w-md lg:max-w-lg p-3 rounded-lg shadow-sm ${
+                        msg.senderId === user?.userId
+                          ? "bg-purple-100 ml-auto"
+                          : "bg-white mr-auto"
+                      }`}
+                    >
+                      <p>{msg.content}</p>
+                      <small className="text-gray-500 block mt-1">
+                        {new Date(msg.timestamp).toLocaleTimeString([], {
+                          hour: "2-digit",
+                          minute: "2-digit",
+                        })}
+                      </small>
+                    </div>
+                  ))
+                )}
+              </div>
+
+              {/* Message Input */}
+              <div className="p-4 border-t bg-white">
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    if (!input.trim() || !selectedConversation) return;
+                    sendMessage(input);
+                  }}
+                  className="flex gap-2"
+                >
+                  <input
+                    type="text"
+                    placeholder="Type a message..."
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                    className="flex-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-300"
+                    disabled={!selectedConversation}
+                  />
+                  <button
+                    type="submit"
+                    className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition"
+                    disabled={!selectedConversation}
+                  >
+                    Send
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
