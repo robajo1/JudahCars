@@ -21,6 +21,7 @@ function ProductsBody() {
   const fuelFilter = searchParams.get('fuelType');
   const querySearch = searchParams.get('query');
   const transmissionFilter = searchParams.get('transmission');
+  const locationFilter = searchParams.get('location');
 
   useEffect(() => {
     const params = new URLSearchParams();
@@ -30,6 +31,7 @@ function ProductsBody() {
     if (makeFilter) params.append('make', makeFilter);
     if (modelFilter) params.append('model', modelFilter);
     if (yearFilter) params.append('year', yearFilter);
+    if (locationFilter) params.append('location', locationFilter);
     if (priceRange) {
       const [min, max] = priceRange.split('-');
       params.append('price', max || min);

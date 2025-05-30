@@ -21,13 +21,12 @@
   .more-filters-button,
   .find-listing-button,
   .clear-filters-button {
-    padding: 8px 15px;
+    padding: 8px 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 5px;
   }
   
   .more-filters-button {
@@ -38,9 +37,11 @@
   .find-listing-button {
     background-color: #3f51b5; /* Example blue color */
     color: white;
+    margin-left: 1rem;
   }
   .clear-filters-button{
     text-decoration: underline;
+    margin-left: -0.5rem;
   }  
   .filter-icon,
   .search-icon {
