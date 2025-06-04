@@ -1,11 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import SockJS from "sockjs-client";
+import { Client } from "@stomp/stompjs";
+import { s } from "framer-motion/client";
 
-// Auth utility (create this in a separate file like authUtils.js)
+
 const getToken = () => localStorage.getItem("jwt_token");
 const isAuthenticated = () => !!getToken();
 
 export default function SellerDashboard() {
+  const stompClientRef = useRef(null);
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [products, setProducts] = useState([]);
@@ -18,11 +22,9 @@ export default function SellerDashboard() {
   const [input, setInput] = useState("");
 
   
-  //load conversations when the user is authenticated and the message modal is shown
   useEffect(() => {
     if (!user || !showMessageModal) return;
 
-    // Fetch conversations for the seller
     const token = getToken();
     fetch(`http://localhost:9090/api/conversations/${user.userId}`, {
       method: "GET",
@@ -72,17 +74,15 @@ export default function SellerDashboard() {
   };
   const [formData, setFormData] = useState(initial);
 
-  // Load user from localStorage on mount
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem("user"));
     if (!storedUser) {
-      navigate("/login"); // Redirect to login if no user found
+      navigate("/login"); 
     } else {
       setUser(storedUser);
     }
   }, [navigate]);
 
-  // Fetch seller products
   useEffect(() => {
     if (!user) return;
 
@@ -105,7 +105,7 @@ export default function SellerDashboard() {
       .catch((err) => {
         console.error("Error fetching products:", err);
         if (err.response?.status === 401) {
-          navigate("/login"); // Redirect if unauthorized
+          navigate("/login"); 
         }
       });
   }, [user, navigate]);
@@ -119,40 +119,61 @@ export default function SellerDashboard() {
       reader.readAsText(blob);
     });
   };
+  useEffect(() => {
+       if (!user) return;
+
+      const socket = new SockJS("http://localhost:9090/ws");
+      const stompClient = new Client({
+        webSocketFactory: () => socket,
+        reconnectDelay: 5000,
+        
+        onConnect: () => {
+          console.log("Connected to WebSocket");
+
+          stompClient.subscribe(`/topic/messages/${user.userId}`, (message) => {
+           
+            const incomingMessage = JSON.parse(message.body);
+                       
+              setMessages((prev) => [...prev, incomingMessage]);
+            
+          });
+        },
+        onStompError: (frame) => {
+          console.error("WebSocket error:", frame);
+        },
+      });
+
+      stompClient.activate();
+      stompClientRef.current = stompClient;
+
+      return () => {
+        if (stompClientRef.current) {
+          stompClientRef.current.deactivate();
+        }
+      };
+    }, [user, selectedConversation]);
+
+
 
   const sendMessage = (content) => {
-    if (!content.trim() || !selectedConversation) return;
+    if (!content.trim() || !selectedConversation || !stompClientRef.current) return;
 
-
-    const token = getToken();
     const payload = {
       sentAt: new Date().toISOString(),
       senderId: user.userId,
       recieverId: selectedConversation.buyerId,
       messageText: content,
     };
-
-    fetch("http://localhost:9090/api/messages", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
+    
+   stompClientRef.current.publish({
+      destination: "/app/chat.sendMessage",
       body: JSON.stringify(payload),
-    })
-      .then((res) => {
-        if (!res.ok) {
-          return res.json().then((errorData) => {
-            throw new Error(errorData.message || "Failed to send message");
-          });
-        }
-        setInput("");
-      })
-      .catch((err) => {
-        console.error("Error sending message:", err);
-        alert(err.message);
-      });
+    });
+    setInput("");
+    
+    
   };
+
 
   const loadMessages = (conversationId, buyerId) => {
     const token = getToken();
@@ -221,7 +242,7 @@ export default function SellerDashboard() {
       alert("Something went wrong. Please try again.");
     }
   };
-  // Let's assume you have the ID of the product to update, e.g., from props or state
+  
   const handleUpdateProduct = async (e, productId) => {
     const token = getToken();
     const updatedProductData = {
@@ -242,7 +263,7 @@ export default function SellerDashboard() {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
           },
-          body: JSON.stringify(updatedProductData), // Send the data for the product to be updated
+          body: JSON.stringify(updatedProductData), 
         }
       );
       if (!response.ok) {
@@ -751,7 +772,7 @@ export default function SellerDashboard() {
                     <div
                       key={index}
                       className={`max-w-xs md:max-w-md lg:max-w-lg p-3 rounded-lg shadow-sm ${
-                        msg.sender.userId === user?.userId
+                        msg.senderId === user?.userId
                           ? "bg-purple-100 ml-auto"
                           : "bg-white mr-auto"
                       }`}
