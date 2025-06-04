@@ -2,7 +2,7 @@ import React, { useState, useEffect,useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import SockJS from "sockjs-client";
 import { Client } from "@stomp/stompjs";
-import { s } from "framer-motion/client";
+
 
 
 const getToken = () => localStorage.getItem("jwt_token");
@@ -170,7 +170,6 @@ export default function SellerDashboard() {
       body: JSON.stringify(payload),
     });
     setInput("");
-    
     
   };
 
