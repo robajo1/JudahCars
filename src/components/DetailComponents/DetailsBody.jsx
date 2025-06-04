@@ -173,7 +173,7 @@ function DetailsBody() {
   const handleAddToCart = () => {
     setIsAddingToCart(true);
     setAddToCartStatus("Adding...");
-    const existing = localStorage.getItem("cartItems");
+    const existing = localStorage.getItem(`cartItems_${JSON.parse(user).userId}`);
     let cartItems = existing ? JSON.parse(existing) : [];
 
     const itemToAdd = {
@@ -185,7 +185,7 @@ function DetailsBody() {
     };
 
     cartItems.push(itemToAdd);
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    localStorage.setItem(`cartItems_${JSON.parse(user).userId}`, JSON.stringify(cartItems));
     setAddToCartStatus("Added to Cart");
 
     setTimeout(() => {

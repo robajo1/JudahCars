@@ -8,30 +8,35 @@ function Cart() {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const cartItemsString = localStorage.getItem("cartItems");
-    setCartItems(cartItemsString ? JSON.parse(cartItemsString) : []);
-  }, []);
+  // Helper function to determine localStorage key for the current user
+  const getCartKey = (userId) => `cartItems_${userId}`;
+
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem("user"));
     if (!storedUser) {
       navigate("/login");
     } else {
       setUser(storedUser);
+      // Load items for the current user only
+      const cartItemsString = localStorage.getItem(getCartKey(storedUser.userId));
+      setCartItems(cartItemsString ? JSON.parse(cartItemsString) : []);
     }
   }, [navigate]);
+
   const handleRemoveItem = (itemId) => {
-    // Only remove the first matching item by ID
+    if (!user) return;
     const indexToRemove = cartItems.findIndex((item) => item.id === itemId);
     if (indexToRemove !== -1) {
       const updatedCartItems = [...cartItems];
       updatedCartItems.splice(indexToRemove, 1); // Remove one item at the found index
-      localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
+      localStorage.setItem(getCartKey(user.userId), JSON.stringify(updatedCartItems));
       setCartItems(updatedCartItems);
     }
   };
+
   const handleClearCart = () => {
-    localStorage.removeItem("cartItems");
+    if (!user) return;
+    localStorage.removeItem(getCartKey(user.userId));
     setCartItems([]);
   };
 
@@ -77,6 +82,7 @@ function Cart() {
       alert("Payment initialization failed.");
     }
   };
+
   const calculateTotalPrice = () => {
     return cartItems
       .reduce((total, item) => total + parseFloat(item.price), 0)
