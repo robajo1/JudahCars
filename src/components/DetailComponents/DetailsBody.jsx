@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useRef } from "react";
 import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router-dom";
+import SockJS from "sockjs-client";
+import { Client } from "@stomp/stompjs";
 import "./detailsbody.css";
 const getToken = () => localStorage.getItem("jwt_token");
 const isAuthenticated = () => !!getToken();
@@ -8,9 +10,9 @@ const isAuthenticated = () => !!getToken();
 function DetailsBody() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
-  const [socket, setSocket] = useState(null);
+  
   const user = localStorage.getItem("user");
-
+  const stompClientRef = useRef(null);
   const location = useLocation();
   const car = location.state?.car;
   const navigate = useNavigate();
@@ -36,27 +38,46 @@ function DetailsBody() {
         })
         .then((data) => {
           setMessages(data);
-          console.log("Messages loaded:", data);
         })
         .catch((err) => {
           console.error("Error loading messages:", err);
           alert("Could not load messages.");
         });
     };
-
-  useEffect(() => {
-    const ws = new WebSocket('ws://localhost:8080');
-    setSocket(ws);
-
-    ws.onmessage = async (event) => {
-      const data = typeof event.data === 'string' ? event.data : await blobToString(event.data);
-      setMessages((prevMessages) => [...prevMessages, data]);
-    };
-
-    return () => {
-      ws.close();
-    };
-  }, []);
+    useEffect(() => {
+           if (!user) return;
+    
+          const socket = new SockJS("http://localhost:9090/ws");
+          const stompClient = new Client({
+            webSocketFactory: () => socket,
+            reconnectDelay: 5000,
+            
+            onConnect: () => {
+              console.log("Connected to WebSocket");
+    
+              stompClient.subscribe(`/topic/messages/${JSON.parse(user).userId}`, (message) => {
+               
+                const incomingMessage = JSON.parse(message.body);
+                           
+                setMessages((prev) => [...prev, incomingMessage]);
+                
+              });
+            },
+            onStompError: (frame) => {
+              console.error("WebSocket error:", frame);
+            },
+          });
+    
+          stompClient.activate();
+          stompClientRef.current = stompClient;
+    
+          return () => {
+            if (stompClientRef.current) {
+              stompClientRef.current.deactivate();
+            }
+          };
+        }, [user]);
+  
 
   const blobToString = (blob) => {
     return new Promise((resolve, reject) => {
@@ -68,8 +89,6 @@ function DetailsBody() {
   };
 
    const sendMessage = (user,seller,content) => {
-     
-
       const token = getToken();
       const payload = {
         recieverId: seller,
@@ -77,25 +96,11 @@ function DetailsBody() {
         sentAt: new Date().toISOString(),
         messageText: content,
       };
-      console.log("Sending message:", payload);
-      console.log("stringify payload:", JSON.stringify(payload));
-      fetch("http://localhost:9090/api/messages", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify(payload),
-        })
-        .then((res) => {
-          if (!res.ok) throw new Error("Failed to send message");
-          
-          setInput("");
-        })
-        .catch((err) => {
-          console.error("Error sending message:", err);
-          alert("Failed to send message.");
+      stompClientRef.current.publish({
+          destination: "/app/chat.sendMessage",
+          body: JSON.stringify(payload),
         });
+        setInput("");
   };
 
   useEffect(() => {
@@ -354,10 +359,33 @@ function DetailsBody() {
               <button className="close-chat" onClick={() => setShowMessageModal(false)}>×</button>
             </div>
             <div className="chat-body">
-              {messages.map((msg, index) => (
-                console.log("Message:", msg),
-                <div key={index} className="bubble">{msg}</div>
-              ))}
+              {messages.length === 0 ? (
+                  <p className="text-gray-500 text-center mt-10">
+                    No messages yet.
+                  </p>
+                ) : (
+                  messages.map((msg, index) => (
+                    <div
+                      key={index}
+                      className={`max-w-xs md:max-w-md lg:max-w-lg p-3 rounded-lg shadow-sm ${
+                        msg.senderId === JSON.parse(user).userId
+                          ? "bg-purple-100 ml-auto"
+                          : "bg-white mr-auto"
+                      }`}
+                    >
+                      
+                      <p>{msg.messageText}</p>
+                      <small className="text-gray-500 block mt-1">
+                        {new Date(msg.sentAt).toLocaleTimeString([], {
+                          year: "numeric",
+                          month: "2-digit",
+                          hour: "2-digit",
+                          minute: "2-digit",
+                        })}
+                      </small>
+                    </div>
+                  ))
+                )}
             </div>
             <div className="chat-input">
               <input type="text" placeholder="Type a message..." value={input} onChange={(e) => setInput(e.target.value)} />
