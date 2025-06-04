@@ -9,7 +9,6 @@ export default function SellerDashboard() {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [products, setProducts] = useState([]);
-  const [socket, setSocket] = useState(null);
   const [showMessageModal, setShowMessageModal] = useState(false);
   const [showEditProductPopup, setShowEditProductPopup] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
@@ -18,6 +17,8 @@ export default function SellerDashboard() {
   const [selectedConversation, setSelectedConversation] = useState(null);
   const [input, setInput] = useState("");
 
+  
+  //load conversations when the user is authenticated and the message modal is shown
   useEffect(() => {
     if (!user || !showMessageModal) return;
 
@@ -109,23 +110,6 @@ export default function SellerDashboard() {
       });
   }, [user, navigate]);
 
-  // Setup WebSocket for messages
-  useEffect(() => {
-    const ws = new WebSocket("ws://localhost:8080");
-    setSocket(ws);
-
-    ws.onmessage = (event) => {
-      const data =
-        event.data instanceof Blob
-          ? URL.createObjectURL(event.data)
-          : event.data;
-      setMessages((prev) => [...prev, data]);
-    };
-
-    return () => {
-      ws.close();
-    };
-  }, []);
 
   const blobToString = (blob) => {
     return new Promise((resolve, reject) => {
@@ -139,11 +123,12 @@ export default function SellerDashboard() {
   const sendMessage = (content) => {
     if (!content.trim() || !selectedConversation) return;
 
+
     const token = getToken();
     const payload = {
       sentAt: new Date().toISOString(),
       senderId: user.userId,
-      receiverId: selectedConversation.buyerId,
+      recieverId: selectedConversation.buyerId,
       messageText: content,
     };
 
@@ -187,7 +172,6 @@ export default function SellerDashboard() {
         setSelectedConversation({ conversationId, buyerId });
       })
       .catch((err) => {
-        console.error("Error loading messages:", err);
         alert("Could not load messages.");
       });
   };
@@ -717,18 +701,20 @@ export default function SellerDashboard() {
                 <ul>
                   {conversations.map((conv) => (
                     <li
-                      key={conv.conversationId}
+                      key={conv.id}
                       className={`p-3 my-2 rounded cursor-pointer ${
                         selectedConversation?.conversationId ===
-                        conv.conversationId
+                        conv.id
                           ? "bg-purple-100 border-l-4 border-purple-500"
                           : "hover:bg-gray-100"
                       }`}
-                      onClick={() =>
-                        loadMessages(conv.conversationId, conv.buyerId)
+                      onClick={() =>{
+                        loadMessages(conv.id, conv.buyer.userId)
+                      }
+
                       }
                     >
-                      <strong>Buyer ID: {conv.buyerId}</strong>
+                      <strong>Buyer ID: {conv.buyer.userId}</strong>
                       <p className="text-sm text-gray-600 truncate">
                         {conv.lastMessage || "Start chatting..."}
                       </p>
@@ -765,14 +751,16 @@ export default function SellerDashboard() {
                     <div
                       key={index}
                       className={`max-w-xs md:max-w-md lg:max-w-lg p-3 rounded-lg shadow-sm ${
-                        msg.senderId === user?.userId
+                        msg.sender.userId === user?.userId
                           ? "bg-purple-100 ml-auto"
                           : "bg-white mr-auto"
                       }`}
                     >
-                      <p>{msg.content}</p>
+                      <p>{msg.messageText}</p>
                       <small className="text-gray-500 block mt-1">
-                        {new Date(msg.timestamp).toLocaleTimeString([], {
+                        {new Date(msg.sentAt).toLocaleTimeString([], {
+                          year: "numeric",
+                          month: "2-digit",
                           hour: "2-digit",
                           minute: "2-digit",
                         })}
