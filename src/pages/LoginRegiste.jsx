@@ -36,19 +36,27 @@ function LoginRegister() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    
     // Basic validation
-    if (!formData.email || !formData.password) {
-      alert("Email and Password are required");
-      return;
-    }
-
     if (isRegistering) {
       if (!formData.fullName) {
         alert("Full Name is required");
         return;
       }
+      if (!formData.email) {
+        alert("Email is required");
+        return;
+      }
       if (!formData.phone) {
         alert("Phone is required");
+        return;
+      }
+      if (!formData.phone.startsWith("09") && !formData.phone.startsWith("07")) {
+        alert("Enter valid Phone Number (09XXXXXXXX) or (07XXXXXXXX)");
+        return;
+      }
+      if (!formData.password) {
+        alert("Password is required");
         return;
       }
       if (formData.password !== formData.confirmPassword) {
@@ -63,7 +71,7 @@ function LoginRegister() {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             fullName: formData.fullName,
-            email: formData.email,
+            email: formData.email.toLowerCase(),
             password: formData.password,
             role: formData.role,
             phone: formData.phone,
@@ -95,7 +103,7 @@ function LoginRegister() {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            email: formData.email,
+            email: formData.email.toLowerCase(),
             password: formData.password,
           }),
         });
@@ -157,6 +165,8 @@ function LoginRegister() {
             type="tel"
             name="phone"
             placeholder="Phone"
+            maxLength={10}
+            minLength={10}
             value={formData.phone}
             onChange={handleChange}
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400"
@@ -166,6 +176,7 @@ function LoginRegister() {
           type="password"
           name="password"
           placeholder="Password"
+          minLength={4}
           value={formData.password}
           onChange={handleChange}
           className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400"

@@ -117,10 +117,11 @@ function ProductsSearch() {
         <div className="more-filters">
           <select onChange={(e) => setMileage(e.target.value)}value={mileage} className="filter-select">
             <option value="">Mileage: Any</option>
-            <option value="0-5000">0 - 50,000 KM</option>
-            <option value="5001-10000">50,001 - 100,000 KM</option>
-            <option value="10001-15000">100,001 - 150,000 KM</option>
-            <option value="15001">Above 150,000 KM</option>
+            <option value="0-10000">0 - 10,000 KM</option>
+            <option value="10001-25000">10,000 - 25,000 KM</option>
+            <option value="25001-35000">25,000 - 35,000 KM</option>
+            <option value="35001-45000">35,000 - 45,000 KM</option>
+            <option value="45001">Above 45,000 KM</option>
           </select>
 
           <select onChange={(e) => setYear(e.target.value)}value={year} className="filter-select">

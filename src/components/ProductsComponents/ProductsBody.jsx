@@ -34,11 +34,13 @@ function ProductsBody() {
     if (locationFilter) params.append('location', locationFilter);
     if (priceRange) {
       const [min, max] = priceRange.split('-');
-      params.append('price', max || min);
+      if (min) params.append('minPrice', min);
+      if (max) params.append('maxPrice', max);
     }
     if (mileageFilter) {
       const [min, max] = mileageFilter.split('-');
-      params.append('mileage', max || min);
+      if (min) params.append('minMileage', min);
+      if (max) params.append('maxMileage', max);
     }
     if (fuelFilter) params.append('fuelType', fuelFilter);
     if (transmissionFilter) params.append('transmission', transmissionFilter);

@@ -477,3 +477,7 @@
     line-height: 1.4;
   }
   
+  .view-details-link{
+    color: #007bff;
+    text-decoration: underline;
+  }

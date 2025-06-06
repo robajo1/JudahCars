@@ -143,7 +143,7 @@ function DetailsBody() {
     year,
     price,
     mileage,
-    fuel_type,
+    fuelType,
     transmission,
     description,
     location: carLocation,
@@ -250,7 +250,7 @@ function DetailsBody() {
                 <p className="car-description">{description}</p>
 
                 <div className="specs-badges">
-                  <span className="badge">🚗 {fuel_type}</span>
+                  <span className="badge">🚗 {fuelType}</span>
                   <span className="badge">⚙️ {transmission}</span>
                   <span className="badge">🧭 All-Wheel Drive</span>
                 </div>
@@ -302,9 +302,6 @@ function DetailsBody() {
               <div className="contact-item">
                 <FaPhoneAlt /> <span>{seller.phone}</span>
               </div>
-              <div className="contact-item">
-                <FaEnvelope /> <span>{seller.contact}</span>
-              </div>
             </div>
           </div>
         </div>
@@ -335,8 +332,8 @@ function DetailsBody() {
                   <div className="model-details">
                     <h4>{item.make} {item.model} – {item.year}</h4>
                     <div className='line'></div>
-                    <div className="model-info-icons" style={{ fontSize: '0.9rem' }}>
-                      <p>{item.mileage} KM {item.fuel_type} {item.transmission}</p>
+                    <div className="model-info-icons" style={{ fontSize: '0.9rem', display:'flex', gap:'1.5rem' }}>
+                      <p>{item.mileage} KM {item.fuel_type}</p><p>{item.transmission}</p> 
                     </div>
                     <div className='line'></div>
                     <div className="model-price-small">{item.price} ETB</div>
