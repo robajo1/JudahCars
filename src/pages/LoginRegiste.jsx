@@ -39,24 +39,8 @@ function LoginRegister() {
     
     // Basic validation
     if (isRegistering) {
-      if (!formData.fullName) {
-        alert("Full Name is required");
-        return;
-      }
-      if (!formData.email) {
-        alert("Email is required");
-        return;
-      }
-      if (!formData.phone) {
-        alert("Phone is required");
-        return;
-      }
       if (!formData.phone.startsWith("09") && !formData.phone.startsWith("07")) {
         alert("Enter valid Phone Number (09XXXXXXXX) or (07XXXXXXXX)");
-        return;
-      }
-      if (!formData.password) {
-        alert("Password is required");
         return;
       }
       if (formData.password !== formData.confirmPassword) {
@@ -148,6 +132,7 @@ function LoginRegister() {
             name="fullName"
             placeholder="Full Name"
             value={formData.fullName}
+            required
             onChange={handleChange}
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400"
           />
@@ -157,6 +142,7 @@ function LoginRegister() {
           name="email"
           placeholder="Email"
           value={formData.email}
+          required
           onChange={handleChange}
           className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400"
         />
@@ -166,6 +152,7 @@ function LoginRegister() {
             name="phone"
             placeholder="Phone"
             maxLength={10}
+            required
             minLength={10}
             value={formData.phone}
             onChange={handleChange}
@@ -177,6 +164,7 @@ function LoginRegister() {
           name="password"
           placeholder="Password"
           minLength={4}
+          required
           value={formData.password}
           onChange={handleChange}
           className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400"
@@ -188,6 +176,7 @@ function LoginRegister() {
               name="confirmPassword"
               placeholder="Confirm Password"
               value={formData.confirmPassword}
+              required
               onChange={handleChange}
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400"
             />

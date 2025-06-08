@@ -12,8 +12,8 @@ import SellerDashboard from "./pages/SellerDashBoard";
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
+    <BrowserRouter>
+      <>
         <Routes>
           <Route path="/" element={<Header />}>
             <Route index element={<Home />} />
@@ -27,9 +27,9 @@ function App() {
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>
-      </BrowserRouter>
-      <Footer />
-    </>
+        <Footer />
+      </>
+    </BrowserRouter>
   );
 }
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import { Link } from 'react-router-dom'; // Add this import
 import './Footer.css';
 
 function Footer() {
@@ -9,8 +9,7 @@ function Footer() {
         <div className="footer-section company">
           <h3>Company</h3>
           <ul>
-            <li><a hrf="/about">About Us</a></li>
-            <li><a h="/services">Services</a></li>
+            <li><Link to="/aboutus">About Us</Link></li>
             <li><a h="/faqs">FAQs</a></li>
             <li><a h="/terms">Terms</a></li>
             <li><a h="/contact">Contact Us</a></li>
@@ -30,28 +29,25 @@ function Footer() {
         <div className="footer-section our-brands">
           <h3>Our Brands</h3>
           <ul>
-            <li><a h="/brands/toyota">Toyota</a></li>
-            <li><a h="/brands/porsche">Porsche</a></li>
-            <li><a h="/brands/audi">Audi</a></li>
-            <li><a h="/brands/bmw">BMW</a></li>
-            <li><a h="/brands/ford">Ford</a></li>
-            <li><a h="/brands/nissan">Nissan</a></li>
-            <li><a h="/brands/peugeot">Peugeot</a></li>
-            <li><a h="/brands/volkswagen">Volkswagen</a></li>
+            <li><Link to="/products?make=toyota">Toyota</Link></li>
+            <li><Link to="/products?make=porsche">Porsche</Link></li>
+            <li><Link to="/products?make=audi">Audi</Link></li>
+            <li><Link to="/products?make=bmw">BMW</Link></li>
+            <li><Link to="/products?make=ford">Ford</Link></li>
+            <li><Link to="/products?make=nissan">Nissan</Link></li>
+            <li><Link to="/products?make=volkswagen">Volkswagen</Link></li>
           </ul>
         </div>
 
         <div className="footer-section vehicles-type">
           <h3>Vehicles Type</h3>
           <ul>
-            <li><a h="/vehicles/sedan">Sedan</a></li>
-            <li><a h="/vehicles/hatchback">Hatchback</a></li>
-            <li><a h="/vehicles/suv">SUV</a></li>
-            <li><a h="/vehicles/hybrid">Hybrid</a></li>
-            <li><a h="/vehicles/electric">Electric</a></li>
-            <li><a h="/vehicles/coupe">Coupe</a></li>
-            <li><a h="/vehicles/truck">Truck</a></li>
-            <li><a h="/vehicles/convertible">Convertible</a></li>
+            <li><Link to="/products?type=sedan">Sedan</Link></li>
+            <li><Link to="/products?type=hatchback">Hatchback</Link></li>
+            <li><Link to="/products?type=suv">SUV</Link></li>
+            <li><Link to="/products?type=electric">Electric</Link></li>
+            <li><Link to="/products?type=coupe">Coupe</Link></li>
+            <li><Link to="/products?type=truck">Truck</Link></li>
           </ul>
         </div>
 

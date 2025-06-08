@@ -723,18 +723,17 @@ export default function SellerDashboard() {
                     <li
                       key={conv.id}
                       className={`p-3 my-2 rounded cursor-pointer ${
-                        selectedConversation?.conversationId ===
-                        conv.id
+                        selectedConversation?.conversationId === conv.id
                           ? "bg-purple-100 border-l-4 border-purple-500"
                           : "hover:bg-gray-100"
                       }`}
-                      onClick={() =>{
-                        loadMessages(conv.id, conv.buyer.userId)
-                      }
-
-                      }
+                      onClick={() => {
+                        loadMessages(conv.id, conv.buyer.userId);
+                      }}
                     >
-                      <strong>Buyer ID: {conv.buyer.userId}</strong>
+                      <strong>
+                        Buyer: #{conv.buyer.userId}
+                      </strong>
                       <p className="text-sm text-gray-600 truncate">
                         {conv.lastMessage || "Start chatting..."}
                       </p>

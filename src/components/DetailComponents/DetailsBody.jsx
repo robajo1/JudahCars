@@ -41,7 +41,6 @@ function DetailsBody() {
         })
         .catch((err) => {
           console.error("Error loading messages:", err);
-          alert("Could not load messages.");
         });
     };
     useEffect(() => {

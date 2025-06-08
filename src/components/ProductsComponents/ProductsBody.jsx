@@ -77,7 +77,7 @@ function ProductsBody() {
   if (loading) return <p>Loading...</p>;
   if (error) return <p className="error">{error}</p>;
   if (!inventory || inventory.length === 0) {
-    return <p className="no-vehicles-found">No vehicles found matching the filters.</p>;
+    return <p className="no-vehicles-found">No vehicles found matching.</p>;
   }
 
   return (
