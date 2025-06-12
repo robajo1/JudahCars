@@ -5,7 +5,7 @@
 
 # 🚗 **Car Dealership SPA** – *React E-Commerce Project*
 
-A responsive, interactive Single Page Application (**SPA**) built with **React** for a **car dealership platform**. Buyers can explore cars, and sellers can manage listings. It includes mock API interactions and is ready for future backend integration.
+A responsive, interactive Single Page Application (**SPA**) built with **React** for a **car dealership platform**. Buyers can explore cars, and sellers can manage listings. It is connected to a springboot backend(https://github.com/robajo1/JudahCars-Backend.git).
 
 ---
 
