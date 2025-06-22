@@ -1,5 +1,5 @@
 # **Judah Cars**  
-# 🚗 **Car Dealership SPA** – *React E-Commerce Project* -*BackEnd at(https://github.com/robajo1/JudahCars-Backend.git)*
+# 🚗 **Car Dealership SPA** – *React E-Commerce Project* -*BackEnd at(https://github.com/robajo1/JudahCars-Backend)*
 
 ![Spotfire Screenshot](Frame1.png)
 
