@@ -84,6 +84,8 @@ function LoginRegister() {
     } else {
       try {
         const response = await fetch("http://localhost:9090/api/user/login", {
+          
+          
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -97,9 +99,9 @@ function LoginRegister() {
         if (!response.ok) {
           alert(data.message || "Invalid email or password");
         } else {
-          console.log("Login successful:", data);
-          console.log("Response headers:", [...response.headers]);
+          
           const token = response.headers.get("Authorization")?.replace("Bearer ", "");
+          console.log("Token received:", token);
 
           if (token) {
             localStorage.setItem("jwt_token", token); 

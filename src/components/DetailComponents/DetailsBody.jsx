@@ -335,8 +335,8 @@ function DetailsBody() {
                       <p>{item.mileage} KM {item.fuel_type}</p><p>{item.transmission}</p> 
                     </div>
                     <div className='line'></div>
-                    <div className="model-price-small">{item.price} ETB</div>
-                    <a href="#" className="view-details-link">View Details</a>
+                    <div className="model-price-small">${item.price} </div>
+                    
                   </div>
                 </div>
               ))

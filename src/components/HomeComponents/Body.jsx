@@ -96,7 +96,7 @@ export default function Body() {
                 key={vehicle.id || vehicle._id}
                 image={vehicle.imageUrl1 || vehicle.imageUrl2 || vehicle.imageUrl3}
                 title={`${vehicle.make} ${vehicle.model}`}
-                price={`ETB ${vehicle.price?.toLocaleString()}`}
+                price={`$${vehicle.price?.toLocaleString()}`}
                 year={vehicle.year}
                 mileage={`${vehicle.mileage?.toLocaleString()} KM`}
                 car={vehicle}
