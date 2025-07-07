@@ -302,6 +302,15 @@
   .ad-banner-toggle.right {
     right: 3vw;
   }
+
+  .ad-banner-details *{
+     transform: scale(0.4);
+     transform-origin: bottom center; 
+  }
+
+  .ad-banner-price{
+    display: none;
+  }
 }
 
 .ADD {

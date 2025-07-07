@@ -29,7 +29,7 @@ function Header() {
       <nav className={`header-nav ${navClass? 'details-page' : ''}`}>
         <ul>
           <li>
-            <Link to="/">JUDAH Shop</Link>
+            <Link to="/" className="title">JUDAH Shop</Link>
           </li>
           <li className="nav-links-container">
             <ul>
@@ -40,7 +40,7 @@ function Header() {
                 <Link to="/products">Products</Link>
               </li>
               <li>
-                <Link to="/aboutus">About Us</Link>
+                <Link to="/aboutus" className="title">About Us</Link>
               </li>
               <li>
                 {JSON.parse(user) ? (

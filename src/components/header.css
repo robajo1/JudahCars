@@ -41,3 +41,19 @@
     width: 77px;
     border-radius: 20px;
   }
+
+  @media (max-width: 569px) {
+
+    .title{
+        display: none;
+    }
+
+  }
+
+  
+@media (max-width: 357px) {
+  .header-nav {
+    transform: scale(0.7); 
+    transform-origin: top left; 
+  }
+}

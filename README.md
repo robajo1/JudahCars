@@ -1,11 +1,11 @@
 # **Judah Cars**  
-# 🚗 **Car Dealership SPA** – *React E-Commerce Project*
+# 🚗 **Car Dealership SPA** – *React E-Commerce Project* -*BackEnd at(https://github.com/robelnigusse/JudahCars-Backend)*
 
 ![Spotfire Screenshot](Frame1.png)
 
 # 🚗 **Car Dealership SPA** – *React E-Commerce Project*
 
-A responsive, interactive Single Page Application (**SPA**) built with **React** for a **car dealership platform**. Buyers can explore cars, and sellers can manage listings. It includes mock API interactions and is ready for future backend integration.
+A responsive, interactive Single Page Application (**SPA**) built with **React** for a **car dealership platform**. Buyers can explore cars, and sellers can manage listings. It is connected to a springboot backend(https://github.com/robajo1/JudahCars-Backend.git).
 
 ---
 
@@ -42,6 +42,9 @@ A responsive, interactive Single Page Application (**SPA**) built with **React**
 - 🎨 **Tailwind CSS + Regular CSS** for responsive, clean design(a bit more on regular to be fair), animation
 - 💾 **LocalStorage + caching** strategies
 
+---
+##  **BackEnd code**
+- can be found at https://github.com/robajo1/JudahCars-Backend.git
 ---
 ## ⚙️ **Group members**
 - Robel Nigusse
