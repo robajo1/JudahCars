@@ -46,7 +46,7 @@ function DetailsBody() {
     useEffect(() => {
            if (!user) return;
     
-          const socket = new SockJS("http://localhost:9090/ws");
+          const socket = new SockJS(`${import.meta.env.VITE_API_URL}/ws`);
           const stompClient = new Client({
             webSocketFactory: () => socket,
             reconnectDelay: 5000,
