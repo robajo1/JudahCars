@@ -26,7 +26,7 @@ export default function SellerDashboard() {
     if (!user || !showMessageModal) return;
 
     const token = getToken();
-    fetch(`http://localhost:9090/api/conversations/${user.userId}`, {
+    fetch(`${import.meta.env.VITE_API_URL}/api/conversations/${user.userId}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -88,7 +88,7 @@ export default function SellerDashboard() {
 
     const token = getToken();
 
-    fetch(`http://localhost:9090/api/products/${user.userId}`, {
+    fetch(`${import.meta.env.VITE_API_URL}/api/products/${user.userId}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -176,7 +176,7 @@ export default function SellerDashboard() {
 
   const loadMessages = (conversationId, buyerId) => {
     const token = getToken();
-    fetch(`http://localhost:9090/api/messages/${conversationId}`, {
+    fetch(`${import.meta.env.VITE_API_URL}/api/messages/${conversationId}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -217,7 +217,7 @@ export default function SellerDashboard() {
     };
 
     try {
-      const response = await fetch("http://localhost:9090/api/products", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/products`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -255,7 +255,7 @@ export default function SellerDashboard() {
     console.log(updatedProductData);
     try {
       const response = await fetch(
-        `http://localhost:9090/api/products/${productId}`,
+        `${import.meta.env.VITE_API_URL}/api/products/${productId}`,
         {
           method: "PATCH",
           headers: {
@@ -291,7 +291,7 @@ export default function SellerDashboard() {
     const token = getToken();
     const productId = index;
 
-    fetch(`http://localhost:9090/api/products/${productId}`, {
+    fetch(`${import.meta.env.VITE_API_URL}/api/products/${productId}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

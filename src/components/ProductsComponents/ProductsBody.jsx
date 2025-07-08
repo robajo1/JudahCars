@@ -48,7 +48,7 @@ function ProductsBody() {
     setLoading(true);
     setError(null);
     console.log(params);
-    fetch(`http://localhost:9090/api/products?${params.toString()}`)
+    fetch(`${import.meta.env.VITE_API_URL}/api/products?${params.toString()}`)
       .then(res => {
         if (!res.ok) throw new Error('Failed to fetch products');
         return res.json();

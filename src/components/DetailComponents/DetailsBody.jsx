@@ -25,7 +25,7 @@ function DetailsBody() {
   const loadMessages = (senderId, receiverId) => {
       const token = getToken();
       
-      fetch(`http://localhost:9090/api/messages?senderId=${senderId}&receiverId=${receiverId}`, {
+      fetch(`${import.meta.env.VITE_API_URL}/api/messages?senderId=${senderId}&receiverId=${receiverId}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -113,7 +113,7 @@ function DetailsBody() {
   useEffect(() => {
     if (!car) return;
 
-    fetch(`http://localhost:9090/api/products?type=${encodeURIComponent(car.type)}`)
+    fetch(`${import.meta.env.VITE_API_URL}/api/products?type=${encodeURIComponent(car.type)}`)
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch similar cars from backend");
         return res.json();

@@ -57,7 +57,7 @@ function Cart() {
       customization: { description }
     };
     try {
-      const response = await fetch("http://localhost:9090/api/payment", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/payment`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

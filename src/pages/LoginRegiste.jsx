@@ -50,7 +50,7 @@ function LoginRegister() {
 
 
       try {
-        const response = await fetch("http://localhost:9090/api/user/register", {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/user/register`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -83,7 +83,7 @@ function LoginRegister() {
       }
     } else {
       try {
-        const response = await fetch("http://localhost:9090/api/user/login", {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/user/login`, {
           
           
           method: "POST",

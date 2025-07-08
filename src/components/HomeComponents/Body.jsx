@@ -40,7 +40,7 @@ export default function Body() {
 
   // Fetch cars from backend
   useEffect(() => {
-    fetch("http://localhost:9090/api/products") // Adjust if needed
+    fetch(`${import.meta.env.VITE_API_URL}/api/products`) // Adjust if needed
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch vehicles");
         return res.json();
