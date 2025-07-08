@@ -49,6 +49,4 @@ A responsive, interactive Single Page Application (**SPA**) built with **React**
 - Robel Nigusse
 - Dawit Enku
 - Nahom Kiflu
-- Leoul lemma
-- Mera Fedlu
-- Asteway aemro
+
