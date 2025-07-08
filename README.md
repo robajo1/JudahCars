@@ -1,5 +1,7 @@
 # **Judah Cars**  
-# 🚗 **Car Dealership SPA** – *React E-Commerce Project* -*BackEnd at(https://github.com/robelnigusse/JudahCars-Backend)*
+# 🚗 **Car Dealership SPA** – *React E-Commerce Project* 
+🌐 **https://judah-cars.vercel.app**
+
 
 ![Spotfire Screenshot](Frame1.png)
 
@@ -43,13 +45,8 @@ A responsive, interactive Single Page Application (**SPA**) built with **React**
 - 💾 **LocalStorage + caching** strategies
 
 ---
-##  **BackEnd code**
-- can be found at https://github.com/robajo1/JudahCars-Backend.git
----
 ## ⚙️ **Group members**
 - Robel Nigusse
 - Dawit Enku
 - Nahom Kiflu
-- Leoul lemma
-- Mera Fedlu
-- Asteway aemro
+
