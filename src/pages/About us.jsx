@@ -1,72 +1,42 @@
 import React from 'react';
-import './aboutus.css'; // Import the CSS file
+import './aboutus.css';
 import { motion } from 'framer-motion';
+import { FaGithub } from 'react-icons/fa';
+import { FiGlobe } from 'react-icons/fi'; 
 
-// Placeholder image URLs - replace with actual paths
-const teamMemberImages = {
-  Robel:'./images/rob.png', 
-  Dawit:'./images/daw.JPEG',    
-  Nahom:'./images/nah.jpg',    
-  Asteway:'./images/ast.jpg',  
-  Leol:'./images/l.jpg',     
-  Mera:'./images/mr.png',     
-};
+const teamMembers = [
+  {
+    name: 'Robel Nigusse',
+    image: './images/rob.png',
+    github: 'https://github.com/robelnigusse',
+    website: 'https://robel-nigusse.vercel.app/', 
+  },
+  {
+    name: 'Dawit Enku',
+    image: './images/daw.JPEG',
+    github: 'https://github.com/dawitl2',
+  },
+  {
+    name: 'Nahom Kiflu',
+    image: './images/nah.jpg',
+    github: 'https://github.com/Nah4-4',
+  },
+];
 
 const AboutUs = () => {
-  const teamMembers = [
-    {
-      name: 'Robel Nigusse',
-      role: 'Project Manager, Mock Data, caching user authentication',
-      contribution: 'Led the project and Handled API simulation, data validation, ',
-      image: teamMemberImages.Robel,
-    },
-    {
-      name: 'Dawit Enku',
-      role: 'Figma Design, React Front End',
-      contribution: 'Designed the user interface and developed the front-end using React.',
-      image: teamMemberImages.Dawit,
-    },
-    {
-      name: 'Nahom Kiflu',
-      role: 'Back End, search, filter',
-      contribution: 'Developed the back-end logic and managed to find his glasses.',
-      image: teamMemberImages.Nahom,
-    },
-    {
-      name: 'Asteway Aemro', 
-      role: 'API Simulation, Validation',
-      contribution: 'Handled API simulation/ validation, provided mock data for development.',
-      image: teamMemberImages.Asteway,
-    },
-    {
-      name: 'Leol Lemma',
-      role: 'Messaging App, Emotional Support',
-      contribution: 'Developed the messaging app feature',
-      image: teamMemberImages.Leol,
-    },
-    {
-      name: 'Mera Fedlu',
-      role: 'Support, CSS Design',
-      contribution: 'Developed the CSS features also color and font',
-      image: teamMemberImages.Mera
-    },
-  ];
-
   return (
-    <>
     <div className="about-us-page">
       <section className="intro-section">
         <h2 className="section-title">About Our Website</h2>
         <p className="description">
-          Welcome to our platform, your one-stop destination for connecting buyers and sellers
-          in Addis Ababa! We strive to provide a seamless and user-friendly experience
-          for discovering a wide range of products.  Our platform is designed to make the buying
-          and selling process as efficient and straightforward as possible.
+          Welcome to our platform — your go-to marketplace for connecting buyers and sellers in Addis Ababa!
+          We aim to provide a smooth, intuitive experience for discovering a wide range of products.
+          Our mission is to make buying and selling easy, efficient, and enjoyable.
         </p>
       </section>
 
       <section className="team-section">
-        <h2 className="section-title">Our Team</h2>
+        <h2 className="section-title">Meet the Team</h2>
         <div className="team-members-grid">
           {teamMembers.map((member, index) => (
             <motion.div
@@ -77,15 +47,35 @@ const AboutUs = () => {
               transition={{ delay: index * 0.2 }}
             >
               <div className="member-image-wrapper">
-                <img src={member.image} alt={member.name} className="member-image" />
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="member-image"
+                />
               </div>
               <div className="member-info">
                 <h3 className="member-name">{member.name}</h3>
-                <p className="member-role">{member.role}</p>
-                <div className="member-contribution">
-                  <span className="curved-text">
-                    {member.contribution}
-                  </span>
+                <div className="member-links">
+                  <a
+                    href={member.github}
+                    className="icon-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="GitHub"
+                  >
+                    <FaGithub size={24} />
+                  </a>
+                  {member.website && (
+                    <a
+                      href={member.website}
+                      className="icon-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Portfolio Website"
+                    >
+                      <FiGlobe size={24} />
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>
@@ -93,7 +83,6 @@ const AboutUs = () => {
         </div>
       </section>
     </div>
-    </>
   );
 };
 

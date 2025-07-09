@@ -1,92 +1,106 @@
 .about-us-page {
-    padding: 50px;
-    font-family: sans-serif;
-    color: #333;
-    max-width: 1000px;
-    margin-left: 5vw;
-    margin-top: 5vh;
+  padding: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  max-width: 1000px;
+  margin-left: 5vw;
+  margin-top: 5vh;
 }
-  
-  .description {
-    font-size: 1.1em;
-    line-height: 1.7;
-    margin-bottom: 30px;
-    color: #555;
-    text-align: justify;
-  }
-  
-  .team-section {
-    margin-top: 40px;
-  }
-  
-  .team-members-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 20px;
-  }
-  
-  .team-member-card {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .team-member-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  }
-  
-  .member-image-wrapper {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-bottom: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  
-  .member-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .member-name {
-    font-size: 1.4em;
-    margin-bottom: 5px;
-    color: #2c3e50;
-  }
-  
-  .member-role {
-    font-size: 1em;
-    color: #7f8c8d;
-    margin-bottom: 10px;
-  }
-  
-  .member-contribution {
-    font-size: 0.95em;
-    color: #34495e;
-    margin-top: 10px;
-  }
-  
-  .curved-text {
-    /* Style to make the text appear on a curved path.  This is a simplified approach. */
-    display: block;
-    /* You would likely need a library like react-curved-text for true curve */
-    /* This is just a visual approximation for demonstration */
-    border-bottom: 1px solid #95a5a6;
-    padding-bottom: 5px;
-    margin-bottom: 5px;
-  }
 
-  
-  
-  
+.section-title {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.description {
+  font-size: 1.1em;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  color: #555;
+  text-align: justify;
+}
+
+.team-section {
+  margin-top: 40px;
+}
+
+.team-members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.team-member-card {
+  background: linear-gradient(145deg, #f9f9f9, #ffffff);
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.team-member-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.member-image-wrapper {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 15px;
+  border: 3px solid #e0e0e0;
+}
+
+.member-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.member-name {
+  font-size: 1.3em;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.github-icon {
+  color: #333;
+  transition: color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.github-icon:hover {
+  color: #000;
+}
+.member-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.member-links {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 5px;
+}
+.icon-link {
+  color: #333;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.icon-link:hover {
+  color: #000;
+  transform: scale(1.1);
+}
